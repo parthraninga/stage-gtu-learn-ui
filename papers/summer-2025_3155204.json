@@ -1,0 +1,854 @@
+{
+  "metadata": {
+    "examination": "SUMMER 2025",
+    "subject_code": "3155204",
+    "subject_name": "Image Processing",
+    "total_marks": 70
+  },
+  "questions": [
+    {
+      "question_no": "Q.1",
+      "sub_question_no": "(a)",
+      "question_text": "Describe 4 and 8 connectivity with suitable diagram.",
+      "diagram_representation": "Diagrams for 4-connectivity and 8-connectivity are required, showing a central pixel and its connected neighbors.",
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Connectivity",
+        "Digital Image Fundamentals"
+      ],
+      "answer": "Connectivity in image processing defines how pixels are related based on their spatial adjacency. **4-Connectivity:** A pixel p(x, y) is 4-connected to its four horizontal and vertical neighbors: (x+1, y), (x-1, y), (x, y+1), and (x, y-1). **8-Connectivity:** A pixel p(x, y) is 8-connected to its eight surrounding neighbors, including the four diagonal neighbors in addition to the 4-connected neighbors. These are (x+1, y+1), (x+1, y-1), (x-1, y+1), and (x-1, y-1). Refer diagram for visual representation.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A lonely pixel in image processing yearned for **connectivity**. It only had **4** friends, each a cardinal direction neighbor, but wanted more! Then, like magic, **8** arms sprouted, grabbing all the **diagonal neighbors** for the biggest, most connected hug ever! Refer to the diagram so you don't miss out on your chance for a hug.",
+          "explanation": "The lonely pixel represents the need for connectivity in image processing. Its initial 4 friends symbolize 4-connectivity, while sprouting 8 arms and grabbing diagonal neighbors illustrates the transition to 8-connectivity, highlighting how diagonal neighbors are added for greater connection."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a bright red door with a giant number \"4\" painted on it, pulsing with a faint, electric blue light. I HEAR a low hum emanating from the door, like a digital heartbeat, and I FEEL a slight tingle in my fingertips as I reach out to touch the glowing number.",
+              "how_to_place": "Walk up to your Front Door and picture it bursting open, revealing the image standing right in the doorway, blocking your entrance."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I stand in a grand entrance hall, where an enormous, shimmering number \"8\" levitates, pulsating with a soft, warm light. The light extends to highlight four portraits on the walls, two horizontally aligned and two vertically, each emanating a faint, clicking sound like puzzle pieces locking together.",
+              "how_to_place": "As you walk into the Entrance Hall, picture a giant, golden retriever puppy excitedly bounding towards you, tripping and scattering colorful tennis balls everywhere."
+            },
+            {
+              "place_number": 3,
+              "location": "Living Room Couch",
+              "visualization": "A plush, velvety living room couch sprouts four extra, diagonally-pointing cushions with hands that reach out (x+1, y+1), (x+1, y-1), (x-1, y+1), and (x-1, y-1), grabbing for the remote control amidst the faint scent of lavender and the creak of settling springs.",
+              "how_to_place": "Walk up to the Living Room Couch and imagine a giant, fluffy sheep relaxing there, its wool overflowing onto the floor."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.1",
+      "sub_question_no": "(b)",
+      "question_text": "Summarize: Sampling and Quantization",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Sampling",
+        "Quantization",
+        "Digital Image Fundamentals"
+      ],
+      "answer": "**Answer:**\n\nSampling and quantization are fundamental steps in converting an analog image into a digital format. Sampling involves discretizing the spatial coordinates (x, y) of the image. This means taking discrete samples of the continuous image function f(x,y) at regular intervals. The sampling rate determines the spatial resolution; higher sampling rates result in finer details. Refer diagram illustrating image sampling.\n\nQuantization, conversely, discretizes the amplitude (intensity) values of each sampled point. Each continuous intensity value is mapped to a discrete level, represented by a finite number of bits. The number of quantization levels determines the gray-level resolution. For instance, 8-bit quantization yields 256 gray levels. Inadequate sampling or quantization introduces artifacts like aliasing or contouring, respectively.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A pixelated Mona Lisa, *sampled* with a giant cheese grater, wept tears of pure analog. Each tear, a continuous scream, was *quantized* into only four, blocky *gray levels* of existential dread. Aliasing ants marched across her face, a *spatial resolution* disaster. They left a *contouring* mess, forever trapping her smile in digital despair.",
+          "explanation": "The story links *sampling* to the cheese grater, representing the discretization of the Mona Lisa's continuous form. *Quantization* is tied to the weeping tears being limited to four *gray levels*, illustrating how continuous intensity is forced into discrete steps. The aliasing ants and contouring mess represent the artifacts of poor *spatial resolution* due to inadequate sampling."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "TV Stand",
+              "visualization": "A vintage TV stand, buzzing faintly, supports a pixelated watermelon that's dripping digitized juice; each drop echoes with a robotic *blip* as it quantizes onto a checkerboard floor that smells faintly of burnt circuits.",
+              "how_to_place": "Walk up to the TV Stand and imagine a giant, wobbly Jello mold shaped like the image is sitting precariously on top, threatening to slide off and splat onto the floor."
+            },
+            {
+              "place_number": 2,
+              "location": "Bookshelf",
+              "visualization": "I see a bookshelf overflowing with books whose spines are morphing into a pixelated image of my own face, the individual books acting as samples. The faster the books multiply and pack themselves together, the clearer and more detailed my pixelated face becomes, like a photograph developing rapidly.",
+              "how_to_place": "Walk up to the Bookshelf and picture it overflowing with books that magically transform into the image, each book page fluttering with the details."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen Counter",
+              "visualization": "I see a glistening, spilled glass of vibrant orange juice on the kitchen counter, slowly dripping and dividing itself into distinct, pixelated squares like a low-resolution video game; I can hear the faint *plink* as each discrete \"pixel\" of juice falls, and smell the overly sweet, artificial aroma intensified by its digital breakdown.",
+              "how_to_place": "Walk up to the Kitchen Counter and picture a GIANT **IMAGE** made of gingerbread crushing the counter, and then *smell* the strong gingerbread scent."
+            },
+            {
+              "place_number": 4,
+              "location": "Refrigerator",
+              "visualization": "Inside the refrigerator, a hyper-realistic grayscale portrait of a chef is pixelated with huge, blocky squares due to low quantization, making his face look like a rocky landscape; a digital voice emanating from within coldly states \"8-bit resolution: 256 shades only!\" The metallic chill stings your hand as you reach in, and the faint smell of moldy cheese mixes with the electronic tang of the malfunctioning portrait.",
+              "how_to_place": "Walk up to the Refrigerator and imagine seeing a giant, talking **REFRIGERATOR MAGNET** holding a **REMOTE CONTROL** while riding a **ROLLER COASTER**."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.1",
+      "sub_question_no": "(c)",
+      "question_text": "Illustrate the applications of various components of EM spectrum.",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "EM Spectrum",
+        "Applications"
+      ],
+      "answer": "The Electromagnetic (EM) spectrum encompasses the entire range of electromagnetic radiation, and each component has unique applications in various fields, particularly in image processing.\n\n1.  **Gamma Rays:** Used in medical imaging, specifically Positron Emission Tomography (PET) scans, to detect cancerous tissues. They penetrate deeply and provide information about metabolic activity.\n\n2.  **X-Rays:** Widely applied in medical imaging (radiography) and industrial inspection. X-ray images reveal bone structure, foreign objects, and structural defects in manufactured components.\n\n3.  **Ultraviolet (UV) Radiation:** Used in dermatology for diagnosing skin conditions and in forensic science for detecting latent fingerprints. UV imaging can also be used for non-destructive testing of materials.\n\n4.  **Visible Light:** The foundation of conventional photography and computer vision. Most image sensors are designed to capture visible light. Image processing techniques enhance and analyze these images for various applications like object recognition and scene understanding.\n\n5.  **Infrared (IR) Radiation:** Used in thermal imaging to detect temperature variations. Applications include building insulation inspection, medical diagnostics (detecting inflammation), and military night vision. Refer diagram illustrating thermography for temperature mapping.\n\n6.  **Microwaves:** Employed in radar systems for remote sensing and weather forecasting. Synthetic Aperture Radar (SAR) uses microwaves to create high-resolution images of the Earth's surface, even through clouds.\n\n7.  **Radio Waves:** Utilized in Magnetic Resonance Imaging (MRI). MRI employs radio waves and strong magnetic fields to generate detailed images of internal organs and tissues, aiding in medical diagnosis.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A **gamma ray** doctor diagnosed a **cancerous** PET hamster. Furious **X-rays** revealed the hamster hid **structural** defects in a tiny, manufactured bone house. The hamster then sunbathed under **UV radiation**, hoping to erase the fingerprints of his crime, but only developed a visible rash detectable by conventional **visible light** photography. The guilty hamster confessed under the thermal gaze of **infrared** cameras exposing his sweaty, inflammatory guilt, revealed by temperature mapping. A **microwave** radar dish then tracked the hamster fleeing in a weather balloon.",
+          "explanation": "The story uses the types of EM radiation to solve the hamster's crime. The doctor using gamma rays to find the cancerous tumor represents medical imaging with PET scans, while the X-rays reveal the hamster's bone house, representing structural imaging. The hamster's attempts to hide with UV and infrared radiation highlight their forensic applications in detecting fingerprints and inflammation, respectively, tying the story to the broader EM spectrum and its uses."
+        },
+        "memory_palace": {
+          "total_places": 7,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Dining Table",
+              "visualization": "At the dining table, a shimmering, rainbow-hued tablecloth pulsates with invisible energy; I hear a faint, rhythmic hum as gamma rays illuminate X-ray images printed on placemats, revealing hidden layers like ghostly dinner guests beneath the surface. A metallic tang fills the air, hinting at the technology transforming the familiar space into an image-processing lab.",
+              "how_to_place": "Walk up to the Dining Table and imagine seeing a giant, inflatable version of the image sitting in one of the chairs, bouncing up and down."
+            },
+            {
+              "place_number": 2,
+              "location": "Window Sill",
+              "visualization": "A sickly, PET-SCAN glow emanates from a cracked ceramic cat perched on the window sill, illuminating dust motes dancing in the stale, metallic-smelling air. I feel the rough, cold sill under my fingertips, and hear a faint, high-pitched whirring like an x-ray machine struggling to power up.",
+              "how_to_place": "Walk up to the Window Sill and picture a giant, sparkling **window** *seal* balancing precariously on the edge, barking hello."
+            },
+            {
+              "place_number": 3,
+              "location": "Bedroom Door",
+              "visualization": "As I reach for the bedroom door, I see it bathed in an eerie UV glow, revealing hidden, microscopic cracks spiderwebbing across its surface. The faint smell of burnt hair from forensic fingerprinting lingers in the air, while I feel a slight sunburn sensation as the invisible rays scan for imperfections.",
+              "how_to_place": "Walk up to the Bedroom Door and imagine seeing the image bursting through it like a piñata, scattering its contents all over the floor."
+            },
+            {
+              "place_number": 4,
+              "location": "Bed Headboard",
+              "visualization": "Resting against the plush, velvet headboard, I see a perfectly clear photograph appearing on it, a 3D image of the headboard's internal structure, lit by soft white light; I feel the cool glass as I reach out to touch the \"photograph,\" and hear a faint *click* as the inspection completes.",
+              "how_to_place": "Lie in bed, look up at the headboard, and visualize the image bursting through it like a vibrant, colorful explosion, leaving cracks and splinters behind."
+            },
+            {
+              "place_number": 5,
+              "location": "Nightstand",
+              "visualization": "On my nightstand, a sleek thermal imaging camera glows with infrared light, painting the scene in false colors; I hear a faint whirring sound as it analyzes the temperature of my water glass, detecting the cool condensation, and I feel a slight warmth radiating from the device.",
+              "how_to_place": "Walk up to the Nightstand and picture a giant **image** overflowing from the drawer, so bright it illuminates the whole room."
+            },
+            {
+              "place_number": 6,
+              "location": "Closet",
+              "visualization": "The closet door creaks open, revealing a swirling fog of green night vision illuminating dusty shelves lined with microwave ovens humming softly; a faint scent of ozone and old wool hangs in the air, while a heat map of the temperature radiates from the back wall.",
+              "how_to_place": "Walk up to the Closet and imagine it bursting open with clothes shaped like a giant CLOCK, loudly ticking and toppling out."
+            },
+            {
+              "place_number": 7,
+              "location": "Bathroom Mirror",
+              "visualization": "I'm staring into the bathroom mirror, but instead of my reflection, I see the Earth surrounded by seven fuzzy, glowing orbs emitting faint static noises like an old radio. I feel the cool, smooth glass of the mirror under my fingertips, and smell the faint, metallic tang of ozone as the radio waves pulse outward, each a 'radio wave' image of Earth cutting through swirling cloud patterns.",
+              "how_to_place": "Walk up to the Bathroom Mirror and imagine your reflection is wearing a giant crown made of toothpaste tubes."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(a)",
+      "question_text": "Alpha trimmed mean filter with example.",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Filters",
+        "Alpha Trimmed Mean Filter"
+      ],
+      "answer": "The alpha-trimmed mean filter is a non-linear spatial filter used to reduce noise in images, particularly salt-and-pepper noise. It operates by removing the α/2 lowest and α/2 highest intensity values within a neighborhood Sxy centered at a pixel (x,y), and then averaging the remaining pixels.\n\n1.  **Algorithm:** Order pixels in Sxy.\n2.  Discard d = α * n/100 lowest & highest pixel values (n: total pixels in Sxy).\n3.  Compute the mean of the remaining (n-d) pixels. This is the filtered output.\n\nExample: For a 3x3 neighborhood (n=9) and α=20, d = 0.2 * 9 = 1.8 ≈ 2. The 2 lowest and 2 highest values are discarded. Refer diagram for a visual representation of Sxy and α selection.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "An **ALPHA** wolf meticulously **ORDERED** his pack (pixels in Sxy) before a feast. He then **DISCARDED** the two weakest and two strongest, a painful **SALT-AND-PEPPER** choice, for the good of the **MEAN** pack. The remaining wolves then **AVERAGED** their catch, a fair **FILTERED OUTPUT** for the hungry group.",
+          "explanation": "The alpha wolf **ORDERING** his pack represents sorting the pixels in the neighborhood Sxy. **DISCARDING** the weakest and strongest wolves (a \"salt-and-pepper\" choice) mirrors removing extreme pixel values to address salt-and-pepper noise, and the **MEAN** catch of the remaining wolves represents calculating the average of the remaining pixels to generate the **FILTERED OUTPUT**."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Shower",
+              "visualization": "The showerhead blasts pixelated water, some pure white (salt), some pitch black (pepper), that stings like static. I'm scrubbing off the extremes - the too-bright and too-dark grime - leaving a smoother, more balanced complexion beneath the digital deluge.",
+              "how_to_place": "Walk up to the Shower and imagine seeing it overflowing with rubber ducks, each wearing a tiny shower cap."
+            },
+            {
+              "place_number": 2,
+              "location": "Study Desk",
+              "visualization": "I see my desk transformed into a pixelated landscape, with tiny figures arguing about their brightness; a stern pixel-referee blows a whistle, banishing the dimmest and brightest to the sidelines as a gentle averaging hum fills the air, smoothing the chaotic light into a soft glow. The metallic tang of circuit boards mixes with the faint, sweet scent of melting plastic as I virtually discard those outliers.",
+              "how_to_place": "Walk up to the Study Desk and visualize a giant, fluffy sheep sitting in the chair, diligently taking notes with a tiny pen."
+            },
+            {
+              "place_number": 3,
+              "location": "Computer Monitor",
+              "visualization": "I see a computer monitor displaying a vibrant image slowly dissolving into a grainy, pixelated mess, then snapping back into sharp focus, leaving (n-d) perfectly clear pixels behind like freshly cleaned glass. The hum of the monitor morphs into the sound of tiny digital dust particles being vacuumed away, leaving a faint, clean, metallic scent in the air.",
+              "how_to_place": "Walk up to the Computer Monitor and imagine a giant, fluffy image bursting out of the screen, nearly knocking you over with its softness."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(b)",
+      "question_text": "How histogram help us to understand characteristics of image? Explain with suitable diagrams.",
+      "diagram_representation": "Diagrams showing various types of image histograms (e.g., dark, bright, low contrast) are required.",
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Histogram",
+        "Image Characteristics"
+      ],
+      "answer": "A histogram in image processing represents the frequency distribution of pixel intensities. By plotting the number of pixels at each intensity level (0-255 for grayscale), it reveals crucial image characteristics.\n\n1.  **Brightness:** A histogram concentrated on the right indicates a brighter image, while a left-skewed histogram represents a darker image. Refer diagram 1.\n\n2.  **Contrast:** A histogram spanning a wide range of intensities signifies high contrast. A narrow, peaked histogram suggests low contrast. Refer diagram 2.\n\n3.  **Image Quality:** Bimodal histograms can indicate distinct regions or objects, potentially related to segmentation. Gaps can point to quantization issues.\n\n4. **Thresholding**: Easily determine optimal threshold values for image segmentation by observing peaks and valleys in the histogram.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "Imagine a **histogram**, shaped like a spooky grayscale castle. A **bright** ghost party on the right side made the whole castle glow! But the **contrast** was low, everything was just a grey blob until a **bimodal** dragon split the castle into light and dark, revealing the perfect **thresholding** point at its fiery breath.",
+          "explanation": "The \"bright ghost party\" on the right of the histogram castle directly represents a brighter image with pixel intensities concentrated on the higher end (right side). The initial \"low contrast\" grey blob is analogous to a histogram with a narrow peak, indicating a limited range of intensities. The \"bimodal dragon\" splitting the castle represents the presence of two distinct peaks in the histogram, which can help find the \"thresholding point\" (the dragon's fiery breath) to separate different regions in the image."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Office Chair",
+              "visualization": "My office chair is now a giant, pixelated throne, constantly shifting color from deep black (0) to blinding white (255), each color block vibrating intensely with the number of pixels it represents, creating a cacophony of digital buzzing and the faint, metallic scent of processing power.",
+              "how_to_place": "Walk up to the Office Chair and picture it wildly spinning, launching a giant ORANGE (image) into the ceiling, sticking there."
+            },
+            {
+              "place_number": 2,
+              "location": "Balcony",
+              "visualization": "I'm on a sun-drenched balcony overlooking a vibrant city; squinting, I see a photographer frantically adjusting settings, exclaiming, \"Too many bright STICKS reflecting light – histogram's all skewed right!\". A faint smell of burnt film wafts from the camera bag, the balcony railing hot against my hands.",
+              "how_to_place": "Walk up to the Balcony and picture a giant BALl COvering it, so large it's about to fall off and you have to brace yourself against it."
+            },
+            {
+              "place_number": 3,
+              "location": "Garden Path",
+              "visualization": "I'm walking a garden path lined with fiery red poppies and pale white lilies; the sun beats down intensely on one side, casting deep, cool shadows on the other. The sharp contrast of light and shadow, heat and cool, feels jarring, like stepping between two different worlds with each footstep.",
+              "how_to_place": "As you step onto the Garden Path, picture a giant, bright-red tomato bursting open, splattering its seeds everywhere."
+            },
+            {
+              "place_number": 4,
+              "location": "Garage",
+              "visualization": "The garage door screeches open, revealing a flickering neon sign shaped like a histogram inside; its jagged peaks and valleys buzz erratically, revealing dark gaps where numbers should smoothly transition, like missing teeth in a quantized skull. I smell ozone and burnt rubber as if the histogram itself is overloading, its digital essence bleeding into the real world.",
+              "how_to_place": "Walk up to the Garage and imagine a giant GARGOYLE sitting on the roof, accidentally crushing the garage door beneath its weight."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(c)",
+      "question_text": "Perform histogram equalization on following 3-bit image data:\n3311\n4343\n4411\n4411",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Histogram Equalization",
+        "Image Enhancement"
+      ],
+      "answer": "**Answer:**\n\nHistogram equalization is a technique in image processing used to enhance contrast by modifying the image's intensity values. It aims to produce a uniform distribution of gray levels across the image, thereby increasing the dynamic range.\n\n1. **Frequency Count:** First, determine the frequency of each gray level (0-7) in the 3-bit image. The image data is:\n   3311\n   4343\n   4411\n   4411\n   Frequency: 0:0, 1:6, 2:0, 3:4, 4:6, 5:0, 6:0, 7:0.\n\n2. **Probability Distribution:** Calculate the probability (P(r<sub>k</sub>)) of each gray level: P(1) = 6/16, P(3) = 4/16, P(4) = 6/16. The other probabilities are zero.\n\n3. **Cumulative Distribution Function (CDF):** Compute the cumulative distribution function (CDF). CDF(1) = 6/16, CDF(3) = 6/16 + 4/16 = 10/16, CDF(4) = 10/16 + 6/16 = 16/16 = 1.\n\n4. **Scaling and Rounding:** Multiply the CDF by the maximum gray level (L-1 = 7 for a 3-bit image) and round to the nearest integer to obtain the new gray levels (s<sub>k</sub>).\n   s<sub>1</sub> = round(7 * 6/16) = round(2.625) = 3\n   s<sub>3</sub> = round(7 * 10/16) = round(4.375) = 4\n   s<sub>4</sub> = round(7 * 16/16) = 7\n\n5. **Mapping:** Map the original gray levels to the new gray levels.  1->3, 3->4, 4->7.\n\n6. **Equalized Image:** Replace the original pixel values with the new values. The histogram equalized image would then be:\n   4433\n   7474\n   7733\n   7733\n\nThis process re-distributes the gray levels and enhances the image's contrast.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A ghostly **FREQUENCY COUNT** of specters argued over probabilities in a haunted mansion. The **CDF** (Cumulative Distribution Function) rose as each ghost joined the spectral line, until all sixteen were aligned. They were **SCALED** and dipped in shimmering, 7-layer cake, each rounding out to a new spectral form. The house, once dim, now glowed with enhanced **CONTRAST**, a **MAPPING** of eerie light.",
+          "explanation": "The ghostly **FREQUENCY COUNT** represents counting the occurrences of each gray level in the image. The **CDF** visualizes the cumulative probability of these levels, with ghosts lining up to represent the accumulation. **SCALING** and dipping in cake mirrors the transformation process where the CDF values are scaled and rounded to new intensity values, enhancing the **CONTRAST** through a **MAPPING** that brightens the image."
+        },
+        "memory_palace": {
+          "total_places": 7,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Car Dashboard",
+              "visualization": "I see my car dashboard transformed into a vibrant equalizer display, its bars bouncing with the rhythm of a funky song, each frequency band representing a different shade of gray spreading evenly across the windshield. I feel the bass vibrating through the seat as the visualizer pumps, and smell the faint scent of ozone, like a powerful image processor overclocking.",
+              "how_to_place": "Walk up to the Car Dashboard and visualize a GIANT cheeseburger sliding across it, leaving a greasy trail as it crashes into the windshield."
+            },
+            {
+              "place_number": 2,
+              "location": "Mailbox",
+              "visualization": "A rusty mailbox overflows with birthday cards, each stamped with a different age. As you pull them out, you hear a chorus of chirping crickets, their frequency increasing with each passing year printed on the cards, and smell the musty scent of aging paper mingled with the sweet, metallic tang of the mailbox itself.",
+              "how_to_place": "Walk up to the mailbox and picture it overflowing with fluffy, white COTTON, so much so that it's spilling out and looks like a giant, cloud-like monster trying to mail itself."
+            },
+            {
+              "place_number": 3,
+              "location": "Staircase",
+              "visualization": "I see a grand, spiraling staircase made entirely of shimmering, grey pixels. I hear the echo of tiny robotic footsteps ascending, and smell the faint ozone of digital circuits overheating as they land precisely on the 1st, 3rd, and 4th steps, then vanish into the digital ether above.",
+              "how_to_place": "Walk up to the Staircase and visualize a giant, bouncy castle shaped like a STAIRCASE sitting right on top of the real one, remember the fun feeling!"
+            },
+            {
+              "place_number": 4,
+              "location": "Attic",
+              "visualization": "Dust motes dance in the single shaft of sunlight piercing the attic's gloom, illuminating an **old, cracked piggy bank shaped like the letter \"O\"**. You hear the faint echo of coins rattling inside as you reach for it, feeling the rough, uneven surface under your fingertips, and smelling the musty scent of forgotten childhood dreams and the metallic tang of old pennies - each penny representing a fraction accumulating to fill the whole.",
+              "how_to_place": "Walk up the attic stairs and picture a giant ANT wearing a TIC-Tac box as a hat, then imagine it tripping and scattering Tic-Tacs everywhere."
+            },
+            {
+              "place_number": 5,
+              "location": "Basement",
+              "visualization": "I'm in a dimly lit basement, damp concrete floor cold under my bare feet. A massive, glowing 3-BIT calculator hums loudly, spitting out a stream of CDF papers that smell faintly of mildew; I'm frantically ROUNDING the numbers on them, each result echoing like a dropped wrench as I scribble the new gray levels onto the wall with a thick, charcoal pencil.",
+              "how_to_place": "Walk down the Basement stairs and picture a giant, inflatable image blocking the entire doorway, forcing you to squeeze past it to enter."
+            },
+            {
+              "place_number": 6,
+              "location": "Ceiling Fan",
+              "visualization": "A dusty ceiling fan spins erratically, its blades painted in uneven shades of gray – 1, 3, and 4. As it spins, a faint \"thwack...thwack...thwack\" echoes, and each blade leaves a trail of shimmering dust that magically transforms into a brighter shade of gray – 3, 4, and 7 – before settling back down, leaving a gritty residue in the air.",
+              "how_to_place": "Walk up to the Ceiling Fan and imagine it's spinning so fast that it launches tennis RACKETS that stick into the ceiling around it."
+            },
+            {
+              "place_number": 7,
+              "location": "Wall Clock",
+              "visualization": "A shattered wall clock's face is replaced with a vibrant, blocky image: \"4433, 7474, 7733, 7733\" glowing intensely, radiating heat like a pixelated sun, replacing the gentle tick-tock with a jarring digital hum. The air crackles with static electricity, smelling faintly of burnt plastic from the recalibration.",
+              "how_to_place": "Walk up to the Wall Clock and imagine it's made of giant waffles dripping with syrup."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(c) OR",
+      "question_text": "Explain following procedure: Region splitting and region merging",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Image Segmentation",
+        "Region Splitting",
+        "Region Merging"
+      ],
+      "answer": "**Answer:**\n\nRegion splitting and merging is a top-down and bottom-up image segmentation technique used to partition an image into homogeneous regions based on a defined predicate.\n\n1.  **Region Splitting:** This is a divisive approach. Initially, the entire image is considered a single region. If the predicate (e.g., variance of intensity) is not satisfied for this region, it's split into sub-regions, typically four equal quadrants (quadtree decomposition). This process recursively continues for each sub-region until the predicate holds true for all resulting regions.\n\n2.  **Region Merging:** This is an agglomerative approach. Initially, each pixel or a small block of pixels constitutes a region. Adjacent regions are merged if they satisfy a predefined similarity predicate (e.g., average gray level difference below a threshold). The merging process continues iteratively until no further merging is possible without violating the predicate.\n\n3.  **Hybrid Approach:** Region splitting and merging are often combined to refine segmentation results. After initial splitting, merging is applied to combine adjacent regions that were unnecessarily separated due to noise or minor variations.\n\nFor example, if the predicate is “variance < threshold”, a region with high variance due to texture will be split until smaller regions with lower variance are obtained. Subsequently, two adjacent regions with similar average intensities might be merged.\nRefer diagram to visualize quadtree decomposition and region adjacency.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A giant, VARIED pizza (entire image) FRACTURED into quadrants when the chef declared its variance \"too high!\" (region splitting). Tiny, lonely pepperoni slices (pixels) then huddled together, MERGING when their grease levels (similarity predicate) matched. But the chef, still unsatisfied, HYBRIDIZED the process, smashing (splitting) a rogue clump of olives before gluing (merging) similar peppers back together for perfect pizza harmony.",
+          "explanation": "The varied pizza fracturing into quadrants when deemed too different represents the initial splitting of an image based on a variance predicate. The merging of pepperoni slices based on grease levels mirrors the bottom-up merging of pixels or regions based on a similarity predicate."
+        },
+        "memory_palace": {
+          "total_places": 7,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Picture Frame",
+              "visualization": "I see a shattered picture frame, but instead of glass shards, the broken pieces are perfect miniature landscapes, each a slightly different shade of green representing regions split. I hear the gentle \"click\" as some of these tiny landscapes magically merge back together, creating larger, more uniform terrains within the fractured frame.",
+              "how_to_place": "Walk up to the Picture Frame and imagine it's been replaced with a giant birthday cake that you take a big bite out of, remembering the taste."
+            },
+            {
+              "place_number": 2,
+              "location": "Lamp Post",
+              "visualization": "A cracked, flickering lamp post casts harsh shadows, illuminating a perfectly square cake divided into four uneven, violently separated slices; a discordant, grating sound like shattering glass emanates from the base. The metallic tang of ozone hangs heavy in the air, while a cold, unsettling draft blows through the disjointed cake pieces.",
+              "how_to_place": "Walk up to the Lamp Post and see it wearing a giant lampshade like a hat, then imagine trying to unscrew the lamp post's bulb, but it's cemented in place."
+            },
+            {
+              "place_number": 3,
+              "location": "Rooftop",
+              "visualization": "I'm on a scorching hot rooftop, overlooking a city neatly divided into square quadrants by cracked, sun-baked tiles; the air shimmers, distorting the view until each tile (a region) either glows consistently green (predicate true) or is smashed apart by a tiny, frantic drone, further dividing the space with a sickening crunch (predicate false, decompose!). The scent of hot asphalt rises, mingling with the faint, metallic tang of the drone's exhaust.",
+              "how_to_place": "Walk up to the Rooftop and imagine a giant, inflatable banana peel sprawled across the entire surface, so large it's visible from the street below."
+            },
+            {
+              "place_number": 4,
+              "location": "Basement Corner",
+              "visualization": "In the basement corner, I see a giant, wobbly JELLO MOLD composed of tiny, shimmering pixel blocks vibrating with a low HUM. I feel the cool, slightly sticky JELLO against my skin as pixel blocks fuse together with a *POP* when they become similar enough, smelling faintly of artificial grape and static electricity.",
+              "how_to_place": "Walk into the Basement Corner and picture a giant, glowing RUBY wedged tightly into the corner, pulsing with light."
+            },
+            {
+              "place_number": 5,
+              "location": "Garden Bench",
+              "visualization": "I see two gnomes stubbornly pushing oversized puzzle pieces together on a sun-drenched garden bench, the air thick with the scent of freshly cut grass and damp earth; I hear their frustrated grunts as they try to force ill-fitting pieces, stopping only when the bench creaks ominously under the mismatched weight. The rough texture of the wooden bench beneath me vibrates with their relentless, iterative attempts.",
+              "how_to_place": "Walk up to the Garden Bench and visualize it's completely covered in [image], like it's been upholstered with it."
+            },
+            {
+              "place_number": 6,
+              "location": "Kitchen Sink",
+              "visualization": "I see a kitchen sink overflowing with a frothy, silvery liquid that smells faintly of ozone. As the liquid merges, tiny fragmented islands of dirty dishes magically fuse together, becoming a pristine, gleaming mountain as the \"NG\" (etched in neon green) zaps the boundaries with a gentle hum, smoothing them into one glorious whole. I feel a tingling static charge in the air.",
+              "how_to_place": "Walk up to the Kitchen Sink and imagine seeing a GIANT, FLOATING rubber duck filling the entire sink basin and overflowing with bubbles."
+            },
+            {
+              "place_number": 7,
+              "location": "Wardrobe",
+              "visualization": "The wardrobe doors burst open, revealing a fractal landscape of silk scarves, each a region of color. I hear the faint ripping sound as the scarves are meticulously divided and feel the soft, similar textures of two nearby scarves merging under my fingertips, releasing a mingled scent of lavender and cedar.",
+              "how_to_place": "Walk up to the Wardrobe and imagine stuffing a giant, squawking parrot inside, slamming the door shut so feathers and tropical colors explode from the cracks."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(a)",
+      "question_text": "Articulate functioning of Butterworth high pass filter.",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Filters",
+        "Butterworth Filter",
+        "High Pass Filter"
+      ],
+      "answer": "A Butterworth high-pass filter attenuates low-frequency components while passing high-frequency components. Its transfer function, H(u,v), is defined by H(u,v) = 1 / (1 + (D0/D(u,v))^(2n)), where D(u,v) is the distance from frequency point (u,v) to the image center, D0 is the cutoff frequency, and n is the filter order. Higher order filters exhibit sharper transitions. Low frequencies below D0 are greatly attenuated. Refer diagram showing frequency response.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "Imagine a BUTTERFLY with LOW frequencies stuck in gooey BUTTER, unable to fly HIGH. A sharp CUTOFF frequency, a shimmering \"D0\" bubble, POPS, launching the butterfly skyward! The FILTER ORDER, \"n,\" dictates how fast it escapes, leaving the sticky butter far behind, only remembering how much the low frequencies are ATTENUATED.",
+          "explanation": "The butterfly struggling in butter represents low frequencies being attenuated by the Butterworth high-pass filter. The cutoff frequency, D0, is the point where the \"bubble\" pops and the butterfly (high frequencies) is allowed to fly, while the filter order, n, determines how quickly the butterfly escapes the sticky \"butter\" (attenuation of low frequencies)."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Dining Chair",
+              "visualization": "A dining chair constructed entirely of butter is melting rapidly under a heat lamp, dripping into a strainer below. The only sound is a high-pitched whine emanating from the strainer as it allows the clarified butter (high frequencies) to pass through, leaving behind solid, rancid clumps (low frequencies). The overwhelming smell is sweet, yet acrid and sickening, as the butter burns.",
+              "how_to_place": "Walk up to the Dining Chair and imagine it's completely upholstered in fluffy clouds, then sit down and feel yourself sinking into the soft, airy cushion."
+            },
+            {
+              "place_number": 2,
+              "location": "Coffee Table",
+              "visualization": "I see a shimmering coffee table made of concentric, pulsing rings of light, the brightness fading outwards from the center. I feel a warm vibration as I run my hand across the smooth surface, and hear a faint, high-pitched hum that changes in tone as the rings expand and contract like a breathing lung.",
+              "how_to_place": "Walk up to the Coffee Table and imagine balancing a giant coffee bean on it, so big it's about to roll off, making you nervous."
+            },
+            {
+              "place_number": 3,
+              "location": "Shoe Rack",
+              "visualization": "A towering shoe rack made of razor-sharp, ascending blades slices through frequencies; the higher the blade, the steeper its angle, audibly SHREDDING high-pitched whines, while muffled, bassy rumbles escape from beneath the lowest, dullest rack, tickling your feet with faint vibrations and the metallic tang of ozone. Each shoe space is labeled with a frequency.",
+              "how_to_place": "Walk up to the Shoe Rack and imagine stuffing each shoe with a fluffy, bright yellow Dandelion until they overflow, picturing the soft seeds tickling your fingers."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(b)",
+      "question_text": "Devise the way to handle salt and pepper noise?",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Noise Reduction",
+        "Salt and Pepper Noise"
+      ],
+      "answer": "Salt and pepper noise, an impulse noise, manifests as random black (pepper) and white (salt) pixels in an image. Handling this involves applying spatial filtering techniques.\n\n1. **Median Filtering:** This is the primary approach. It replaces each pixel value with the median of its neighborhood, effectively removing extreme values caused by salt and pepper noise without significant blurring.\n\n2. **Adaptive Median Filtering:** This advanced technique adjusts the neighborhood size based on noise density. If the median is also a noisy pixel, the window size is increased iteratively until a valid median is found. This preserves image details better than standard median filtering. Refer diagram showing window size adjustment.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A chef sprinkled **salt and pepper noise** all over a prized photo, turning it into static. He panicked, grabbing a **median filter** the size of a plate, smoothing out most of the mess. But some specks remained, so he unleashed an **adaptive median filter**, its window growing like a hungry amoeba until every last black and white pixel vanished, leaving the image pristine.",
+          "explanation": "The \"salt and pepper noise\" the chef sprinkled represents the random black and white pixels in the image. The plate-sized \"median filter\" symbolizes the standard median filter that smooths out the majority of the noise, while the \"adaptive median filter\" with its growing window embodies the adaptive technique's ability to increase the neighborhood size until all noise is removed and the image is pristine."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Hallway Mirror",
+              "visualization": "I'm staring at my reflection, but it's distorted – my face is a speckled mess of black pepper and white salt, making me itch. The mirror hums with a low, electronic buzz, and I smell burnt popcorn, like static electricity turned edible and acrid.",
+              "how_to_place": "Walk up to the Hallway Mirror and picture it reflecting back not your face, but a giant, shimmering disco ball."
+            },
+            {
+              "place_number": 2,
+              "location": "Window Curtain",
+              "visualization": "Imagine a tattered window curtain, riddled with tiny black (pepper) and white (salt) holes, but someone is meticulously patching each hole with a piece of fabric that perfectly matches the average color of the surrounding curtain, smoothing out the blemishes. The gentle breeze rustles the patched curtain, a faint scent of old cotton and fresh thread in the air, the texture rough under your fingertips where the patches meet the original fabric.",
+              "how_to_place": "Walk up to the Window Curtain and imagine it's made of giant, shimmering window blinds, each one slapping loudly as a bird flies through it."
+            },
+            {
+              "place_number": 3,
+              "location": "Light Switch",
+              "visualization": "I see a light switch sparking erratically, each flicker accompanied by a burst of static LOUDER than a lawnmower, making my teeth vibrate; I can FEEL the rough, gritty plastic of the switch under my fingertip as I desperately try to find a point of silence to flick it off, releasing the pressure in my ears.",
+              "how_to_place": "Walk up to the Light Switch and imagine seeing a giant lightbulb, so heavy it's bending the switch downwards."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(c)",
+      "question_text": "Explain Gray level slicing and Bit plane slicing",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Image Enhancement",
+        "Gray Level Slicing",
+        "Bit Plane Slicing"
+      ],
+      "answer": "**Answer:**\n\nGray level slicing and Bit plane slicing are image enhancement techniques used to highlight specific features within an image by manipulating its gray levels.\n\n**1. Gray Level Slicing:**\n\nGray level slicing aims to highlight a specific range of gray levels in an image. It operates by either setting the gray levels within the desired range to a specific value (e.g., white) and keeping others unchanged, or by brightening the desired range and darkening the rest.\n\n*   **Without Background Preservation:** Pixels with gray level values within a specified range [A, B] are set to a high (or low) intensity, while all other pixels remain unchanged.\n*   **With Background Preservation:** Pixels within the range [A, B] are brightened (or darkened), and the remaining pixels are either preserved or darkened. Refer diagram illustrating both types of gray level slicing transformations. This is useful for highlighting specific features like defects or regions of interest based on intensity.\n\n**2. Bit Plane Slicing:**\n\nBit plane slicing decomposes an image into its bit planes. Each pixel is represented by a certain number of bits (e.g., 8 bits for a grayscale image). This method extracts each bit from each pixel and creates a separate image representing that bit plane. The higher-order bit planes (e.g., bit planes 7, 6) contribute significantly to the image's overall appearance, while lower-order planes contain finer details. Analyzing individual bit planes can be useful in image compression and steganalysis. For example, analyzing bit planes of medical images can help detect subtle abnormalities.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A **gray** elephant meticulously **sliced** a cake, only highlighting the chocolate frosting (**gray level slicing**). The bright frosting masked a range of burnt flavors. Suddenly, the cake shattered into eight shimmering **bit planes**, each revealing a different layer of deliciousness, with the top layers contributing the most to the overall taste.",
+          "explanation": "The gray elephant slicing the cake represents **gray level slicing**, highlighting the chocolate frosting (specific gray level range). The cake shattering into **bit planes** demonstrates bit plane slicing, where each layer's contribution to taste (image appearance) varies, with higher layers (more significant bit planes) being most impactful."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(a) OR",
+      "question_text": "Summarize the process to detect point from an image?",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Point Detection",
+        "Feature Detection"
+      ],
+      "answer": "Point detection in image processing aims to identify isolated pixels significantly different from their surroundings.\n\n1. **Filtering:** Apply a point detection filter (e.g., Laplacian) to highlight areas of high intensity change. This generates a filtered image.\n2. **Thresholding:** Set a threshold value. Pixels in the filtered image exceeding this threshold are considered potential points.\n3. **Non-Maximum Suppression:** Remove redundant detections. Retain only local maxima above the threshold as the final point detections. These points are isolated singularities.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A lone PIXEL, tired of its SURROUNDINGS, hired a FILTER, the Laplacian, to dramatically change its look. The filter's work was so intense, it created a glowing, filtered image. But to truly stand out, the pixel underwent THRESHOLDING, rejecting any similar-looking neighbors. NON-MAXIMUM SUPPRESSION made it the ultimate ISOLATED SINGULARITY, a victorious, pointy-headed rebel!",
+          "explanation": "The story mirrors point detection by having the `PIXEL` (pixel) hiring a `FILTER` (Laplacian filter) to change its `SURROUNDINGS` (image). The `THRESHOLDING` represents the pixel rejecting similar-looking neighbors, and `NON-MAXIMUM SUPPRESSION` leads to the `ISOLATED SINGULARITY` (isolated point), highlighting how the algorithm isolates key pixels."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(b) OR",
+      "question_text": "Articulate following terms: Binary image, gray scale image, RB image, Index image",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Image Types",
+        "Binary Image",
+        "Grayscale Image",
+        "RGB Image",
+        "Indexed Image"
+      ],
+      "answer": "**Answer:**\n\nImage representation dictates how images are stored digitally. Four common types are:\n\n1.  **Binary Image:** A binary image (or bilevel image) contains only two pixel values, typically 0 (black) and 1 (white), representing a foreground/background. Useful for document scanning and character recognition.\n\n2.  **Grayscale Image:** Each pixel in a grayscale image represents an intensity value. Typically, these values range from 0 (black) to 255 (white), representing varying shades of gray. Refer diagram for intensity variation.\n\n3.  **RGB Image:** An RGB image represents color by combining Red, Green, and Blue color components. Each pixel has three values corresponding to the intensity of each color channel. Example: (255,0,0) is pure red.\n\n4.  **Indexed Image:** An indexed image stores pixel values as indices into a colormap (lookup table). The colormap contains the actual color values. This reduces storage when the image contains a limited number of colors.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A **BINARY IMAGE** of a document scanned itself, revealing only **BLACK** and **WHITE** secrets. Suddenly, it faded into a **GRAYSCALE IMAGE**, each pixel a shade of embarrassment. Blushing fiercely, it projected an **RGB IMAGE**, its face a pure (255,0,0) **RED** of shame. Hiding behind a **COLORMAP**, the image became **INDEXED**, desperately trying to lose itself in a limited palette of forgettable hues.",
+          "explanation": "The story links image types to color representation: the binary image is strictly black and white. As it becomes embarrassed, grayscale shows shades, RGB displays pure red, and the colormap leads to an indexed image, trying to blend into limited colors."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(c) OR",
+      "question_text": "Describe various properties of DFT",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "DFT",
+        "Discrete Fourier Transform",
+        "Frequency Domain"
+      ],
+      "answer": "Discrete Fourier Transform (DFT) properties are crucial for understanding and manipulating images in the frequency domain. DFT decomposes an image into its sinusoidal components, facilitating filtering and analysis.\n\n1.  **Linearity:** DFT is linear, meaning DFT[a\\*f(x,y) + b\\*g(x,y)] = a\\*DFT[f(x,y)] + b\\*DFT[g(x,y)], where a and b are constants.\n\n2.  **Symmetry:** For real-valued images, the DFT exhibits conjugate symmetry: F(u,v) = F*(-u,-v), where F* denotes complex conjugate. This implies the magnitude spectrum |F(u,v)| is even-symmetric and the phase spectrum is odd-symmetric.\n\n3.  **Separability:** The 2D DFT can be computed using a sequence of 1D DFTs along rows and columns. This significantly reduces computational complexity.\n\n4.  **Periodicity:** DFT is periodic with period N, i.e., F(u,v) = F(u+N, v) = F(u, v+N) = F(u+N, v+N) where N is size of image.\n\n5.  **Translation:** Shifting an image in the spatial domain results in a phase shift in the frequency domain. If f'(x,y) = f(x-x0, y-y0), then F'(u,v) = F(u,v) \\* exp(-j2π(ux0/N + vy0/N)).\n\n6.  **Scaling:** Compression or expansion in the spatial domain results in the inverse scaling in the frequency domain.\n\n7.  **Rotation:** Rotating the image in the spatial domain rotates the DFT accordingly in the frequency domain. Refer diagram for illustration.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A **linear** lion juggled glowing sinusoidal orbs. Suddenly, a **symmetric** mirror reflected the lion, its **conjugate** twin. The mirror then split, **separating** into rows and columns, each performing its own **periodic** dance. When the original lion **translated** to the left, his glowing orbs only changed phase. He shrank with **scaling**, his conjugate twin expanded and when they rotated around each other, the frequency domain mirrored their every move.",
+          "explanation": "The story links DFT properties to memorable visuals: the **linear** lion represents the DFT's linearity. The **symmetric** mirror and its **conjugate** reflection illustrate conjugate symmetry, while the mirror **separating** into rows and columns represents separability, and the **periodic** dance connects to the DFT's periodicity. Finally, the change in phase with **translation**, image shrinkage with **scaling**, and mirror frequency response all correlate to the effects of these operations in the frequency domain."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(a)",
+      "question_text": "Illustrate the way to detect discontinuity in image using gradient.",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Discontinuity Detection",
+        "Gradient",
+        "Edge Detection"
+      ],
+      "answer": "Image discontinuities, such as edges, can be detected using gradients. The gradient, a vector quantity, points in the direction of the greatest rate of change in image intensity.\n\n1.  **Calculate Gradients:** Compute the horizontal (Gx) and vertical (Gy) gradients using derivative masks like Sobel or Prewitt operators.\n2.  **Gradient Magnitude:** Calculate the gradient magnitude, typically using `sqrt(Gx^2 + Gy^2)`, representing edge strength.\n3.  **Thresholding:** Apply a threshold to the gradient magnitude. Pixels with values above the threshold are considered edge pixels. Refer diagram of edge detection process.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A **gradient** of psychedelic paint dripped down a wall, revealing a hidden **edge**. We **calculate**d its intensity using a magical, glowing ruler (Sobel!), measuring both its horizontal (Gx) *and* vertical (Gy) drips. The **magnitude** of the combined glow stunned us, so we set a **threshold**: Only the brightest drips were deemed worthy, becoming part of our masterpiece, forever etched in our minds like a diagram.",
+          "explanation": "The paint **gradient** represents the image gradient, its **edge** mirrors image discontinuities.  **Calculating** the intensity (Gx and Gy, using the Sobel ruler) signifies gradient calculation; the drip's **magnitude** is edge strength, and setting a **threshold** is isolating the strongest edges."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(b)",
+      "question_text": "Discuss at least two distance measure with suitable diagram and formula.",
+      "diagram_representation": "Diagrams illustrating distance measures (e.g., Euclidean, City-block, Chessboard) are required.",
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Distance Measures",
+        "Digital Image Fundamentals",
+        "mathematical"
+      ],
+      "answer": "**SOLUTION:**\n\n1.  **GIVEN:** Question asking for discussion of at least two distance measures with suitable diagrams and formulas in image processing.\n2.  **TO FIND:** Describe two distance measures (Euclidean and City Block/Manhattan), their formulas, and diagrams.\n3.  **THEORY/CONCEPT:** Distance measures quantify the similarity/dissimilarity between pixels or feature vectors in images. Smaller distances indicate higher similarity. Euclidean distance is the straight-line distance, while City Block distance sums the absolute differences along each axis.\n4.  **FORMULAS:**\n    *   Euclidean Distance:  `D_E(p, q) = sqrt((x_q - x_p)^2 + (y_q - y_p)^2)`\n    *   City Block Distance: `D_4(p, q) = |x_q - x_p| + |y_q - y_p|` where p=(x_p, y_p) and q=(x_q, y_q).\n5.  **STEP-BY-STEP SOLUTION:**\n\n    *   **Euclidean Distance:** Consider two pixels p(1,1) and q(4,5). `D_E(p, q) = sqrt((4-1)^2 + (5-1)^2) = sqrt(9+16) = sqrt(25) = 5`.\n\n    *   **City Block Distance:** For the same pixels p(1,1) and q(4,5). `D_4(p, q) = |4-1| + |5-1| = 3 + 4 = 7`.\n\n    **Diagram:** (Imagine a 2D plane. Euclidean distance is a straight line between p and q. City block distance follows horizontal and vertical lines only).\n6.  **FINAL ANSWER:** We have discussed Euclidean and City Block distance measures, their formulas, and provided example calculations demonstrating their application.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A **GIVEN** pixel, lost in a maze, dreamt of finding its friend. To **FIND** him, it chose between two paths: A straight **EUCLIDEAN** tightrope (formula: `sqrt`) or a clumsy **CITY BLOCK** shuffle through gridded streets (formula: absolute values added). The **THEORY** was, shorter distance, closer friendship. The pixel, deciding between the paths on the **DIAGRAM**, ultimately chose the quicker Euclidean tightrope, avoiding the City Block's endless, frustrating corners.",
+          "explanation": "The pixel's **GIVEN** task to **FIND** its friend represents the problem of needing to calculate distances. The **EUCLIDEAN** tightrope (square root in its formula) and **CITY BLOCK** shuffle (absolute values) are the two distance measures, and the **THEORY** connects shorter distance to similarity, guiding the pixel's choice and representing the core concept of distance metrics. The pixel's decision on the **DIAGRAM** visually reinforces how each distance measure calculates the separation between two points."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(c)",
+      "question_text": "How edge differs from boundary? Discuss various operator for edge extraction.",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Edge Detection",
+        "Boundary Detection",
+        "Edge Operators"
+      ],
+      "answer": "**Answer:**\n\nEdge and boundary, while related, are distinct concepts in image processing. A **boundary** represents the outline or contour of an object, defining its spatial extent. It's a global characteristic representing the complete separation between an object and its background. An **edge**, on the other hand, is a local feature representing a significant change in image intensity, such as a sharp transition from dark to light pixels. Edges can exist within an object, representing surface markings or texture variations. In essence, a boundary is a *type* of edge that defines the *entire* object.\n\nVarious operators are employed for edge extraction:\n\n1.  **Sobel Operator:** Calculates the gradient in both horizontal (Gx) and vertical (Gy) directions. Magnitude is approximated by |Gx| + |Gy| or sqrt(Gx<sup>2</sup> + Gy<sup>2</sup>). Sensitive to noise.\n\n2.  **Prewitt Operator:** Similar to Sobel, but uses a slightly different kernel for gradient estimation. Less sensitive to noise than simple difference operators, but still susceptible.\n\n3.  **Roberts Operator:** A simple 2x2 operator that calculates the difference between adjacent pixels. Very sensitive to noise.\n\n4.  **Canny Edge Detector:** A multi-stage algorithm involving noise reduction (Gaussian filtering), gradient calculation (Sobel), non-maximum suppression to thin the edges, and hysteresis thresholding to detect strong and weak edges, connecting them appropriately. *Refer diagram* illustrating Canny's steps. It is widely considered the optimal edge detector.\n\n5.  **Laplacian Operator:** A second-order derivative operator that detects rapid changes in intensity. Isotropic and sensitive to noise; often combined with Gaussian smoothing (Laplacian of Gaussian - LoG) to reduce noise. *Refer diagram* illustrating LoG kernel.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "Imagine a **boundary** around a giant, fluffy sheep, its wool stark against the dark night. Suddenly, a **Sobel operator** strikes like lightning, revealing inner **edges** - hidden wrinkles like cracks in porcelain. The clumsy **Prewitt Operator** next door only sees blurry shadows, while the **Roberts Operator** screams at every tiny wool fiber! Finally, the wise old **Canny Edge Detector**, with its Gaussian filter glasses, patiently connects the strong and weak lines, perfectly outlining the sheep amidst the chaos.",
+          "explanation": "The story illustrates edge and boundary differences: the sheep's **boundary** is its outer outline, while the **Sobel operator** exposes inner **edges** as wrinkles within the sheep. The other operators highlight the varying effectiveness of edge detection algorithms, with the **Canny Edge Detector** being the most accurate in defining edges, analogous to outlining the sheep amidst noise."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(a) OR",
+      "question_text": "Define the term: Radiance, Luminance, Brightness",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Radiometry",
+        "Photometry",
+        "Image Perception"
+      ],
+      "answer": "**Answer:**\n\n**Radiance:** Radiance, denoted as *L*, quantifies the amount of light emitted, reflected, or transmitted by a surface, per unit solid angle, per unit projected area. Its units are Watts per steradian per square meter (W sr⁻¹ m⁻²).\n\n**Luminance:** Luminance is a photometric measure of the luminous intensity per unit area of light travelling in a given direction. It's essentially the perceived brightness of a surface and is measured in candelas per square meter (cd/m²), also known as a nit. It considers the spectral sensitivity of the human eye.\n\n**Brightness:** Brightness is a subjective perception of the intensity of light emitted by a source. It's a psychological attribute, influenced by factors like adaptation and surrounding illumination. Refer diagram (not included) for brightness perception variations.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A radiant sun, *L* times brighter than usual, beamed down, turning the world into a giant candela. My *luminance*-sensitive eyeballs screamed at the perceived *brightness*, an emotional plea against such intense light. My subjective perception morphed the sun into a screaming nit, forever burned into my memory.",
+          "explanation": "The story links *L* (radiance) to an intensely bright sun, highlighting that radiance is a measure of the emitted light. This intense light causes the perception of *brightness* (luminance) in the eyeballs, connecting radiance to the perceived light intensity; the transformation into a \"nit\" reinforces that luminance is measured in nits."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(b) OR",
+      "question_text": "Sketch the working of Hough transform.",
+      "diagram_representation": "Diagram illustrating the Hough transform concept (e.g., parameter space mapping) is required.",
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Hough Transform",
+        "Feature Extraction"
+      ],
+      "answer": "The Hough Transform is a feature extraction technique used in image analysis to identify shapes, particularly lines, circles, and ellipses.\n\n1.  **Parameter Space:** It works by transforming image space points into a parameter space (e.g., ρ-θ space for lines, where ρ is the perpendicular distance from the origin and θ is the angle).\n\n2.  **Accumulator Array:** An accumulator array is created in the parameter space. For each edge point in the image, all possible parameter combinations (e.g., all possible lines passing through that point) are calculated and the corresponding cells in the accumulator array are incremented.\n\n3.  **Peak Detection:** Peaks in the accumulator array represent the parameters of shapes present in the image. These peaks indicate the parameters of lines, circles, etc.\n\n4.  **Shape Extraction:** The parameters corresponding to the detected peaks are used to draw the detected shapes on the original image. Refer diagram illustrating accumulator array and parameter space transformation.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A **Hough Transform** magician pulled shapes from a photo! He zapped the image points into a swirling **parameter space** vortex. Each spark filled an **accumulator array** like a cosmic bingo card. The highest **peak detection** glowed, revealing hidden lines. With a flourish, he extracted the shape, drawing it boldly on the original image!",
+          "explanation": "The magician's **parameter space** vortex represents the transformation of image points into a new space, mirroring the Hough Transform's conversion. The **accumulator array** bingo card symbolizes how potential shape parameters are tallied, with the brightest **peak detection** highlighting the most likely shape, analogous to how the transform identifies prominent shapes in an image."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(c) OR",
+      "question_text": "Illustrate various low pass frequency domain filters.",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Filters",
+        "Low Pass Filter",
+        "Frequency Domain"
+      ],
+      "answer": "**Answer:**\n\nLow pass filtering in the frequency domain attenuates high-frequency components in an image while preserving low-frequency components, effectively blurring the image. This is achieved by multiplying the Fourier transform of the image with a low-pass filter transfer function. Several low-pass filters exist, each with a different transfer function characteristic.\n\n1. **Ideal Low Pass Filter (ILPF):** ILPF has a transfer function H(u,v) = 1 if D(u,v) ≤ D0 and 0 otherwise, where D(u,v) is the distance from point (u,v) to the origin of the frequency domain and D0 is the cutoff frequency. It sharply cuts off frequencies beyond D0. However, it introduces ringing artifacts in the spatial domain due to its abrupt cutoff.\n\n2. **Butterworth Low Pass Filter (BLPF):** BLPF has a transfer function H(u,v) = 1 / [1 + (D(u,v)/D0)^(2n)], where n is the order of the filter. BLPF provides a smoother transition than ILPF, reducing ringing. Higher order filters approach ideal filter characteristics.\n\n3. **Gaussian Low Pass Filter (GLPF):** GLPF has a transfer function H(u,v) = exp(-D^2(u,v) / (2*D0^2)). GLPF offers the smoothest transition among the three and produces the least ringing artifacts. Its spatial domain representation is also Gaussian. Refer diagram for a visual representation of the transfer functions of each filter.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A **fuzzy BUTTERFLY** landed smack-dab in the **FREQUENCY DOMAIN**, trying to **attenuate** the high-pitched squeals of cicadas. This **IDEAL** butterfly, sharply cutting off the noise, caused **RINGING** in everyone's ears. Luckily, a **SMOOTHER GAUSSIAN** butterfly gently silenced the cicadas, leaving a calm, **BLURRED** scene, like a dream.",
+          "explanation": "The \"fuzzy BUTTERFLY\" in the **FREQUENCY DOMAIN** represents low-pass filtering. The \"IDEAL\" butterfly, causing \"RINGING,\" symbolizes the Ideal Low Pass Filter's sharp cutoff and resulting artifacts, while the \"SMOOTHER GAUSSIAN\" butterfly, creating a \"BLURRED\" scene, represents the smoother Butterworth or Gaussian Low Pass Filter that attenuates highs without harsh artifacts."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(a)",
+      "question_text": "Write a short note on Arithmetic coding",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Image Compression",
+        "Arithmetic Coding"
+      ],
+      "answer": "Arithmetic coding is a lossless data compression technique. It represents a string of symbols by a single fractional number. Instead of replacing an input symbol with a code, it encodes the entire message into a single number in the interval [0, 1). The length of the interval used to represent the input string depends on the probability of occurrence of the symbols in the string; more probable symbols contribute less to the interval size reduction. Consequently, frequent symbols shorten the message, while rare symbols lengthen it. Refer diagram for interval subdivision illustration.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A tiny FRACTIONAL number, representing the entire message, dreamt of being LOSSLESS. It stood on the ARITHMETIC tightrope between 0 and 1, nervously eyeing the SYMBOLS below. Frequent symbols CHEERED, shrinking its interval, while rare symbols BOOED, threatening to LENGTHEN its fall into oblivion.",
+          "explanation": "The story's \"fractional number\" embodies how arithmetic coding represents messages as a single fraction. The \"lossless\" dream and tightrope walk represent the core concept of lossless compression within the [0,1) interval. The cheering and booing symbols illustrate how symbol frequency (probability) affects interval size, with frequent symbols shortening the encoded message and rare ones lengthening it, analogous to interval reduction."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(b)",
+      "question_text": "Write a short note on pseudo color image processing",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Color Image Processing",
+        "Pseudo Color"
+      ],
+      "answer": "Pseudo color image processing, also known as false color imaging, assigns colors to gray levels based on specific criteria. It enhances visualization and interpretation by converting monochrome images into color representations.\n\n1.  **Definition:** It maps each intensity value in a grayscale image to a specific color.\n\n2.  **Techniques:** Intensity slicing maps a range of gray levels to a single color. Gray level to color transformation functions use independent transformations for each R, G, and B component.\n\n3.  **Applications:** Used in medical imaging (e.g., thermography), astronomy (e.g., representing radio wave intensity), and remote sensing (e.g., vegetation analysis).\n\n4.  **Benefit:** Allows easy differentiation of features invisible in the original grayscale image. Refer diagram showing mapping functions for further clarity.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A **grayscale** ghost, tired of being dull, demanded a **pseudo color** makeover. A mischievous artist used **intensity slicing**, painting the ghost's icy breath vibrant blue and its shadowy form fiery red. Now, doctors using medical imaging could easily see the ghost's cold spots and astronomers analyzed its radio waves, all thanks to the ghost's colorful transformation revealing hidden features! The ghost, finally happy, glowed with RGB light, a testament to the power of color.",
+          "explanation": "The grayscale ghost needing a \"pseudo color\" makeover represents how pseudo color image processing converts grayscale images to color. The \"intensity slicing\" used by the artist, highlighting the ghost's breath and form, mirrors the technique of mapping gray levels to distinct colors to reveal hidden features in applications like medical imaging and astronomy."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(c)",
+      "question_text": "Explain different types of redundancy in image",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Image Compression",
+        "Redundancy"
+      ],
+      "answer": "Image redundancy refers to the repetition of information within an image, which can be exploited for compression. There are primarily three types of redundancy in images:\n\n1.  **Spatial Redundancy:** Also known as correlation between neighboring pixels, it arises due to similar gray levels in adjacent areas. This is typical in smooth, continuous regions of an image.  For example, in a picture of a clear sky, many neighboring pixels will have nearly identical blue values.\n\n2.  **Temporal Redundancy:**  This type occurs in image sequences or video, where consecutive frames often contain very similar scenes. Information changes slowly over time. Refer diagram of a video frame sequence demonstrating minimal change between frames.\n\n3.  **Coding Redundancy:**  This relates to the inefficient use of code words (bits) to represent image data.  For instance, assigning equal length code words to frequently and infrequently occurring gray levels wastes bits. Huffman coding addresses this by assigning shorter codes to more frequent values.\n\n4.  **Irrelevant Information Redundancy (Psychovisual Redundancy):** Human visual system is less sensitive to certain types of information. Some data can be removed without significantly affecting perceived image quality. This exploits the limitations of human perception.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A pixel twins convention! Identical twins formed **spatial redundancy**, boredly staring at the unchanging blue sky. Suddenly, they filmed themselves, but the **temporal redundancy** was so high each video frame looked the same. A coder arrived, ranting that their uniform use of the same-sized name tags was **coding redundancy**, like wasting precious glitter. Luckily, the convention's motto was \"Embrace **irrelevant information**, let's get rid of all the name tags, we don't even need to know each other, anyway.\"",
+          "explanation": "The pixel twins represent pixels, and their identical appearance (spatial redundancy) highlights the similarity of neighboring pixels in an image. Their unchanging video (temporal redundancy) illustrates how consecutive video frames can have similar content. The coder's complaint about the identical name tags (coding redundancy) mirrors the inefficient use of coding symbols."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(a) OR",
+      "question_text": "Describe impulse noise model",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Noise Models",
+        "Impulse Noise"
+      ],
+      "answer": "Impulse noise, also known as salt-and-pepper noise, corrupts an image with random pixels set to extreme values.\n\n1.  Pixels are randomly set to either a maximum (salt) or minimum (pepper) intensity level.\n2.  It is caused by malfunctioning camera sensors or errors during data transmission.\n3.  Probability density function is characterized by P(z=a) = Pa and P(z=b) = Pb, where 'a' and 'b' are extreme grey levels. Refer diagram showing the pdf.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A malfunctioning camera sensor coughed up **salt** and **pepper** onto a pristine image, like a chef gone mad. Each random **pixel** screamed at either maximum or minimum **intensity**, creating a visual pandemonium described by a chaotic probability **density function**, where extreme grey levels 'a' and 'b' warred for dominance. Data transmission errors caused this corrupted image.",
+          "explanation": "The story connects \"salt and pepper\" with corrupted image pixels, mirroring how salt-and-pepper noise manifests as extreme value pixels. The \"malfunctioning camera sensor\" and \"data transmission errors\" directly link to the causes of impulse noise in real-world scenarios."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(b) OR",
+      "question_text": "Write a short note on CMY and RGB color models",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Color Models",
+        "CMY",
+        "RGB"
+      ],
+      "answer": "The RGB and CMY color models are fundamental in image processing for representing and manipulating colors.\n\n1.  **RGB (Red, Green, Blue):** This is an additive color model where colors are created by adding different intensities of red, green, and blue light. It's commonly used in displays like monitors and TVs. A combination of maximum intensity red, green, and blue produces white; absence of all three yields black.\n\n2.  **CMY (Cyan, Magenta, Yellow):** This is a subtractive color model. CMY colors are created by subtracting red, green, and blue from white light. It's used primarily in printing. Mixing cyan, magenta, and yellow ideally produces black, but often results in a muddy brown, hence the addition of black (K) in CMYK.\n\n3.  CMY is often derived from RGB using the equation: [C, M, Y] = [1, 1, 1] - [R, G, B].\n\n4.  RGB is device-dependent, meaning the same RGB values can produce slightly different colors on different displays due to variations in the phosphor characteristics. Similarly, CMY ink formulations also vary impacting color reproduction.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A **RED, GREEN, and BLUE** dragon breathed light onto a white wall, **ADDING** colors to make a vibrant display. Suddenly, a **CYAN, MAGENTA, YELLOW** chameleon leaped out and **SUBTRACTED** the light, leaving only a muddy brown smear. The chameleon then used the formula **[1,1,1] - [R,G,B]** to magically transform the smear into perfect black ink. The dragon and chameleon realized their colors were **DEVICE-DEPENDENT**, arguing about who had the \"truer\" hues.",
+          "explanation": "The story uses the **RED, GREEN, and BLUE** dragon to represent the RGB color model, highlighting its **ADDITIVE** nature by showing the dragon *adding* colors to create light. The **CYAN, MAGENTA, YELLOW** chameleon embodies the CMY model, demonstrating its **SUBTRACTIVE** nature by *subtracting* light and using the **[1,1,1] - [R,G,B]** formula to emphasize its mathematical relationship to RGB."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(c) OR",
+      "question_text": "Apply Huffman coding to determine the code for following data: {a, b, c, d, c, c, b, a, a, a, a, d, c, b, c, d, a, c, e, e, e, e, b}",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Image Compression",
+        "Huffman Coding"
+      ],
+      "answer": "**Answer:**\n\nHuffman coding is a lossless data compression algorithm widely used in image and video compression. It assigns variable-length codes to input characters based on their frequency of occurrence. More frequent characters receive shorter codes, while less frequent characters receive longer codes, thereby achieving compression.\n\n1. **Frequency Analysis:** First, we calculate the frequency of each character in the given data:\n    * a: 6\n    * b: 4\n    * c: 5\n    * d: 3\n    * e: 4\n\n2. **Tree Construction:** A Huffman tree is built iteratively. Initially, each character and its frequency form a single-node tree. We repeatedly merge the two trees with the lowest frequencies until a single tree remains. Refer diagram for tree construction steps.\n\n3. **Code Assignment:**  Assign '0' to the left branch and '1' to the right branch of the Huffman tree. The code for each character is obtained by traversing the path from the root to the character's leaf node.\n\n4. **Huffman Codes:**  Based on the constructed tree, the Huffman codes are:\n    * a: 11\n    * b: 00\n    * c: 01\n    * d: 101\n    * e: 100\n\nTherefore, by applying Huffman coding, we have assigned variable-length codes to the characters based on their frequency. This allows us to represent the data using fewer bits on average compared to fixed-length codes, achieving compression.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A FREQUENT hippo, \"a,\" wearing eleven hats, climbed a binary TREE to escape a swarm of bees, \"b,\" coded as \"00\". Deeper in the branches, a \"c,\" coded as \"01,\" laughed as a \"d,\" coded as \"101,\" tripped over a root. The length of their falls was variable, but the lossless tree ensured everyone landed safely, compressed but sound.",
+          "explanation": "The frequent hippo \"a\" with many hats represents the most frequent character getting the shortest code in Huffman coding. The binary tree, where characters \"b,\" \"c,\" and \"d\" are located with varying branch depths (variable length codes), illustrates how less frequent characters get longer codes. The lossless fall from the tree mirrors the lossless nature of Huffman coding, where data is compressed but can be perfectly reconstructed."
+        },
+        "memory_palace": {
+          "total_places": 0,
+          "places": []
+        }
+      }
+    }
+  ]
+}
