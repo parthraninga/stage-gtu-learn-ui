@@ -1,0 +1,1106 @@
+{
+  "metadata": {
+    "examination": "SUMMER 2025",
+    "subject_code": "3155204",
+    "subject_name": "Image Processing",
+    "total_marks": 70
+  },
+  "questions": [
+    {
+      "question_no": "Q.1",
+      "sub_question_no": "(a)",
+      "question_text": "Describe 4 and 8 connectivity with suitable diagram.",
+      "diagram_representation": "Diagrams for 4-connectivity and 8-connectivity are required, showing a central pixel and its connected neighbors.",
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Connectivity",
+        "Digital Image Fundamentals"
+      ],
+      "answer": "Connectivity is a concept used to establish whether two pixels are connected based on their intensity values and their spatial relationship. It defines the set of neighbors that are considered linked to a central pixel $p$ at coordinates $(x, y)$.\n\n1.  **4-Connectivity (D-Connectivity):**\n    * A pixel $p$ is 4-connected to its neighbor $q$ if $q$ is in the set $N_4(p)$, which consists of the **horizontal and vertical neighbors** of $p$.\n    * The coordinates of the 4-neighbors are: $(x-1, y)$, $(x+1, y)$, $(x, y-1)$, and $(x, y+1)$.\n    * In 4-connectivity, only neighbors that share an **edge** with $p$ are considered connected.\n    \n\n2.  **8-Connectivity:**\n    * A pixel $p$ is 8-connected to its neighbor $q$ if $q$ is in the set $N_8(p)$, which consists of all $N_4(p)$ neighbors **plus the diagonal neighbors** of $p$.\n    * The coordinates of the 8-neighbors are all 8 pixels surrounding $p$: $(x \\pm 1, y)$, $(x, y \\pm 1)$, $(x \\pm 1, y \\pm 1)$, and $(x \\mp 1, y \\pm 1)$.\n    * In 8-connectivity, neighbors that share an **edge or a corner** with $p$ are considered connected.\n    ",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The pixel at the **center** only speaks to its four **Edge** neighbors (4-Connectivity), like a strict family. But when it's a social event, it welcomes the four **Diagonal** neighbors too, making it a group of eight (8-Connectivity).",
+          "explanation": "The 'strict family' (4-Connectivity) only uses the four shared edges (horizontal/vertical). The 'social event' (8-Connectivity) includes the diagonal neighbors, totaling eight."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a simple 'plus' sign (+) drawn on the door, representing the **4-neighbors** (up, down, left, right). It's a very simple, direct path to enter.",
+              "how_to_place": "Picture the plus sign on the Front Door."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a large star or asterisk $(*)$ on the floor of the hall, representing all **8-neighbors** (including the diagonals). It's more complex and covers more ground.",
+              "how_to_place": "Picture the star/asterisk on the floor of the Entrance Hall."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.1",
+      "sub_question_no": "(b)",
+      "question_text": "Summarize: Sampling and Quantization",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Sampling",
+        "Quantization",
+        "Digital Image Fundamentals"
+      ],
+      "answer": "Digital image acquisition involves converting a continuous-toned optical image (analogue signal) into a discrete digital image through two main processes: **Sampling** and **Quantization**.\n\n## 💡 Sampling (Spatial Discretization)\n* **Definition:** The process of discretizing the **spatial coordinates** (the $x$ and $y$ axes) of the continuous image. It determines the **resolution** of the image.\n* **Procedure:** It involves taking intensity measurements at discrete, equally spaced locations across the image plane.\n* **Result:** The continuous image is converted into a grid of discrete picture elements, called **pixels**.\n* **Impact:** Determines the **size** of the image (number of rows and columns, $M \\times N$). Higher sampling rate means finer spatial detail and higher resolution.\n\n## 🎨 Quantization (Amplitude Discretization)\n* **Definition:** The process of discretizing the **amplitude** (intensity or gray level) values of the sampled image at each pixel location.\n* **Procedure:** The continuous range of intensity values is mapped to a finite set of discrete gray levels, typically $L=2^k$ levels, where $k$ is the number of bits.\n* **Result:** The intensity value of each pixel is assigned an integer value (gray level) from 0 to $L-1$.\n* **Impact:** Determines the **depth** of the image (number of gray levels). Higher quantization levels (more bits, $k$) mean better intensity resolution and fewer false contours.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A photographer must first **Sample** (1) the scene by selecting the grid size for the photo, giving it **Size**. Then, he must **Quantize** (2) the light, deciding how many shades of gray he will use, giving it **Depth**.",
+          "explanation": "Sampling deals with the grid/size (spatial coordinates). Quantization deals with the shades/depth (amplitude/intensity)."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Kitchen",
+              "visualization": "I SEE a chef **Sampling** (tasting) tiny cubes of food arranged on a checkerboard grid, focusing on the coordinates of the food. This is **Sampling** (Spatial Discretization).",
+              "how_to_place": "Picture the chef and the grid on the Kitchen counter."
+            },
+            {
+              "place_number": 2,
+              "location": "Living Room Couch",
+              "visualization": "I SEE a painter mixing a **Quantity** of paint, selecting only a few specific shades of gray from a continuous spectrum. This is **Quantization** (Amplitude Discretization).",
+              "how_to_place": "Picture the painter and the paint cans on the Living Room Couch."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.1",
+      "sub_question_no": "(c)",
+      "question_text": "Illustrate the applications of various components of EM spectrum.",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "EM Spectrum",
+        "Applications"
+      ],
+      "answer": "The Electromagnetic (EM) Spectrum is the range of all possible frequencies of electromagnetic radiation. Image processing techniques are applied across various bands of this spectrum, each revealing unique information about an object or scene.\n\n## 🌈 Components and Applications\n\n| EM Spectrum Component | Description | Key Applications in Imaging/Sensing |\n| :--- | :--- | :--- |\n| **Gamma Rays** | Highest energy, shortest wavelength. | Nuclear medicine imaging (PET, SPECT scans), Astronomy (detecting black holes, supernovae), Industrial flaw detection. |\n| **X-rays** | High energy, penetrate soft tissue but absorbed by bone/dense material. | Medical diagnostics (radiography, CT scans), Airport baggage inspection, Industrial inspection of welds. |\n| **Ultraviolet (UV)** | Just below visible light. | Fluorescence microscopy, Astronomical observation (hot stars), Semiconductor manufacturing (lithography), Document analysis (security features). |\n| **Visible Light** | The narrow band humans can see (RGB). | Digital photography, Machine vision (inspection, robotics), Remote sensing (land use), Optical microscopy. |\n| **Infrared (IR)** | Just above visible light, divided into near, mid, and far IR. | Thermal imaging (night vision, detecting heat loss in buildings), Surveillance, Remote sensing (vegetation health, atmospheric studies). |\n| **Microwaves** | Longer wavelength than IR, used for communication and heating. | Radar imaging (mapping terrain/weather, Synthetic Aperture Radar - SAR), Telecommunications, Microwave ovens. |\n| **Radio Waves** | Longest wavelength, lowest energy. | MRI (Magnetic Resonance Imaging), Terrestrial broadcasting, Radio astronomy. |",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A scientist uses **Gamma** rays (1) for a medical scan, then checks her bones with **X-rays** (2). She verifies a security mark with **UV** light (3). Then she takes a regular **Visible** photo (4). Later, she uses **Infrared** (5) to see heat and a **Microwave** (6) radar to check the weather. Finally, she listens to the **Radio** (7) while the MRI machine hums.",
+          "explanation": "This story links the components in decreasing order of energy: Gamma, X-rays, UV, Visible, Infrared, Microwave, and Radio, with a primary application for each."
+        },
+        "memory_palace": {
+          "total_places": 7,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Dining Table",
+              "visualization": "I SEE an emergency room doctor operating a machine that shoots powerful **Gamma Rays** to treat cancer (Nuclear Medicine).",
+              "how_to_place": "Picture the medical scenario on the Dining Table."
+            },
+            {
+              "place_number": 2,
+              "location": "Bedroom",
+              "visualization": "I SEE a broken bone being examined by a white light—an **X-ray**—lying on the bed. (Medical Diagnostics).",
+              "how_to_place": "Picture the X-ray on the bed."
+            },
+            {
+              "place_number": 3,
+              "location": "Bathroom Mirror",
+              "visualization": "I SEE a 'blacklight' poster that glows brightly with **UV** (Ultraviolet) light. (Fluorescence/Security).",
+              "how_to_place": "Picture the glowing poster on the Bathroom Mirror."
+            },
+            {
+              "place_number": 4,
+              "location": "Study Desk",
+              "visualization": "I SEE a standard digital camera taking a photo of a flower, using **Visible Light** (Digital Photography).",
+              "how_to_place": "Picture the camera and flower on the Study Desk."
+            },
+            {
+              "place_number": 5,
+              "location": "Balcony/Window",
+              "visualization": "I SEE a thermal camera showing the heat escaping from the building in red—this is **Infrared** (Thermal Imaging).",
+              "how_to_place": "Look out the Balcony/Window and picture the heat map."
+            },
+            {
+              "place_number": 6,
+              "location": "Garage/Driveway",
+              "visualization": "I SEE a large dish antenna sweeping the sky, using **Microwaves** for weather radar (SAR/Radar).",
+              "how_to_place": "Picture the radar dish in the Garage/Driveway."
+            },
+            {
+              "place_number": 7,
+              "location": "Staircase",
+              "visualization": "I SEE a giant speaker playing music, using **Radio Waves** for broadcasting, and an MRI machine is at the bottom. (MRI/Broadcasting).",
+              "how_to_place": "Picture the speaker and MRI machine near the Staircase."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(a)",
+      "question_text": "Alpha trimmed mean filter with example.",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Filters",
+        "Alpha Trimmed Mean Filter"
+      ],
+        "answer": "The **Alpha-Trimmed Mean Filter** (or **Averaging Filter**) is a non-linear smoothing filter used primarily to reduce **mixed noise** (like Gaussian and Impulse noise, e.g., salt-and-pepper) while preserving image detail better than a simple mean filter.\n\n## ⚙️ Functioning\n1.  For a given $m \\times n$ neighborhood (window), the filter first **sorts** the gray levels of all $mn$ pixels in ascending order.\n2.  A value $d$ (where $d$ is an even integer, typically $1 \\le d < mn$) is specified. The filter then **discards** $d/2$ of the smallest gray-level values and $d/2$ of the largest gray-level values from the sorted list. This process is called **trimming**.\n3.  The filter output for the central pixel is the **average (mean)** of the remaining $mn - d$ pixel values.\n\n## 📝 Mathematical Formula\nLet $S_{xy}$ be the set of pixel values in the neighborhood. Let $S'_{xy}$ be the sorted set of values. The $\\alpha$-trimmed mean $g(x, y)$ is calculated as:\n$$g(x, y) = \\\\frac{1}{mn - d} \\\\sum_{(r, c) \\\\in S'_{xy}} I(r, c)$$ where the sum excludes the $d$ trimmed values.\n\n## 📌 Example\nConsider a $3 \\times 3$ neighborhood with pixel values: $\\\\{10, 20, 30, 100, 50, 60, 250, 70, 80\\\\}$. The window size is $mn=9$.\n\n* **Filter Goal:** Use an $\\\\alpha$-trimmed mean filter with $d=4$.\n* **Step 1: Sort the values:** $S'_{xy} = \\\\{10, 20, 30, 50, 60, 70, 80, 100, 250\\\\}$\n* **Step 2: Trim $d=4$ values:** Discard $d/2 = 2$ smallest (10, 20) and $d/2 = 2$ largest (100, 250).\n* **Remaining values:** $\\\\{30, 50, 60, 70, 80\\\\}$. (Total $9-4=5$ values).\n* **Step 3: Calculate the mean:**\n$$\\\\text{Output} = \\\\frac{30 + 50 + 60 + 70 + 80}{5} = \\\\frac{290}{5} = 58$$",      "memory_techniques": {
+        "story_method": {
+          "story": "The **Alpha** chef runs a kitchen. To make the best **Mean** (average) soup, he first **Sorts** all ingredients by quality. He then **Trims** (removes) the worst (smallest) and the best (largest) ingredients, and only **Averages** the middle ones.",
+          "explanation": "Alpha-Trimmed Mean: Sort $\\rightarrow$ Trim extremes $\\rightarrow$ Calculate Mean."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Staircase",
+              "visualization": "I SEE a pile of numbered blocks being meticulously **Sorted** on the stairs in ascending order. (Sorting).",
+              "how_to_place": "Picture the sorted blocks on the Staircase."
+            },
+            {
+              "place_number": 2,
+              "location": "Upper Landing",
+              "visualization": "I SEE a gardener with a large shear, aggressively **Trimming** the top and bottom branches of a bush. (Trimming $d/2$ smallest and $d/2$ largest).",
+              "how_to_place": "Picture the trimming on the Upper Landing."
+            },
+            {
+              "place_number": 3,
+              "location": "Hallway",
+              "visualization": "I SEE a calculator on a pedestal, showing the result of a single **Average** calculation from the remaining pieces. (Calculating Mean).",
+              "how_to_place": "Picture the calculator on a pedestal in the Hallway."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(b)",
+      "question_text": "How histogram help us to understand characteristics of image? Explain with suitable diagrams.",
+      "diagram_representation": "Diagrams showing various types of image histograms (e.g., dark, bright, low contrast) are required.",
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Histogram",
+        "Image Characteristics"
+      ],
+      "answer": "An image **histogram** is a graph that plots the frequency of occurrence of each gray level in a digital image. The gray levels (from 0 to $L-1$) are on the horizontal axis, and the count of pixels for each gray level is on the vertical axis. The shape of the histogram provides a concise summary of the image's tonal characteristics.\n\n## 🖼️ Interpreting Image Characteristics\n\n1.  **Dark Image:** The histogram is concentrated towards the **low-intensity** (dark) side (left side, closer to 0). This indicates a lack of bright details and overall low illumination.\n    \n\n2.  **Bright Image:** The histogram is concentrated towards the **high-intensity** (bright) side (right side, closer to $L-1$). This indicates an image with over-exposure or predominantly bright objects.\n    \n\n3.  **Low Contrast Image:** The histogram is **narrow and concentrated** in the middle of the gray scale. This indicates that the image pixels use only a small range of gray levels, resulting in poor differentiation between objects and a 'washed-out' or dull appearance.\n    \n\n4.  **High Contrast Image:** The histogram is **spread out** over the entire gray scale, with peaks typically at the low and high extremes (bi-modal distribution). This indicates that the image contains both very dark and very bright areas, utilizing the full dynamic range for a sharp, detailed appearance.\n    ",
+      "memory_techniques": {
+        "story_method": {
+          "story": "Imagine a **Dark** (1) room, all the people (pixels) huddle on the **Left**. When the light is too **Bright** (2), everyone crowds to the **Right**. In a **Low Contrast** (3) scene, they all stand close together in the **Middle**. But for **High Contrast** (4), they spread out all over the room.",
+          "explanation": "Links the image characteristic to the histogram's location: Dark $\\rightarrow$ Left; Bright $\\rightarrow$ Right; Low Contrast $\\rightarrow$ Narrow/Middle; High Contrast $\\rightarrow$ Spread/Wide."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Upper Landing",
+              "visualization": "I SEE a deep, black shadow covering the area. This represents a **Dark Image**, and its histogram is a bar pushed to the far **Left** of a graph on the wall.",
+              "how_to_place": "Picture the shadow and the left-skewed histogram on the Upper Landing."
+            },
+            {
+              "place_number": 2,
+              "location": "Hallway",
+              "visualization": "I SEE a blinding spotlight making everything pure white. This is a **Bright Image**, and its histogram is a bar pushed to the far **Right** of a graph on the wall.",
+              "how_to_place": "Picture the spotlight and the right-skewed histogram in the Hallway."
+            },
+            {
+              "place_number": 3,
+              "location": "Closet",
+              "visualization": "I SEE a stack of gray clothes, all almost the same shade, signifying **Low Contrast**. Its histogram is a **narrow spike** right in the center.",
+              "how_to_place": "Open the Closet and picture the stack of gray clothes and the narrow, central histogram."
+            },
+            {
+              "place_number": 4,
+              "location": "Pantry",
+              "visualization": "I SEE a checkerboard of pure black and pure white tiles, signifying **High Contrast**. Its histogram is **spread out** with peaks at both the far left and far right.",
+              "how_to_place": "Picture the checkerboard and the wide/bimodal histogram on the Pantry floor."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(c)",
+      "question_text": "Perform histogram equalization on following 3-bit image data:\\n3311\\n4343\\n4411\\n4411",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Histogram Equalization",
+        "Image Enhancement"
+      ],
+        "answer": "Histogram equalization is a technique used to enhance the contrast of an image by distributing the most frequent gray levels. The given image is a **3-bit** image, meaning $k=3$ and the maximum number of gray levels is $L = 2^3 = 8$. The gray levels range from $r_0=0$ to $r_{L-1}=7$.\n\n## 📊 Step 1: Calculate Histogram ($h(r_k)$) and Probability ($p_r(r_k)$)\n\n* Total number of pixels, $N = 4 \\times 4 = 16$.\n* The gray levels present are $\\{1, 3, 4\\}$.\n\n| Gray Level $\\mathbf{r_k}$ | Count $\\mathbf{h(r_k)}$ | Probability $\\mathbf{p_r(r_k) = h(r_k)/N}$ |\n| :---: | :---: | :---: |\n| **0** | 0 | $0/16 = 0$ |\n| **1** | 5 | $5/16 = 0.3125$ |\n| **2** | 0 | $0/16 = 0$ |\n| **3** | 4 | $4/16 = 0.25$ |\n| **4** | 7 | $7/16 = 0.4375$ |\n| **5** | 0 | $0/16 = 0$ |\n| **6** | 0 | $0/16 = 0$ |\n| **7** | 0 | $0/16 = 0$ |\n\n## 📈 Step 2: Calculate Cumulative Distribution Function ($c(r_k)$)\n$$c(r_k) = \\sum_{j=0}^{k} p_r(r_j)$$\n\n| Gray Level $\\mathbf{r_k}$ | $\\mathbf{p_r(r_k)}$ | $\\mathbf{c(r_k) = \\sum p_r(r_j)}$ |\n| :---: | :---: | :---: |\n| **1** | $0.3125$ | $0.3125$ |\n| **3** | $0.25$ | $0.3125 + 0.25 = 0.5625$ |\n| **4** | $0.4375$ | $0.5625 + 0.4375 = 1.00$ |\n\n## 🔢 Step 3: Calculate New Gray Levels ($s_k$)\nThe transformation function is given by:\n$$s_k = \\text{round} \\{ (L-1) \\times c(r_k) \\}$$\nSince $L=8$, $L-1 = 7$.\n\n| Gray Level $\\mathbf{r_k}$ | $\\mathbf{c(r_k)}$ | $\\mathbf{s_k = \\text{round}\\{7 \\times c(r_k)\\}}$ |\n| :---: | :---: | :---: |\n| **1** | $0.3125$ | $\\text{round}(7 \\times 0.3125) = \\text{round}(2.1875) = \\mathbf{2}$ |\n| **3** | $0.5625$ | $\\text{round}(7 \\times 0.5625) = \\text{round}(3.9375) = \\mathbf{4}$ |\n| **4** | $1.00$ | $\\text{round}(7 \\times 1.00) = \\text{round}(7.0) = \\mathbf{7}$ |\n\n## 📝 Step 4: Construct the Equalized Image\nReplace the original gray levels in the image with their new equalized levels ($1 \\rightarrow 2$, $3 \\rightarrow 4$, $4 \\rightarrow 7$):\n\n| Original Image | Equalized Image |\n| :---: | :---: |\n| 3 3 1 1 | 4 4 2 2 |\n| 4 3 4 3 | 7 4 7 4 |\n| 4 4 1 1 | 7 7 2 2 |\n| 4 4 1 1 | 7 7 2 2 |",      "memory_techniques": {
+        "story_method": {
+          "story": "The **Histogram** (1) is the list of guests' ages. The host needs to calculate the **Probability** (2) of each age. Then he uses a **Cumulative** sum (3) to see who is older than whom. Finally, he calculates the new, **Equalized** age (4) for everyone using the total possible age range.",
+          "explanation": "Steps are: Histogram/Count $\\rightarrow$ Probability $\\rightarrow$ Cumulative Distribution $\\rightarrow$ New Gray Levels (Equalization)."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Closet",
+              "visualization": "I SEE a tally mark counter next to the gray clothes, counting how many of each shade there are. This is the **Histogram** (Count).",
+              "how_to_place": "Picture the tally counter in the Closet."
+            },
+            {
+              "place_number": 2,
+              "location": "Pantry",
+              "visualization": "I SEE a fraction calculator dividing the count by the total number of items. This is the **Probability** (P(r)).",
+              "how_to_place": "Picture the fraction calculator in the Pantry."
+            },
+            {
+              "place_number": 3,
+              "location": "Master Bathroom",
+              "visualization": "I SEE a list being built step-by-step, adding each fraction to the last one. This is the **Cumulative** Distribution Function (c(r)).",
+              "how_to_place": "Picture the running list in the Master Bathroom."
+            },
+            {
+              "place_number": 4,
+              "location": "Master Bedroom",
+              "visualization": "I SEE a big rounding machine taking the cumulative number and multiplying it by 7, then rounding it to get the **New Equalized Gray Level**.",
+              "how_to_place": "Picture the rounding machine in the Master Bedroom."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(c) OR",
+      "question_text": "Explain following procedure: Region splitting and region merging",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Image Segmentation",
+        "Region Splitting",
+        "Region Merging"
+      ],
+      "answer": "**Region-based segmentation** is a technique that groups pixels into regions based on predefined homogeneity criteria (e.g., intensity, color, texture). **Region Splitting and Merging** is an iterative technique that uses a **Quadtree** data structure to recursively divide and combine image areas until all regions satisfy the homogeneity criterion.\n\n## 1. 🔪 Region Splitting\n* **Principle:** If a region $R$ in the image does **not satisfy** the homogeneity criterion (e.g., the variance of gray levels is too high, $P(R) = \\text{FALSE}$), it is **split** into four equal-sized, disjoint quadrants ($R_1, R_2, R_3, R_4$).\n* **Process:** The process starts with the entire image as one region. This region is tested. If it's non-homogeneous, it is divided into four sub-regions. Each sub-region is then tested recursively until all sub-regions are homogeneous or the regions become single pixels.\n* **Data Structure:** This recursive division naturally forms a **Quadtree**, where the root node is the entire image, and the leaf nodes are the homogeneous regions (or pixels).\n\n## 2. 🤝 Region Merging\n* **Principle:** After splitting, two adjacent regions $R_i$ and $R_j$ that **are individually homogeneous** might actually be part of the same larger, meaningful object. If the union of these two adjacent, homogeneous regions **also satisfies** the homogeneity criterion (e.g., $P(R_i \\cup R_j) = \\text{TRUE}$), they are **merged** to form a single larger region.\n* **Process:** Merging is performed to prevent over-segmentation (too many small regions) caused by the splitting step. The process is iteratively applied to neighboring regions (quadtree nodes at the same level) until no two adjacent regions can be merged without violating the homogeneity criterion.\n\n## 🔁 Complete Algorithm\n1.  **Split:** Start with the whole image. Recursively split any non-homogeneous region into four quadrants.\n2.  **Merge:** After splitting, merge any two adjacent regions that are both homogeneous and whose union is also homogeneous.\n3.  **Stop:** The process stops when no further splitting or merging is possible.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "A general wants to divide his army camp. If a **Region** is **Non-Homogeneous** (mixed, disorganized), he **Splits** (1) it into four smaller, simpler quadrants (Quadtree). Once all camps are simple, he checks if two adjacent camps can be **Merged** (2) into a single, larger, **Homogeneous** group for better defense.",
+          "explanation": "Splitting $\\rightarrow$ Non-Homogeneous $\\rightarrow$ Divide into 4 (Quadtree). Merging $\\rightarrow$ Adjacent/Union Homogeneous $\\rightarrow$ Combine."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Master Bathroom",
+              "visualization": "I SEE a large, complex block of ice that is too hard to handle. A tool **Splits** it into four smaller, manageable pieces (Quadtree). (Region Splitting).",
+              "how_to_place": "Picture the ice block being split in the Master Bathroom."
+            },
+            {
+              "place_number": 2,
+              "location": "Master Bedroom",
+              "visualization": "I SEE two adjacent jigsaw puzzle pieces, which have been proven to fit together perfectly, being **Merged** into one single, strong piece. (Region Merging).",
+              "how_to_place": "Picture the two puzzle pieces merging on the desk in the Master Bedroom."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(a)",
+      "question_text": "Articulate functioning of Butterworth high pass filter.",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Filters",
+        "Butterworth Filter",
+        "High Pass Filter"
+      ],
+      "answer": "The **Butterworth High Pass Filter (BHPF)** is a frequency-domain filter used for **image sharpening** by suppressing low-frequency components (smooth, slow-varying changes in intensity) while passing high-frequency components (edges and noise).\n\n## ⚙️ Transfer Function\nThe transfer function $H(u, v)$ for a Butterworth High Pass Filter of order $n$ and with a cutoff frequency $D_0$ is defined as:\n$$H(u, v) = \\frac{1}{1 + \\left[ \\frac{D_0}{D(u, v)} \\right]^{2n}}$$ where $D(u, v)$ is the distance from the point $(u, v)$ in the frequency plane to the origin (center).\n\n## 🔑 Key Functioning Characteristics\n1.  **High Pass Nature:** The transfer function $H(u, v)$ approaches **0** (attenuation) when the distance $D(u, v)$ is small (low frequencies) and approaches **1** (pass) when $D(u, v)$ is large (high frequencies).\n2.  **Smooth Transition:** Unlike the Ideal High Pass Filter, the BHPF does **not have a sharp cutoff** at $D_0$. The transition from 0 to 1 is smooth, which is determined by the filter order $n$.\n    * A **low order $n$** results in a very smooth transition, minimizing **ringing artifacts** (ripples) in the spatial domain.\n    * A **high order $n$** approaches the shape of an Ideal filter, but increases the ringing effect.\n3.  **Cutoff Frequency $\\mathbf{D_0}$:** This is the distance from the origin at which the filter's gain is $H(u, v) = 0.5$. It controls the extent of low-frequency suppression (i.e., how much low-frequency content is removed).",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Butterworth** filter is a **High Pass** (1) gate. Unlike a sharp gate, its entrance is **Smooth** (2), defined by a mathematical **Order** ($n$). The gatekeeper sets the **Cutoff Frequency** ($D_0$) (3), deciding exactly where the high frequencies can start passing through.",
+          "explanation": "BHPF: High Pass $\\rightarrow$ Smooth Transition (no ringing) $\\rightarrow$ Order $n$ controls smoothness $\\rightarrow$ Cutoff Frequency $D_0$ sets the 50% point."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a sign that says 'HIGH PASS ONLY', letting high-pitched sounds (high frequencies) through but blocking low rumbles (low frequencies). (High Pass Nature).",
+              "how_to_place": "Picture the 'HIGH PASS ONLY' sign on the Front Door."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a road with no sudden, sharp bumps; the slope is perfectly **Smooth**, like a stick of butter sliding down. This represents the smooth transition/no ringing. (Smooth Transition).",
+              "how_to_place": "Picture the smooth road in the Entrance Hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a dial on the stove labeled 'D-naught' ($D_0$) that controls the heat/volume, setting the specific point where the filter is 50% on. (Cutoff Frequency).",
+              "how_to_place": "Picture the $D_0$ dial in the Kitchen."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(b)",
+      "question_text": "Devise the way to handle salt and pepper noise?",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Noise Reduction",
+        "Salt and Pepper Noise"
+      ],
+      "answer": "**Salt-and-pepper noise** (or **Impulse noise**) appears as random, isolated white pixels (salt) and black pixels (pepper) scattered across an image. The noise is characterized by abrupt, large changes in intensity. The most effective way to handle this noise is by using **Order-Statistic (Non-linear) Filters**, primarily the **Median Filter**.\n\n## 🛡️ Median Filter (The Primary Solution)\n\n1.  **Mechanism:** The Median Filter is an order-statistic filter that replaces the gray level of a central pixel with the **median** of the gray levels in its neighborhood (e.g., $3 \\times 3$ window).\n2.  **Process:**\n    * The filter window is centered at the pixel $(x, y)$.\n    * All pixel values in the window are collected and **sorted** in ascending order.\n    * The **middle value** of the sorted list is selected as the new gray level for the central pixel.\n3.  **Effectiveness:** Since salt-and-pepper noise introduces very low (black, near 0) and very high (white, near $L-1$) values, these noisy pixels will be at the **extremes** of the sorted list. By selecting the median, the noisy values are effectively **discarded** and replaced by a more representative value from the surrounding non-noisy pixels. The median filter is excellent at preserving edges while removing impulse noise.\n\n## 🥈 Other Solutions (For Reference)\n* **Max/Min Filter:** Max filter removes 'pepper' noise (low values), and Min filter removes 'salt' noise (high values), but they are less effective than the Median filter as a general solution.\n* **Alpha-Trimmed Mean Filter:** Can also be used for mixed noise, but the Median filter ($d = mn-1$) is a specific and optimal case for pure salt-and-pepper noise.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "To deal with the chaotic 'Salt and Pepper' mess, a **Median Filter** is the best defense. It lines up all the surrounding ingredients, **Sorts** them by size, and then simply picks the **Middle** one, ignoring the extreme salt and pepper grains at the ends.",
+          "explanation": "Salt-and-Pepper $\\rightarrow$ Median Filter $\\rightarrow$ Sort $\\rightarrow$ Pick Middle Value."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Living Room Couch",
+              "visualization": "I SEE a group of people sitting on the couch, wearing **Median**-sized clothes. They are all organized by height. (Median Filter).",
+              "how_to_place": "Picture the organized group on the Living Room Couch."
+            },
+            {
+              "place_number": 2,
+              "location": "Dining Table",
+              "visualization": "I SEE a judge selecting only the person who is exactly in the **Middle** of the group's height line, discarding the shortest and tallest 'outliers.' (Sorting and Selecting Median).",
+              "how_to_place": "Picture the judge and the selection on the Dining Table."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(c)",
+      "question_text": "Explain Gray level slicing and Bit plane slicing",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Image Enhancement",
+        "Gray Level Slicing",
+        "Bit Plane Slicing"
+      ],
+      "answer": "Both Gray Level Slicing and Bit Plane Slicing are image enhancement techniques that operate in the spatial domain to highlight specific intensity features of an image.\n\n## 1. 🌈 Gray Level Slicing (Intensity Slicing)\n* **Purpose:** To **highlight a specific range of gray levels** in an image. It is useful for extracting features or regions that fall within a particular intensity band.\n* **Mechanism:** It maps the gray level of a pixel to a new value based on whether the original gray level falls within a specified range $[A, B]$.\n* **Variations:**\n    1.  **Highlighting the Range (A-B) with a New Value:** All gray levels in the range $[A, B]$ are mapped to a high value (e.g., white, 255), and all other gray levels are mapped to a low value (e.g., black, 0).\n    2.  **Highlighting the Range (A-B) while Preserving Others:** All gray levels in the range $[A, B]$ are mapped to a new high value, and the gray levels outside the range are left unchanged.\n\n## 2. 🔢 Bit Plane Slicing\n* **Purpose:** To reveal the contribution of each **bit** to the overall image appearance and to analyze the relative importance of different bits. It is also used for image compression and watermarking.\n* **Mechanism:** An 8-bit image can be thought of as eight 1-bit binary images (bit planes), ranging from bit 0 (Least Significant Bit - LSB) to bit 7 (Most Significant Bit - MSB).\n* **Process:** For an $M \\times N$ image, **Bit Plane $i$** is constructed by setting every pixel's value to 1 if the $i$-th bit of its original gray level is 1, and 0 otherwise. The pixel values are then scaled (e.g., multiplied by $2^i$) for viewing.\n* **Significance:** The **MSB planes (Bit 7, 6, 5)** contain most of the visually significant information (contrast and overall structure), while the **LSB planes (Bit 0, 1, 2)** contain subtle details and contribute more to noise.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Gray Level** slicer (1) is like a quality control machine, only highlighting the cakes whose color is within a specific **Intensity Range** (Slice). The **Bit Plane** slicer (2) is like an archaeologist who digs through eight layers (8-bit planes) to see which **Bit** (layer) of the cake contributes the most to its final structure.",
+          "explanation": "Gray Level Slicing $\\rightarrow$ Highlights Intensity Range. Bit Plane Slicing $\\rightarrow$ Extracts Bit Contribution (MSB for structure, LSB for detail/noise)."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Study Desk",
+              "visualization": "I SEE a spotlight focusing intensely on a book that is only open to pages 20-30. This represents **Gray Level Slicing** (Highlighting a specific range).",
+              "how_to_place": "Picture the spotlight on the Study Desk."
+            },
+            {
+              "place_number": 2,
+              "location": "Balcony/Window",
+              "visualization": "I SEE a window pane made of 8 transparent layers (bit planes). The top layers (MSB) show the main scene, but the bottom ones (LSB) are just blurry noise. (Bit Plane Slicing).",
+              "how_to_place": "Picture the 8-layer window on the Balcony/Window."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(a) OR",
+      "question_text": "Summarize the process to detect point from an image?",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Point Detection",
+        "Feature Detection"
+      ],
+      "answer": "Point detection (or isolation of a point) is the simplest form of discontinuity detection, aiming to find pixels whose intensity value is significantly different from its immediate neighbors.\n\n## 1. ⚙️ Point Detection Filter (Mask)\nThe process uses a **spatial mask (filter)** that is sensitive to isolated points. A common $3 \\times 3$ mask $W$ for point detection is:\n$$W = \\begin{pmatrix} -1 & -1 & -1 \\\\ -1 & 8 & -1 \\\\ -1 & -1 & -1 \\end{pmatrix}$$\n\n## 2. 📝 Detection Process (Convolution)\n1.  **Convolve:** The point detection mask $W$ is **convolved** with the image $f(x, y)$ to produce a filtered image $g(x, y)$. The result at the center of the mask is a measure of the difference between the center pixel and its neighbors.\n$$g(x, y) = W \\ast f(x, y)$$\n2.  **Thresholding:** A point is said to be detected at location $(x, y)$ if the magnitude of the filtered value $|g(x, y)|$ exceeds a specified **non-negative threshold $T$**.\n* If $|g(x, y)| \\ge T$, the central pixel is a potential point.\n\n## 💡 Rationale\n* The sum of all coefficients in the mask $W$ is zero $(-1 \\times 8 + 8 = 0)$.\n* If the mask is over an area of uniform intensity, the convolution result $g(x, y)$ will be zero.\n* If the mask is centered on a point $f(x, y)$ that is different from its neighbors, $g(x, y)$ will have a large magnitude, which is then detected by the threshold $T$.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "To find a secret **Point** in the image, you need a special **Mask** (1). You wear the mask and **Convolve** (2) your way through the crowd (image). If the result is louder than a specific **Threshold** (3) alarm, you've found the secret point.",
+          "explanation": "Point Detection $\\rightarrow$ Use Special Mask $\\rightarrow$ Convolve $\\rightarrow$ Apply Threshold $T$."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Garage/Driveway",
+              "visualization": "I SEE a police officer wearing a unique **Mask** with a big '8' at the center and all '-1's' around it, used only for finding isolated points. (Point Detection Mask).",
+              "how_to_place": "Picture the mask in the Garage/Driveway."
+            },
+            {
+              "place_number": 2,
+              "location": "Staircase",
+              "visualization": "I SEE a machine **Convolving** (rolling/combining) the mask down the stairs, generating a new set of numbers on each step. (Convolve).",
+              "how_to_place": "Picture the convolving machine on the Staircase."
+            },
+            {
+              "place_number": 3,
+              "location": "Upper Landing",
+              "visualization": "I SEE a strict security guard who only lets values larger than a set **Threshold $T$** pass the gate. (Thresholding).",
+              "how_to_place": "Picture the guard and the threshold gate on the Upper Landing."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(b) OR",
+      "question_text": "Articulate following terms: Binary image, gray scale image, RB image, Index image",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Image Types",
+        "Binary Image",
+        "Grayscale Image",
+        "RGB Image",
+        "Indexed Image"
+      ],
+      "answer": "These terms classify images based on the type of data stored per pixel, primarily concerning color and intensity depth.\n\n1.  **Binary Image (1-bit):**\n    * **Definition:** The simplest form of image, where each pixel has only two possible intensity values, typically **0 (Black)** and **1 (White)**. It requires **1 bit** per pixel.\n    * **Application:** Used for line art, text, shapes, and other applications where only foreground and background separation is needed.\n\n2.  **Grayscale Image (8-bit or higher):**\n    * **Definition:** An image where each pixel represents a single intensity value, ranging from the darkest black to the brightest white. An 8-bit image has **256 gray levels** (0 to 255).\n    * **Application:** Standard image format for medical, satellite, and general processing where color information is not required or is computationally expensive.\n\n3.  **RGB Image (True Color, 24-bit):**\n    * **Definition:** A full-color image where each pixel is represented by a triplet of values corresponding to the intensities of the **Red (R), Green (G), and Blue (B)** color components. Typically uses 8 bits for each component, totaling **24 bits** per pixel, allowing for $2^{24} \\approx 16.7$ million colors.\n    * **Application:** Standard format for displaying natural scenes, photography, and general viewing.\n\n4.  **Indexed Image (Pseudo Color):**\n    * **Definition:** An image that uses a single value per pixel, but this value is an **index** or pointer into a separate table called a **Color Map** (or palette).\n    * **Structure:** The image data array contains indices (e.g., 0 to 255 for an 8-bit index), and the color map (often a $256 \\times 3$ table of RGB values) holds the actual color information.\n    * **Application:** Useful for applications that require more colors than grayscale but less than true color, or for highlighting specific features using an arbitrary color scale (e.g., remote sensing, thermal imaging).",
+      "memory_techniques": {
+        "story_method": {
+          "story": "In the 'Image World', there are four citizens. **Binary** (1) only speaks Black or White. **Grayscale** (2) speaks in 256 shades. **RGB** (3) speaks in three different colors (Red, Green, Blue) at once. **Indexed** (4) doesn't speak color, but points to a separate **Color Map** book to find its color.",
+          "explanation": "Binary $\\rightarrow$ 2 levels. Grayscale $\\rightarrow$ 256 levels (8-bit). RGB $\\rightarrow$ 3 components (True Color). Indexed $\\rightarrow$ Index into a Color Map."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Hallway",
+              "visualization": "I SEE a coin with only 'Heads' (1) and 'Tails' (0) faces, representing a **Binary Image**.",
+              "how_to_place": "Picture the coin in the Hallway."
+            },
+            {
+              "place_number": 2,
+              "location": "Closet",
+              "visualization": "I SEE a large chart showing 256 shades of gray, from black to white. This is a **Grayscale Image**.",
+              "how_to_place": "Picture the grayscale chart in the Closet."
+            },
+            {
+              "place_number": 3,
+              "location": "Pantry",
+              "visualization": "I SEE three cans of paint—Red, Green, and Blue—mixing to create millions of colors. This is an **RGB Image**.",
+              "how_to_place": "Picture the three paint cans in the Pantry."
+            },
+            {
+              "place_number": 4,
+              "location": "Master Bathroom",
+              "visualization": "I SEE a librarian pointing a finger (index) to a large, separate book (Color Map) to find the color of a sample. This is an **Indexed Image**.",
+              "how_to_place": "Picture the librarian and the color map book in the Master Bathroom."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(c) OR",
+      "question_text": "Describe various properties of DFT",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "DFT",
+        "Discrete Fourier Transform",
+        "Frequency Domain"
+      ],
+      "answer": "The **Discrete Fourier Transform (DFT)** is a mathematical tool that decomposes an image (spatial domain) into its constituent frequency components (frequency domain). It is fundamental for image filtering and analysis in the frequency domain. Key properties of the 2-D DFT $F(u, v)$ of an image $f(x, y)$ are:\n\n1.  **Separability:** The 2-D DFT can be computed by applying the 1-D DFT sequentially along the rows and then along the columns (or vice-versa). This makes computation more efficient, especially with the Fast Fourier Transform (FFT).\n    $$F(u, v) = \\sum_{x=0}^{M-1} \\left[ \\sum_{y=0}^{N-1} f(x, y) e^{-j2\\pi vy/N} \\right] e^{-j2\\pi ux/M}$$\n\n2.  **Shifting (Translation):**\n    * **Spatial Domain Shift:** Shifting the image $f(x, y)$ by $(x_0, y_0)$ in the spatial domain introduces a phase shift in the frequency domain, but the magnitude spectrum remains unchanged. This means the spectral content is independent of the image's location.\n    $$\\mathcal{F}\\{f(x-x_0, y-y_0)\\} = F(u, v) e^{-j2\\pi (ux_0/M + vy_0/N)}$$\n    * **Frequency Domain Shift (Centering):** Multiplying the image by $(-1)^{x+y}$ shifts the center of the frequency spectrum to the origin of the frequency plane (DC component at $F(0, 0)$ to $F(M/2, N/2)$). This is crucial for visualization and filter design.\n    $$\\mathcal{F}\\{f(x, y) (-1)^{x+y}\\} = F(u-M/2, v-N/2)$$\n\n3.  **Periodicity:** The DFT and its inverse are infinite, periodic functions. For an $M \\times N$ image, $F(u, v)$ is periodic with period $M$ in the $u$ direction and $N$ in the $v$ direction.\n    $$F(u, v) = F(u+M, v) = F(u, v+N)$$\n\n4.  **Conjugate Symmetry:** If the image $f(x, y)$ is a real function (which is true for grayscale images), its DFT exhibits conjugate symmetry, meaning the magnitude spectrum is symmetric about the origin.\n    $$F(u, v) = F^*(-u, -v) \\implies |F(u, v)| = |F(-u, -v)|$$\n\n5.  **Linearity:** The DFT is a linear transform. The DFT of a linear combination of two functions is the same linear combination of their individual DFTs.\n    $$\\mathcal{F}\\{a f(x, y) + b g(x, y)\\} = a F(u, v) + b G(u, v)$$\n\n6.  **Rotation (Geometric):** Rotating the image $f(x, y)$ by an angle $\\theta$ in the spatial domain results in the same rotation of the DFT $F(u, v)$ in the frequency domain. Rotation in one domain corresponds to rotation in the other.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The DFT has many powers. It can **Separate** (1) into rows and columns. It can **Shift** (2) objects around without changing their energy. It's **Periodic** (3), repeating its patterns endlessly. It exhibits **Symmetry** (4), so the right side is a mirror image of the left. It obeys **Linearity** (5), so a mix of inputs is a mix of outputs. And it can **Rotate** (6) the whole scene easily.",
+          "explanation": "Properties: Separability $\\rightarrow$ Shifting $\\rightarrow$ Periodicity $\\rightarrow$ Conjugate Symmetry $\\rightarrow$ Linearity $\\rightarrow$ Rotation."
+        },
+        "memory_palace": {
+          "total_places": 6,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Master Bedroom",
+              "visualization": "I SEE a block that can be easily pulled apart (**Separate**) into rows and then columns. (Separability).",
+              "how_to_place": "Picture the separable block in the Master Bedroom."
+            },
+            {
+              "place_number": 2,
+              "location": "Master Closet",
+              "visualization": "I SEE a magician **Shifting** an object from one side of the room to the other, but the energy remains the same. (Shifting/Translation).",
+              "how_to_place": "Picture the magician in the Master Closet."
+            },
+            {
+              "place_number": 3,
+              "location": "Guest Bedroom",
+              "visualization": "I SEE a calendar showing the same pattern repeating month after month, representing **Periodicity**.",
+              "how_to_place": "Picture the repeating calendar in the Guest Bedroom."
+            },
+            {
+              "place_number": 4,
+              "location": "Guest Bathroom",
+              "visualization": "I SEE a perfect mirror image of the items on the counter, representing **Conjugate Symmetry**.",
+              "how_to_place": "Picture the mirror image in the Guest Bathroom."
+            },
+            {
+              "place_number": 5,
+              "location": "Downstairs Study",
+              "visualization": "I SEE two equations added together on a whiteboard, and the result is the same as the addition of their individual parts. This is **Linearity**.",
+              "how_to_place": "Picture the equations on the whiteboard in the Downstairs Study."
+            },
+            {
+              "place_number": 6,
+              "location": "Laundry Room",
+              "visualization": "I SEE a clothes dryer rotating the clothes, and the image on the door is also **Rotating** with it. (Rotation).",
+              "how_to_place": "Picture the rotating dryer in the Laundry Room."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(a)",
+      "question_text": "Illustrate the way to detect discontinuity in image using gradient.",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Discontinuity Detection",
+        "Gradient",
+        "Edge Detection"
+      ],
+      "answer": "Discontinuity in an image, such as an **edge** or a **line**, is characterized by an **abrupt change in gray level**. The **gradient** is the mathematical tool used to detect these changes.\n\n## 📈 Gradient and Discontinuity\n1.  **Definition of Gradient:** The gradient of an image function $f(x, y)$ at location $(x, y)$ is a vector $\\nabla f$ that points in the direction of the **maximum rate of change** of the intensity, and whose magnitude is the rate of change.\n    $$\\nabla f = \\begin{pmatrix} G_x \\\\ G_y \\end{pmatrix} = \\begin{pmatrix} \\frac{\\partial f}{\\partial x} \\\\ \\frac{\\partial f}{\\partial y} \\end{pmatrix}$$ where $G_x$ and $G_y$ are the partial derivatives in the $x$ and $y$ directions.\n\n2.  **Detection Method:** The **magnitude** of the gradient, $M(x, y)$, measures the strength of the discontinuity (the intensity change).\n    $$M(x, y) = |\\nabla f| \\approx \\sqrt{G_x^2 + G_y^2} \\approx |G_x| + |G_y|$$\n\n3.  **Process:**\n    * **Estimate Derivatives:** Compute $G_x$ and $G_y$ using discrete approximation masks (e.g., Prewitt, Sobel, or Roberts operators) via convolution.\n    * **Calculate Magnitude:** Use the approximation $M(x, y) \\approx |G_x| + |G_y|$ to find the strength of the edge at every pixel.\n    * **Threshold:** Apply a **threshold** to the magnitude image $M(x, y)$. Any pixel whose gradient magnitude exceeds the threshold is marked as an edge point (discontinuity).",
+      "memory_techniques": {
+        "story_method": {
+          "story": "To find a **Discontinuity** (cliff edge), you use a **Gradient** (1) map. You measure the steepness of the climb in the $x$ and $y$ directions. The **Magnitude** (2) of the gradient tells you how strong the edge is. If the magnitude is greater than a certain **Threshold** (3) of danger, it's a confirmed edge.",
+          "explanation": "Discontinuity $\\rightarrow$ Gradient $G_x, G_y$ $\\rightarrow$ Magnitude $|\\nabla f|$ $\\rightarrow$ Threshold."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Downstairs Study",
+              "visualization": "I SEE a vector arrow pointing to the steepest part of a hill drawn on the whiteboard. The arrow is labeled 'Gradient $\\nabla f$'. (Gradient Vector).",
+              "how_to_place": "Picture the vector on the whiteboard in the Downstairs Study."
+            },
+            {
+              "place_number": 2,
+              "location": "Laundry Room",
+              "visualization": "I SEE a weightlifter lifting a heavy barbell. The amount of weight he lifts is the **Magnitude**, representing the strength of the edge. (Magnitude of Gradient).",
+              "how_to_place": "Picture the weightlifter in the Laundry Room."
+            },
+            {
+              "place_number": 3,
+              "location": "Garden/Yard",
+              "visualization": "I SEE a fence in the garden that only allows plants taller than a certain limit to pass through. This is the **Threshold** on the magnitude.",
+              "how_to_place": "Picture the threshold fence in the Garden/Yard."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(b)",
+      "question_text": "Discuss at least two distance measure with suitable diagram and formula.",
+      "diagram_representation": "Diagrams illustrating distance measures (e.g., Euclidean, City-block, Chessboard) are required.",
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Distance Measures",
+        "Digital Image Fundamentals"
+      ],
+      "answer": "Distance measures are fundamental in image processing for calculating the proximity between pixels, which is used in tasks like connectivity, segmentation, and object recognition. Let $p$, $q$, and $z$ be three pixels with coordinates $(x_p, y_p)$, $(x_q, y_q)$, and $(x_z, y_z)$, respectively.\n\n## 1. 📏 Euclidean Distance ($D_e$)\n* **Formula:** This is the shortest straight-line distance between two points, analogous to the hypotenuse of a right-angled triangle.\n    $$D_e(p, q) = \\sqrt{(x_p - x_q)^2 + (y_p - y_q)^2}$$\n* **Neighborhood:** Pixels whose $D_e$ is less than a certain radius $R$ form a **circular** neighborhood around $p$.\n    \n\n## 2. 🏙️ City-Block Distance ($D_4$)\n* **Formula (Manhattan Distance, $L_1$ Norm):** This is the distance between two points if movement is restricted to only horizontal and vertical paths (like navigating city blocks). It corresponds to **4-connectivity**.\n    $$D_4(p, q) = |x_p - x_q| + |y_p - y_q|$$\n* **Neighborhood:** Pixels whose $D_4$ is less than a certain value $R$ form a **diamond shape** (rhombus) centered at $p$.\n    \n\n## 3. ♟️ Chessboard Distance ($D_8$)\n* **Formula (Chebyshev Distance, $L_\\infty$ Norm):** This is the maximum of the absolute differences in the coordinates. It corresponds to **8-connectivity**.\n    $$D_8(p, q) = \\max(|x_p - x_q|, |y_p - y_q|)$$\n* **Neighborhood:** Pixels whose $D_8$ is less than a certain value $R$ form a **square shape** centered at $p$.\n    ",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The three travelers are measuring distance. **Euclid** (1) flies straight across the field (straight line). The **City-Block** (2) traveler can only walk on the streets (horizontal/vertical, 4-connectivity). The **Chessboard** (3) traveler (like a King on a chessboard) can take the quickest route by moving diagonally as well (8-connectivity).",
+          "explanation": "Euclidean $\\rightarrow$ Straight line. City-Block $\\rightarrow$ Horizontal/Vertical (4-connectivity). Chessboard $\\rightarrow$ Max/Diagonal (8-connectivity)."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Garden/Yard",
+              "visualization": "I SEE a perfectly straight rope pulled taut between two posts, measuring the true distance. This is **Euclidean Distance**.",
+              "how_to_place": "Picture the rope in the Garden/Yard."
+            },
+            {
+              "place_number": 2,
+              "location": "Hallway",
+              "visualization": "I SEE a maze made of straight lines (no diagonals), and a person walking only on the lines to get from one point to another. This is **City-Block Distance**.",
+              "how_to_place": "Picture the maze in the Hallway."
+            },
+            {
+              "place_number": 3,
+              "location": "Guest Bedroom",
+              "visualization": "I SEE a chessboard where the King piece can move one square in any direction (including diagonal), and the distance is the maximum move. This is **Chessboard Distance**.",
+              "how_to_place": "Picture the chessboard in the Guest Bedroom."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(c)",
+      "question_text": "How edge differs from boundary? Discuss various operator for edge extraction.",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Edge Detection",
+        "Boundary Detection",
+        "Edge Operators"
+      ],
+      "answer": "While the terms 'edge' and 'boundary' are often used interchangeably in general language, they have distinct meanings in image processing and computer vision.\n\n## 1. 🔍 Edge vs. Boundary\n\n| Feature | **Edge** | **Boundary (Contour)** |\n| :--- | :--- | :--- |\n| **Definition** | A set of pixels where there is an **abrupt change in gray-level intensity** (a local discontinuity in $f(x, y)$). | A **closed, continuous path** that separates an object from the background or separates two regions. |\n| **Dimensionality** | A local 1-D feature (a line segment) found by local operators. | A global 2-D feature (a complete outline) found by higher-level algorithms. |\n| **Connection** | Edges may be fragmented, thick, or disconnected. | Boundaries must be continuous and fully enclosed. |\n| **Detection** | Detected using **local gradient operators** (e.g., Sobel) that are sensitive to intensity changes. | Found by algorithms like **contour following, region growing, or Hough transform** that link edges or group pixels. |\n| **Purpose** | Low-level feature extraction for segmentation. | High-level feature representation for object recognition. |\n\n## 2. 🔪 Edge Extraction Operators\nEdge extraction operators use the **image gradient** to locate the points of maximum intensity change. They are categorized based on their complexity and method.\n\n### A. First-Order Derivative Operators (Gradient-based)\nThese operators compute the magnitude of the first derivative (gradient) to find sharp changes. They are sensitive to noise.\n* **Roberts Cross Operator:**\n    * Uses $2 \\times 2$ masks to compute the magnitude of the cross-diagonal differences. Simple and fast, but highly sensitive to noise.\n    * Masks: $G_x = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}, G_y = \\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$\n* **Prewitt and Sobel Operators:**\n    * Use $3 \\times 3$ masks that include a **smoothing** effect by weighting the center pixel's neighbors more heavily. Sobel is generally more robust to noise than Prewitt.\n    * Sobel $G_x$: $\\begin{pmatrix} -1 & 0 & 1 \\\\ -2 & 0 & 2 \\\\ -1 & 0 & 1 \\end{pmatrix}$\n\n### B. Second-Order Derivative Operators (Laplacian-based)\nThese operators detect edges by finding the **zero-crossings** in the second derivative. They are highly sensitive to fine details and noise.\n* **Laplacian Operator:**\n    * A single mask that computes the second derivative. It is rotationally invariant but cannot determine edge orientation and is very sensitive to noise.\n    * Mask: $\\begin{pmatrix} 0 & 1 & 0 \\\\ 1 & -4 & 1 \\\\ 0 & 1 & 0 \\end{pmatrix}$\n* **Laplacian of Gaussian (LoG):**\n    * Combines Gaussian smoothing (to reduce noise) with the Laplacian operator. It performs better than a pure Laplacian for edge detection by locating zero crossings in the filtered image.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "An **Edge** (1) is a single, broken line segment on a hill (local intensity change), found by local **Gradient Operators** like **Sobel**. A **Boundary** (2) is a complete, closed fence (continuous path) separating the regions, found by global algorithms.",
+          "explanation": "Edge $\\rightarrow$ Local/Discontinuity/Sobel. Boundary $\\rightarrow$ Global/Continuous/Separation."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Guest Bathroom",
+              "visualization": "I SEE a single, sharp **Edge** of a broken razor blade on the sink. This is found by a local **Sobel** mask. (Edge/First-Order Operator).",
+              "how_to_place": "Picture the broken razor blade and the Sobel mask in the Guest Bathroom."
+            },
+            {
+              "place_number": 2,
+              "location": "Guest Bedroom",
+              "visualization": "I SEE a complete, closed outline (**Boundary**) drawn around the entire room, found by a higher-level algorithm. (Boundary/Higher-Level Feature).",
+              "how_to_place": "Picture the closed boundary outline in the Guest Bedroom."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(a) OR",
+      "question_text": "Define the term: Radiance, Luminance, Brightness",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Radiometry",
+        "Photometry",
+        "Image Perception"
+      ],
+      "answer": "These terms relate to the measurement and perception of light, forming the basis of image acquisition and display.\n\n1.  **Radiance ($L$):**\n    * **Definition:** A precise **radiometric** (physical) measure of the **power (energy) emitted** from a surface area per unit solid angle and per unit projected area. It is a measure of the light energy flowing through space. It is the basis of all physical measurements.\n    * **Unit:** Watts per steradian per square meter ($\text{W} \\cdot \text{sr}^{-1} \\cdot \text{m}^{-2}$).\n\n2.  **Luminance ($Y$):**\n    * **Definition:** A **photometric** (perceived) measure that is derived from Radiance by weighting the energy according to the human eye's sensitivity (the **V-lambda curve**). It measures the **light intensity perceived by the human eye** from a particular surface.\n    * **Unit:** Candelas per square meter ($\text{cd} \\cdot \text{m}^{-2}$), also called $\text{nits}$.\n\n3.  **Brightness:**\n    * **Definition:** A purely **subjective** and **perceptual** attribute. It is a physiological sensation by which an area appears to emit more or less light. Brightness cannot be measured with a physical instrument; it is how the human brain interprets Luminance and surrounding factors.\n    * **Measure:** No standard physical unit; often described using subjective scales.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "**Radiance** (1) is the raw **Energy** of a light bulb. **Luminance** (2) is the energy filtered by the **Human Eye's** sensitivity curve. **Brightness** (3) is the personal, **Subjective** feeling of how dazzling that light is to an individual.",
+          "explanation": "Radiance $\\rightarrow$ Physical Energy. Luminance $\\rightarrow$ Physical Energy $\\times$ Human Eye Sensitivity. Brightness $\\rightarrow$ Subjective Perception."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Garden/Yard",
+              "visualization": "I SEE a powerful laser beam shooting out pure, raw **Energy** from the garden. This is **Radiance**.",
+              "how_to_place": "Picture the laser beam in the Garden/Yard."
+            },
+            {
+              "place_number": 2,
+              "location": "Hallway",
+              "visualization": "I SEE a large pair of human **Eyes** in the hallway, adjusting the light coming from the laser to match what they can see. This is **Luminance**.",
+              "how_to_place": "Picture the pair of eyes in the Hallway."
+            },
+            {
+              "place_number": 3,
+              "location": "Guest Bedroom",
+              "visualization": "I SEE a person giving a thumbs-up or thumbs-down to the light, based on their **Subjective** feeling. This is **Brightness**.",
+              "how_to_place": "Picture the person giving the thumbs-up in the Guest Bedroom."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(b) OR",
+      "question_text": "Sketch the working of Hough transform.",
+      "diagram_representation": "Diagram illustrating the Hough transform concept (e.g., parameter space mapping) is required.",
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Hough Transform",
+        "Feature Extraction"
+      ],
+      "answer": "The **Hough Transform** is a powerful feature extraction technique used to identify instances of shapes (most commonly lines, circles, or ellipses) within an image, even if the features are broken or incomplete.\n\n## ⚙️ Working Principle (Line Detection)\nThe Hough Transform works by transforming the problem of finding lines in the image plane (Cartesian $xy$-space) into the problem of finding intersecting curves in a new parameter space ($\\rho\\theta$-space).\n\n1.  **Line Representation (Parameter Space):** A straight line in the $xy$-plane can be represented in the normal (Hesse normal) form by two parameters: the distance $\\rho$ (rho) from the origin to the line and the angle $\\theta$ (theta) of the normal vector from the origin to the line.\n    $$\\rho = x \\cos\\theta + y \\sin\\theta$$\n\n2.  **Transformation (Mapping):**\n    * For a single detected **edge point** $(x_i, y_i)$ in the image, it is a part of **infinitely many possible lines** that pass through it.\n    * For each point $(x_i, y_i)$, the equation $\\rho = x_i \\cos\\theta + y_i \\sin\\theta$ is plotted for all possible values of $\\theta$ (e.g., $0^{\\circ}$ to $180^{\\circ}$). This plot traces a **sinusoidal curve** in the $\\rho\\theta$-parameter space.\n\n3.  **Accumulator Array (Voting):**\n    * The parameter space is discretized into a 2-D array called the **Accumulator Array**. Each cell $(\\rho_j, \\theta_k)$ in this array acts as a counter (a 'bin').\n    * For every point $(x_i, y_i)$ in the image, its corresponding sinusoidal curve in $\\rho\\theta$-space is traced, and the value of every accumulator cell that the curve passes through is **incremented** (a 'vote').\n\n4.  **Detection:**\n    * A straight line in the image space corresponds to a set of points $(x_i, y_i)$ whose sinusoidal curves all **intersect at a single point** $(\\rho', \\theta')$ in the parameter space.\n    * The cells in the accumulator array with the **highest number of votes (peaks)** indicate the parameters of the most prominent lines in the image.\n\n",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Hough** magician wants to find all lines. He first translates the problem from $xy$-space to the $\\rho\\theta$ **Parameter Space** (1). Every point he finds creates a **Sinusoidal Curve** (2). He then sets up an **Accumulator** (3) to tally all the curve intersections (votes). The cell with the most **Votes** (4) reveals the true line.",
+          "explanation": "Hough $\\rightarrow$ Parameter Space $\\rightarrow$ Sinusoidal Curve $\\rightarrow$ Accumulator (Voting) $\\rightarrow$ Detection (Peak)."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Downstairs Study",
+              "visualization": "I SEE a translator transforming a Cartesian map ($xy$) into a polar map ($\\rho\\theta$). This is the **Parameter Space** transformation.",
+              "how_to_place": "Picture the translator working on the desk in the Downstairs Study."
+            },
+            {
+              "place_number": 2,
+              "location": "Laundry Room",
+              "visualization": "I SEE a washing machine that is rocking back and forth in a wavelike motion, tracing a **Sinusoidal Curve** every time. (Mapping a point to a curve).",
+              "how_to_place": "Picture the rocking washing machine in the Laundry Room."
+            },
+            {
+              "place_number": 3,
+              "location": "Garden/Yard",
+              "visualization": "I SEE a large collection box (**Accumulator**) in the garden, and people are throwing small tokens (**Votes**) into the bins. (Accumulator Array/Voting).",
+              "how_to_place": "Picture the accumulator in the Garden/Yard."
+            },
+            {
+              "place_number": 4,
+              "location": "Hallway",
+              "visualization": "I SEE a crowd of people standing under a brightly lit sign (**Peak**) that says 'Detected Line!' (Detection).",
+              "how_to_place": "Picture the crowd and the sign in the Hallway."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(c) OR",
+      "question_text": "Illustrate various low pass frequency domain filters.",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Filters",
+        "Low Pass Filter",
+        "Frequency Domain"
+      ],
+      "answer": "**Low Pass Filters (LPF)** in the frequency domain are used for **image smoothing (blurring)** by attenuating (reducing) high-frequency components (which correspond to noise and sharp edges) while passing low-frequency components (which represent the overall intensity and slowly varying image features).\n\nKey LPFs are distinguished by the shape of their transfer function $H(u, v)$, which defines how frequencies are attenuated based on their distance $D(u, v)$ from the center of the frequency plane.\n\n## 1. 🔪 Ideal Low Pass Filter (ILPF)\n* **Transfer Function:** A perfectly sharp, step-function cutoff. It passes all frequencies within a distance $D_0$ (cutoff radius) and completely blocks all others.\n    $$H(u, v) = \\begin{cases} 1 & \\text{if } D(u, v) \\le D_0 \\\\ 0 & \\text{if } D(u, v) > D_0 \\end{cases}$$\n* **Drawback:** The sharp transition causes significant **ringing artifacts** (visible ripples) in the spatial domain because the Inverse DFT of a square function is a sinc function.\n\n## 2. 🧈 Butterworth Low Pass Filter (BLPF)\n* **Transfer Function:** Offers a smooth transition from passband to stopband, controlled by the filter order $n$.\n    $$H(u, v) = \\frac{1}{1 + \\left[ \\frac{D(u, v)}{D_0} \\right]^{2n}}$$\n* **Advantage:** The smooth transition significantly **reduces ringing artifacts** compared to the ILPF, making it a preferred practical choice for smoothing. Higher order $n$ approximates the ILPF.\n\n## 3. 📉 Gaussian Low Pass Filter (GLPF)\n* **Transfer Function:** Uses a Gaussian function, which is the smoothest possible transition.\n    $$H(u, v) = e^{-D^2(u, v) / (2\\sigma^2)} = e^{-D^2(u, v) / (2D_0^2)}$$\n    * Here, $D_0$ (often set to $\\sigma$) controls the spread of the Gaussian and defines the cutoff point (where $H(u, v) = e^{-1/2} \\approx 0.607$).\n* **Advantage:** The Fourier Transform of a Gaussian is another Gaussian, ensuring that the filter's spatial counterpart is also a Gaussian. This property guarantees **zero ringing** in the spatial domain, making it the superior choice for high-quality smoothing.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Low Pass** (1) guard filters the crowd. The **Ideal** (2) guard uses a sharp, square gate, causing a traffic jam (**Ringing**). The **Butterworth** (3) guard uses a smoothly sloped ramp, minimizing the ringing. The **Gaussian** (4) guard uses a perfectly curved, bell-shaped slope, causing **Zero Ringing**.",
+          "explanation": "LPF $\\rightarrow$ Attenuates high frequencies. ILPF $\\rightarrow$ Sharp cutoff (Max Ringing). BLPF $\\rightarrow$ Smooth cutoff (Reduced Ringing). GLPF $\\rightarrow$ Gaussian function (Zero Ringing)."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Guest Bathroom",
+              "visualization": "I SEE a single, sharp line cutting the light, representing the **Ideal** (sharp) cutoff. (ILPF).",
+              "how_to_place": "Picture the sharp line of light in the Guest Bathroom."
+            },
+            {
+              "place_number": 2,
+              "location": "Guest Bedroom",
+              "visualization": "I SEE a butter knife carving a gentle, smooth curve out of a block of butter. This is the **Butterworth** (smooth) cutoff. (BLPF).",
+              "how_to_place": "Picture the butter knife in the Guest Bedroom."
+            },
+            {
+              "place_number": 3,
+              "location": "Downstairs Hallway",
+              "visualization": "I SEE a perfect, bell-shaped hill made of dirt, representing the **Gaussian** (no ringing) curve. (GLPF).",
+              "how_to_place": "Picture the bell-shaped hill in the Downstairs Hallway."
+            },
+            {
+              "place_number": 4,
+              "location": "Storage Room",
+              "visualization": "I SEE a sign that says 'LOW FREQUENCY ONLY', allowing only bass notes to pass through, representing the function of the filter type. (LPF).",
+              "how_to_place": "Picture the sign in the Storage Room."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(a)",
+      "question_text": "Write a short note on Arithmetic coding",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Image Compression",
+        "Arithmetic Coding"
+      ],
+      "answer": "## 📝 Arithmetic Coding\n**Arithmetic coding** is a powerful, advanced form of **entropy encoding** (lossless compression) that encodes the entire input sequence of symbols into a **single floating-point number** in the range $[0, 1)$. It is generally superior to Huffman coding because it can achieve compression rates arbitrarily close to the theoretical entropy limit.\n\n1.  **Principle:** Instead of assigning a fixed-length or integer-length codeword to each symbol (like Huffman), Arithmetic coding assigns a **range of values** to each symbol based on its probability. The size of the range is proportional to the symbol's probability.\n2.  **Process:**\n    * The encoding process starts with the current range being $[0, 1)$.\n    * For each new symbol, the current range is divided into sub-intervals based on the cumulative probability of the symbols.\n    * The sub-interval corresponding to the current symbol becomes the new current range (defined by a **low** and a **high** value).\n    * The final encoded output is any single floating-point number within the final, narrow range.\n3.  **Advantage:** Because the code can represent non-integer bit lengths, it is highly efficient, particularly for sources with a small number of symbols or highly skewed probability distributions, which is common in image data after a lossy compression step (like DCT).",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Arithmetic** (1) accountant is an expert in compression. He doesn't use codes; he encodes the whole ledger into a **Single** (2) **Floating-Point Number** (3) between 0 and 1, by constantly narrowing the range based on the probability of each transaction.",
+          "explanation": "Arithmetic Coding $\\rightarrow$ Entropy Encoding $\\rightarrow$ Single Number in $[0, 1)$."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Storage Room",
+              "visualization": "I SEE a giant, single, compact block of compressed paper. This represents the entire file encoded into a **Single Number**. (Single Floating-Point Number).",
+              "how_to_place": "Picture the compressed block in the Storage Room."
+            },
+            {
+              "place_number": 2,
+              "location": "Downstairs Hallway",
+              "visualization": "I SEE a range of numbers $[0, 1)$ written on the wall. A narrow gate keeps squeezing the range smaller and smaller. (Range $[0, 1)$).",
+              "how_to_place": "Picture the shrinking range on the wall of the Downstairs Hallway."
+            },
+            {
+              "place_number": 3,
+              "location": "Downstairs Study",
+              "visualization": "I SEE a calculator constantly dividing the range by the **Probability** of the next symbol. (Probability-based Range Subdivision).",
+              "how_to_place": "Picture the calculator in the Downstairs Study."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(b)",
+      "question_text": "Write a short note on pseudo color image processing",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Color Image Processing",
+        "Pseudo Color"
+      ],
+      "answer": "## 🎨 Pseudo-Color Image Processing\n**Pseudo-color image processing** (also known as **false coloring** or **color mapping**) is a technique used to assign color to grayscale images based on specific gray-level intensity values. It is a form of **image enhancement** where the goal is to make subtle differences in gray levels more apparent to the human eye.\n\n1.  **Principle:** The human eye can discern thousands of shades of color but only a few dozen shades of gray. By mapping a grayscale image to a color image, the subtle variations in intensity are represented by distinct, easily distinguishable colors.\n2.  **Mechanism:** The process uses a pre-defined or custom-generated **Color Map (or palette)**. Each gray level in the input image (e.g., $r_k$ from 0 to 255) is used as an **index** to look up a corresponding RGB triplet in the color map. The output image is then a full-color image.\n3.  **Applications:**\n    * **Medical Imaging:** Highlighting tissue density ranges in CT or X-ray scans.\n    * **Remote Sensing/Satellite Imagery:** Visualizing temperature, elevation, or pollution levels, where distinct colors are assigned to different measurement ranges (e.g., red for high temperature, blue for low).\n    * **Thermal Imaging:** Displaying heat distribution from objects or buildings.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Pseudo-Color** (1) artist takes a plain **Grayscale** (2) drawing. He doesn't paint the true color, but uses the gray levels as an **Index** (3) to a special **Color Map** book, making subtle intensity differences pop out as bright colors.",
+          "explanation": "Pseudo-Color $\\rightarrow$ Assigns false color to Grayscale $\\rightarrow$ Index into a Color Map $\\rightarrow$ Enhancement."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Master Closet",
+              "visualization": "I SEE a scientist taking a black and white photo and covering it with a brightly colored, transparent film. This is the **Pseudo-Color** effect.",
+              "how_to_place": "Picture the scientist and the color film in the Master Closet."
+            },
+            {
+              "place_number": 2,
+              "location": "Guest Bathroom",
+              "visualization": "I SEE a thermal image of a person, where the heat (intensity) is mapped to distinct colors (red, yellow, blue). (Thermal Imaging Application).",
+              "how_to_place": "Picture the thermal image in the Guest Bathroom."
+            },
+            {
+              "place_number": 3,
+              "location": "Guest Bedroom",
+              "visualization": "I SEE a library full of books. The grayscale number is the finger pointing (**Index**) to a shelf where the book (Color Map) contains the new color. (Index/Color Map).",
+              "how_to_place": "Picture the library and the index in the Guest Bedroom."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(c)",
+      "question_text": "Explain different types of redundancy in image",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Image Compression",
+        "Redundancy"
+      ],
+      "answer": "Image compression aims to reduce the amount of data required to represent an image by removing **redundant data**. Redundancy is the unnecessary duplication or presence of information. The three main types of redundancy in digital images are:\n\n## 1. ⚛️ Coding Redundancy\n* **Source:** Occurs when the codes used to represent the pixel values (gray levels) are not optimally assigned based on the frequency of their occurrence.\n* **Explanation:** If a symbol (gray level) with a high probability of occurrence is assigned a long codeword, the overall bit rate is unnecessarily high. Optimal coding assigns shorter codes to more frequent symbols (e.g., Huffman coding, Arithmetic coding).\n* **Removal Method:** **Variable-length coding** (e.g., Huffman coding, Run-Length Encoding).\n\n## 2. 🗺️ Interpixel Redundancy (Spatial Redundancy)\n* **Source:** Occurs due to the **strong correlation** between adjacent pixels. In typical images, a pixel's value is very similar to its neighbors.\n* **Explanation:** The information carried by a pixel is largely predictable from its neighbors. Therefore, transmitting the value of every pixel is redundant; only the **difference** between adjacent pixels (which is usually a small number) needs to be transmitted.\n* **Removal Method:** **Predictive coding** (e.g., Differential Pulse Code Modulation - DPCM) or **Transform coding** (e.g., Discrete Cosine Transform - DCT, which de-correlates the image data).\n\n## 3. 👁️ Psychovisual Redundancy\n* **Source:** Occurs because certain information is **irrelevant to the human visual system (HVS)** or is present in a form that the HVS cannot perceive.\n* **Explanation:** The HVS has limitations (e.g., it is less sensitive to high-frequency color variations than to high-frequency luminance variations, and it cannot perceive very small differences in intensity). Information that is visually insignificant can be safely removed without a noticeable degradation in perceived image quality.\n* **Removal Method:** **Quantization** (lossy compression). This is achieved by reducing the number of gray levels or color shades (e.g., by sacrificing LSB planes or coarsely quantizing transform coefficients).",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The three forms of data waste are: **Coding** (1) is like an inefficient language, using long words for common ideas. **Interpixel** (2) is like everyone in a family saying the same thing, with high **Correlation**. **Psychovisual** (3) is like writing down sounds a human ear can't even hear.",
+          "explanation": "Coding $\\rightarrow$ Inefficient codeword assignment (entropy). Interpixel $\\rightarrow$ High correlation between neighbors (spatial). Psychovisual $\\rightarrow$ Information not perceived by the Human Visual System (HVS)."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Downstairs Study",
+              "visualization": "I SEE a pile of very long **Codes** written on the desk, even for common letters. This is **Coding Redundancy** (Inefficient Codes).",
+              "how_to_place": "Picture the long codes on the desk in the Downstairs Study."
+            },
+            {
+              "place_number": 2,
+              "location": "Laundry Room",
+              "visualization": "I SEE two shirts that are almost identical, showing very high **Correlation** between the colors. This is **Interpixel Redundancy** (Spatial Correlation).",
+              "how_to_place": "Picture the correlated shirts in the Laundry Room."
+            },
+            {
+              "place_number": 3,
+              "location": "Garden/Yard",
+              "visualization": "I SEE a gardener throwing away tiny bits of soil that are too small for the human eye to notice. This is **Psychovisual Redundancy** (HVS Insensitivity).",
+              "how_to_place": "Picture the gardener and the tiny soil bits in the Garden/Yard."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(a) OR",
+      "question_text": "Describe impulse noise model",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Image Processing",
+        "Noise Models",
+        "Impulse Noise"
+      ],
+      "answer": "## 💣 Impulse Noise Model\n**Impulse noise** (also known as **salt-and-pepper noise** or **spike noise**) is a noise model that appears as random, isolated pixels of extreme intensity scattered across an image. It is often caused by sudden, short-duration electrical disturbances during image acquisition or transmission (e.g., faulty sensors, memory errors).\n\n1.  **Characteristics:**\n    * The noise is characterized by abrupt, large, and **random intensity changes** at a few scattered pixel locations.\n    * **Salt:** Pixels taking the **maximum** possible value (e.g., 255 for 8-bit image, appearing white).\n    * **Pepper:** Pixels taking the **minimum** possible value (e.g., 0 for 8-bit image, appearing black).\n\n2.  **Mathematical Model:** The noise is typically modeled as a **bipolar impulse model** or simply as a random variable with a probability $P$ of having an impulsive value.\n    Let $p_a$ be the probability of a black impulse (pepper) and $p_b$ be the probability of a white impulse (salt). The probability that a pixel is affected is $P = p_a + p_b$. The probability of a pixel being noise-free is $1-P$.\n    * The model assumes that the noisy pixels are **independent** of the signal and of each other.\n\n3.  **Noise Density:** The percentage of pixels corrupted by impulse noise (often $P < 0.1$, or 10%) is called the **noise density**. The effectiveness of filters like the Median filter depends on the density being low.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Impulse** (1) is a sudden, random event. It's modeled by two possibilities: a **Salt** (2) explosion (max intensity, white) or a **Pepper** (3) explosion (min intensity, black). The total chance of a pixel being hit is the **Probability** $P$ of the impulse.",
+          "explanation": "Impulse $\\rightarrow$ Random/Abrupt $\\rightarrow$ Salt (Max Intensity) $\\rightarrow$ Pepper (Min Intensity)."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Storage Room",
+              "visualization": "I SEE a small, random spark of fire (**Impulse**) popping up unexpectedly in the middle of the room. (Impulse/Randomness).",
+              "how_to_place": "Picture the spark in the Storage Room."
+            },
+            {
+              "place_number": 2,
+              "location": "Downstairs Hallway",
+              "visualization": "I SEE a salt shaker (white) and a pepper shaker (black) sitting on the floor, representing the **Salt and Pepper** extremes (Max/Min Intensity).",
+              "how_to_place": "Picture the shakers in the Downstairs Hallway."
+            },
+            {
+              "place_number": 3,
+              "location": "Downstairs Study",
+              "visualization": "I SEE a chart showing a small percentage number (e.g., 5%) labeled 'P'. This is the **Probability** that the noise will hit a pixel.",
+              "how_to_place": "Picture the probability chart in the Downstairs Study."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(b) OR",
+      "question_text": "Write a short note on CMY and RGB color models",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Image Processing",
+        "Color Models",
+        "CMY",
+        "RGB"
+      ],
+      "answer": "Color models provide a standardized way to represent and reproduce colors numerically. **RGB** is an additive model for display, while **CMY** is a subtractive model for printing.\n\n## 1. 🟥🟩🟦 RGB (Red, Green, Blue) Model\n* **Type:** **Additive** color model. Colors are formed by adding components of light.\n* **Principle:** When R, G, and B light components are combined in varying proportions, they produce a wide spectrum of colors.\n    * **Maximum intensity (1, 1, 1):** Produces **White** (since all three colors of light are added).\n    * **Minimum intensity (0, 0, 0):** Produces **Black** (the absence of light).\n* **Application:** All color-producing electronic display devices (monitors, TVs, digital cameras).\n* **Representation:** Represented as a cube where the origin $(0, 0, 0)$ is black and the point $(1, 1, 1)$ is white.\n\n## 2. 🖨️ CMY (Cyan, Magenta, Yellow) Model\n* **Type:** **Subtractive** color model. Colors are formed by subtracting (absorbing) components of white light.\n* **Principle:** The CMY colors are the **secondary colors** of the RGB model. Each CMY pigment absorbs one of the primary RGB colors and reflects the other two.\n    * **Maximum concentration (1, 1, 1):** Ideally produces **Black** (since all light is absorbed). In practice, a $K$ (Black) component is often added to form CMYK for true black.\n    * **Minimum concentration (0, 0, 0):** Produces **White** (since no pigment is present to absorb any light, reflecting all white light).\n* **Application:** Color printing and graphic arts (e.g., inkjet and laser printers).\n\n## 🔄 Conversion (Ideal)\nCMY and RGB are complementary. The transformation between them (assuming normalized values in $[0, 1]$) is:\n$$\\begin{pmatrix} C \\\\ M \\\\ Y \\end{pmatrix} = \\begin{pmatrix} 1 \\\\ 1 \\\\ 1 \\end{pmatrix} - \\begin{pmatrix} R \\\\ G \\\\ B \\end{pmatrix}$$",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **RGB** (1) light producer is **Additive**: start with Black (no light), and adding all colors makes **White**. The **CMY** (2) printer is **Subtractive**: start with White paper (all light), and adding all pigments makes **Black** (by absorbing all light).",
+          "explanation": "RGB $\\rightarrow$ Additive $\\rightarrow$ Black to White. CMY $\\rightarrow$ Subtractive $\\rightarrow$ White to Black."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Garden/Yard",
+              "visualization": "I SEE three spotlights—Red, Green, and Blue—shining together to create a bright **White** light. This is **RGB** (Additive).",
+              "how_to_place": "Picture the three spotlights in the Garden/Yard."
+            },
+            {
+              "place_number": 2,
+              "location": "Hallway",
+              "visualization": "I SEE three paint cans—Cyan, Magenta, Yellow—being mixed on a white canvas. The final result is a muddy **Black** (or dark color). This is **CMY** (Subtractive).",
+              "how_to_place": "Picture the three paint cans in the Hallway."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(c) OR",
+      "question_text": "Apply Huffman coding to determine the code for following data: {a, b, c, d, c, c, b, a, a, a, a, d, c, b, c, d, a, c, e, e, e, e, b}",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Image Processing",
+        "Image Compression",
+        "Huffman Coding"
+      ],
+        "answer": "Huffman coding is a form of optimal **prefix code** (lossless compression) where the code words are assigned based on the probability of the symbols. More frequent symbols receive shorter codes, and less frequent symbols receive longer codes.\n\n## 1. 📊 Step 1: Calculate Frequencies and Probabilities\n* Total number of symbols $N = 23$.\n* The symbols are $\\{a, b, c, d, e\\}$.\n\n| Symbol | Count | Probability $\\mathbf{P}$ (Approx.) |\n| :---: | :---: | :---: |\n| **a** | 5 | $5/23 \\approx 0.217$ |\n| **c** | 6 | $6/23 \\approx 0.261$ |\n| **b** | 4 | $4/23 \\approx 0.174$ |\n| **e** | 4 | $4/23 \\approx 0.174$ |\n| **d** | 4 | $4/23 \\approx 0.174$ |\n\n## 2. 🌲 Step 2: Construct the Huffman Tree (Sorted by probability)\nStart with the two lowest probabilities and merge them, then treat the new node as a single symbol and repeat until a single tree remains. The initial symbols are: $d(0.174)$, $e(0.174)$, $b(0.174)$, $a(0.217)$, $c(0.261)$.\n\n1.  **Merge $d$ and $e$:** $d:0.174 + e:0.174 = de:0.348$\n    * List: $b(0.174)$, $a(0.217)$, $c(0.261)$, $de(0.348)$\n2.  **Merge $b$ and $a$:** $b:0.174 + a:0.217 = ba:0.391$\n    * List: $c(0.261)$, $de(0.348)$, $ba(0.391)$\n3.  **Merge $c$ and $de$:** $c:0.261 + de:0.348 = cde:0.609$\n    * List: $ba(0.391)$, $cde(0.609)$\n4.  **Merge $ba$ and $cde$:** $ba:0.391 + cde:0.609 = 1.00$ (Final Root)\n\n## 3. 🔑 Step 3: Assign Code Words\nAssign 0 to the left branch and 1 to the right branch at each node, reading the code from the root to the symbol leaf.\n\n* **Root (1.00):** Left $\\rightarrow ba(0.391)$, Right $\\rightarrow cde(0.609)$\n* **Path for $\\mathbf{ba}$ (0.391):** Left $\\rightarrow b(0.174)$, Right $\\rightarrow a(0.217)$\n* **Path for $\\mathbf{cde}$ (0.609):** Left $\\rightarrow c(0.261)$, Right $\\rightarrow de(0.348)$\n* **Path for $\\mathbf{de}$ (0.348):** Left $\\rightarrow d(0.174)$, Right $\\rightarrow e(0.174)$\n\n| Symbol | Path | Code Word | Code Length |\n| :---: | :---: | :---: | :---: |\n| **b** | $0 \\rightarrow 0$ | $\\mathbf{00}$ | 2 |\n| **a** | $0 \\rightarrow 1$ | $\\mathbf{01}$ | 2 |\n| **c** | $1 \\rightarrow 0$ | $\\mathbf{10}$ | 2 |\n| **d** | $1 \\rightarrow 1 \\rightarrow 0$ | $\\mathbf{110}$ | 3 |\n| **e** | $1 \\rightarrow 1 \\rightarrow 1$ | $\\mathbf{111}$ | 3 |\n\n## 4. ⚖️ Step 4: Calculate Average Code Length\n$$L_{avg} = \\sum_{k=1}^{5} P(r_k) \\times L(r_k)$$\n$$L_{avg} = \\frac{5}{23}(2) + \\frac{4}{23}(2) + \\frac{6}{23}(2) + \\frac{4}{23}(3) + \\frac{4}{23}(3)$$\n$$L_{avg} = \\frac{10 + 8 + 12 + 12 + 12}{23} = \\frac{54}{23} \\approx 2.348 \\text{ bits/symbol}$$\n(Note: The average code length for the source is significantly lower than the 3 bits/symbol of a fixed-length code for 5 symbols.)",      "memory_techniques": {
+        "story_method": {
+          "story": "To build the **Huffman** (1) tree, you first count all the votes (**Frequencies**). You then take the two **Lowest** (2) vote counts, merge them, and repeat until you have one final winner (**Root**). The final code is written by tracing the path from the root, assigning shorter codes to the most frequent symbols.",
+          "explanation": "Huffman $\\rightarrow$ Frequencies $\\rightarrow$ Merge Lowest Probabilities $\\rightarrow$ Tree $\\rightarrow$ Code Assignment."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Outdoor Shed",
+              "visualization": "I SEE a person diligently counting a pile of different colored items and listing the **Frequencies**. (Calculate Frequencies).",
+              "how_to_place": "Picture the person counting in the Outdoor Shed."
+            },
+            {
+              "place_number": 2,
+              "location": "Tool Bench",
+              "visualization": "I SEE two small pieces of wood being joined together, and the process being repeated, which represents the iterative **Merging** of the lowest probabilities. (Construct Huffman Tree).",
+              "how_to_place": "Picture the merging on the Tool Bench."
+            },
+            {
+              "place_number": 3,
+              "location": "Pond/Water Feature",
+              "visualization": "I SEE a branching tree growing out of the water. Each left branch is marked '0' and each right is marked '1'. (Assign Code Words).",
+              "how_to_place": "Picture the labeled tree at the Pond/Water Feature."
+            },
+            {
+              "place_number": 4,
+              "location": "Path to House",
+              "visualization": "I SEE a sign showing the total steps (bits) of the journey from the water to the shed. This is the **Average Code Length** calculation.",
+              "how_to_place": "Picture the sign on the Path to the House."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

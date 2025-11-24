@@ -1,0 +1,15 @@
+{
+  "short_name": "GTU Learn",
+  "name": "GTU Learn - Interactive Learning Platform",
+  "icons": [
+    {
+      "src": "graduation-cap.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff"
+}

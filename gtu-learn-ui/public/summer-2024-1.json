@@ -1,0 +1,1084 @@
+{
+  "metadata": {
+    "examination": "SUMMER 2024",
+    "subject_code": "3154201",
+    "subject_name": "Optimization Techniques",
+    "total_marks": 70
+  },
+  "questions": [
+    {
+      "question_no": "Q.1",
+      "sub_question_no": "(a)",
+      "question_text": "Explain any six applications of optimization in engineering.",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Optimization",
+        "Engineering Applications"
+      ],
+      "answer": "Optimization is widely used in engineering to achieve the best possible design or operation by minimizing costs, time, or resources, and maximizing efficiency or performance.\n\n**Six Applications in Engineering:**\n\n1.  **Structural Engineering:** Designing optimal component sizes (beams, columns) to **minimize material weight** while ensuring structural integrity and meeting safety codes.\n2.  **Chemical Engineering:** Optimizing operational parameters (temperature, pressure, flow rate) in reactors to **maximize product yield** or purity.\n3.  **Industrial Engineering:** Determining optimal production schedules and resource allocation to **minimize manufacturing costs** and maximize throughput.\n4.  **Aerospace Engineering:** Designing aircraft wings and components for **maximum aerodynamic efficiency** (maximum lift, minimum drag) at various flight conditions.\n5.  **Electrical Engineering:** Optimizing power distribution grids to **minimize energy transmission losses** and ensure stable load management.\n6.  **Control Systems Engineering:** Tuning controller parameters (like PID gains) to achieve optimal **system response** (e.g., minimum settling time or minimum control effort).",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Structural** Engineer minimizes weight (1). The **Chemical** Engineer maximizes yield (2). The **Industrial** Manager minimizes cost (3). The **Aerospace** team minimizes drag (4). The **Electrical** team minimizes power loss (5). The **Control Systems** engineer minimizes error (6).",
+          "explanation": "The story links six engineering disciplines with their respective optimization goals."
+        },
+        "memory_palace": {
+          "total_places": 6,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a tiny bridge structure built from thin, light wires, representing **Design of Structures** to minimize weight.",
+              "how_to_place": "Picture a lightweight truss structure on your doormat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a chemistry beaker overflowing with product, representing **Chemical** maximization of yield.",
+              "how_to_place": "Place the overflowing beaker in the center of the entrance hall floor."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a perfectly stacked inventory tower, minimizing cost for **Industrial** scheduling.",
+              "how_to_place": "Visualize the perfectly stacked inventory tower on the kitchen counter."
+            },
+            {
+              "place_number": 4,
+              "location": "Living Room Couch",
+              "visualization": "I SEE a sleek paper airplane flying effortlessly, illustrating **Aerospace** design for minimal drag.",
+              "how_to_place": "Imagine the paper airplane flying near the couch."
+            },
+            {
+              "place_number": 5,
+              "location": "Dining Table",
+              "visualization": "I SEE a glowing wire with no heat coming off, demonstrating minimal loss in **Electrical** transmission.",
+              "how_to_place": "See the cool, glowing wire across the table."
+            },
+            {
+              "place_number": 6,
+              "location": "Bedroom",
+              "visualization": "I SEE a robot hand precisely adjusting a tiny dial (PID controller) to eliminate **Control System** error.",
+              "how_to_place": "Visualize the robot hand fine-tuning a dial on the dresser."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.1",
+      "sub_question_no": "(b)",
+      "question_text": "Explain different types of constraints in Engineering Optimization with suitable examples.",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Optimization",
+        "Constraints",
+        "Engineering Optimization"
+      ],
+      "answer": "Constraints are **restrictions or limitations** imposed on the design variables or the system's response that define the **feasible region** of the optimization problem. \n\n---\n\n## Types of Constraints\n\n1.  **Side Constraints (Bounds):**\n    * **Explanation:** Simple limits placed directly on the individual design variables ($\\mathbf{X}$). They define the search space boundaries.\n    * **Form:** $x_i^{\\min} \\le x_i \\le x_i^{\\max}$.\n    * **Example:** The radius $r$ of a shaft must be between 10mm and 20mm: $10 \\le r \\le 20$.\n\n2.  **Equality Constraints:**\n    * **Explanation:** Rigid functional requirements where a complex relationship between variables must be exactly equal to a specified value. They define a **constraint surface**.\n    * **Form:** $h_k(\\mathbf{X}) = 0$.\n    * **Example:** The volume $V$ of a tank must be exactly 100 cubic units: $\\pi r^2 h - 100 = 0$.\n\n3.  **Inequality Constraints:**\n    * **Explanation:** Requirements that set a limit or acceptable range (upper or lower bound) on a function of the design variables.\n    * **Form:** $g_j(\\mathbf{X}) \\le 0$ or $g_j(\\mathbf{X}) \\ge 0$.\n    * **Example:** The maximum stress $\\sigma$ must not exceed the yield strength $\\sigma_y$: $\\sigma(\\mathbf{X}) - \\sigma_y \\le 0$.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The three constraint brothers police the optimization world. **Side** Brother sets simple **min/max limits** on each road. **Equality** Brother draws **exact lines** $h(\\mathbf{X})=0$ that travelers must stand on. **Inequality** Brother uses flexible **ropes** $g(\\mathbf{X})\\le 0$, allowing travelers to be anywhere inside the roped area.",
+          "explanation": "The three types are Side (simple bounds), Equality (rigid $h(\\mathbf{X})=0$), and Inequality (range $g(\\mathbf{X})\\le 0$)."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a ruler measuring the height and width of the door with strict $\\min$ and $\\max$ bounds, representing **Side Constraints**.",
+              "how_to_place": "Visualize the ruler measuring the doorway."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a wall marked '$h(\\mathbf{X})=0$', representing the rigid **Equality Constraint**.",
+              "how_to_place": "See the solid wall erected in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a rope forming a loop marked 'Stress $\\le$ Limit', representing the range defined by **Inequality Constraints**.",
+              "how_to_place": "See the rope forming the loop on the kitchen counter."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.1",
+      "sub_question_no": "(c)",
+      "question_text": "Explain the concept of maxima and minima in single variable optimization.",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Optimization",
+        "Maxima",
+        "Minima",
+        "Single Variable Optimization"
+      ],
+      "answer": "In single variable optimization, we analyze the function $f(x)$ to find points $x^*$ where the function reaches its highest (maxima) or lowest (minima) value. These are known as **stationary points** or **extrema**.\n\n---\n\n## Necessary and Sufficient Conditions\n\n### 1. Necessary Condition (First Derivative Test)\n\nFor a continuous and differentiable function $f(x)$, a necessary condition for a point $x^*$ to be an extremum (maxima or minima) is that the first derivative must be zero at that point. [Image illustrating a single variable function curve showing local and global extrema]\n\n$$\\frac{df}{dx} \\bigg|_{x=x^*} = f'(x^*) = 0$$\n\n### 2. Sufficient Condition (Second Derivative Test)\n\nOnce a stationary point $x^*$ is found, the second derivative $f''(x^*)$ determines the nature of the extremum:\n\n* **Local Minimum:** If $f''(x^*) > 0$, the function is convex (concave up) at $x^*$, indicating a local minimum.\n* **Local Maximum:** If $f''(x^*) < 0$, the function is concave (concave down) at $x^*$, indicating a local maximum.\n* **Inflection Point (Test Fails):** If $f''(x^*) = 0$, the test is inconclusive, and higher-order derivatives or checking function values around $x^*$ is required.\n\n---\n\n## Global vs. Local Extrema\n\n* **Local Extrema:** The highest or lowest value in a **small neighborhood** around $x^*$. A function can have multiple local maxima and minima.\n* **Global Extrema:** The absolute highest or lowest value over the **entire feasible domain** of the function.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **First Detective** ($f'(x)$) finds all the **flat spots** (stationary points) where the slope is zero. The **Second Detective** ($f''(x)$) then checks the curvature: if the ground **smiles ($>0$ )**, it's a **minimum**; if it **frowns ($<0$)**, it's a **maximum**.",
+          "explanation": "The first derivative finds candidates (necessary condition). The second derivative checks concavity (sufficient condition). Smiling face/frowning face is a visual mnemonic for minima/maxima based on sign."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a sign reading 'Slope $= 0$', representing the **Necessary Condition** $f'(x^*)=0$.",
+              "how_to_place": "Visualize the sign on the doormat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a very happy face (smiling, $>0$) for **Minimum** next to a very sad face (frowning, $<0$) for **Maximum**.",
+              "how_to_place": "See the happy/sad faces in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a magnifying glass checking only the small area of the counter (Local Optima).",
+              "how_to_place": "Place the magnifying glass on the counter."
+            },
+            {
+              "place_number": 4,
+              "location": "Living Room Couch",
+              "visualization": "I SEE a sign covering the entire room, representing the search for the **Global Optima** over the entire domain.",
+              "how_to_place": "See the huge sign covering the couch."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(a)",
+      "question_text": "Give difference of Single variable and Multi variable optimization.",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Optimization",
+        "Single Variable",
+        "Multi Variable",
+        "Comparison"
+      ],
+      "answer": "The primary difference lies in the **number of independent design variables** that the objective function depends upon.\n\n| Feature | Single Variable Optimization | Multi Variable Optimization |\n| :--- | :--- | :--- |\n| **Variables** | Only **one** variable ($x$). $\\mathbf{X} = \\{x\\}$. | **Two or more** variables ($x_1, x_2, \\dots, x_n$ where $n \\ge 2$). |\n| **Function Form** | $f(x)$. Represents a **curve** in 2D space. | $f(\\mathbf{X})$. Represents a **surface** or hypersurface in $n$-D space. |\n| **Optimality Condition** | Simple derivative: $\\frac{df}{dx} = 0$. | **Gradient vector:** $\\nabla f(\\mathbf{X}) = \\mathbf{0}$. |\n| **Methods** | Line Search (Golden Section, Fibonacci) and Calculus. | Gradient Descent, Newton's Method, Direct Search (Hooke's). |\n\n* **Example (Single):** Minimizing $f(x) = x^2 - 5x + 10$.\n* **Example (Multi):** Minimizing area $A(r, h) = 2\\pi r h + \\pi r^2$.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Single Variable** hiker walks on a **single road** (1D curve) and uses a **simple wrench** (derivative) to find the flat spot. The **Multi Variable** hiker navigates a **vast surface** (N-D space) and requires a **toolbox** (**Gradient** vector) and complex maps.",
+          "explanation": "Single variable relates to 1D and simple derivative. Multivariable relates to N-D and the gradient vector."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a single path or wire leading to the door, marked with a large '1', symbolizing **Single Variable**.",
+              "how_to_place": "Visualize a single line leading directly to the doorway."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a giant, topographical map (a surface) covering the floor, requiring a **vector compass** ($\\nabla f$) to navigate. This represents **Multi Variable**.",
+              "how_to_place": "Picture the topographical map and vector compass on the hall floor."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(b)",
+      "question_text": "What is convex programming and problem of it? Explain with example.",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Optimization",
+        "Convex Programming"
+      ],
+      "answer": "## Convex Programming\n\n**Definition:** **Convex Programming (CP)** is an optimization problem where both the **objective function** and the **feasible region** are defined by convex sets and functions.\n\n* **Convex Objective:** Must be convex (for minimization) or concave (for maximization).\n* **Convex Feasible Region:** The region defined by constraints must be a convex set (no indentations or holes).\n\n### 🔑 Key Property: Global Optimality\nThe most critical property of CP is that **any local optimum is also the global optimum** ($\\text{Local} \\implies \\text{Global}$). [Image illustrating a convex function and a convex feasible set]\n\n* **Significance:** This guarantee allows the use of efficient local search algorithms, as checking for multiple optima is unnecessary.\n\n### Problem/Challenge\nThe main challenge lies in **recognizing and formulating a problem as convex**.\n\n* **Proving Convexity:** For many non-linear problems, it is mathematically intensive (e.g., checking the Hessian matrix) or impossible to prove that a given function is convex.\n\n### Example\n\n$$\\text{Minimize } f(x_1, x_2) = x_1^2 + x_2^2$$ (Convex objective)\n$$\\text{Subject to: } x_1 + x_2 \\le 10$$ (Linear inequality $\\implies$ Convex feasible region)\n\nThis is a CP problem, and the minimum found by any local search method is guaranteed to be the global minimum.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Convex Programmer** lives in a **perfectly shaped bowl**. He knows that the **lowest spot he finds locally** must be the **lowest spot in the entire bowl** (Global minimum). His only **problem** is proving the complex shape he's working on is actually a convex bowl.",
+          "explanation": "Convexity means objective is bowl-shaped and feasible region is convex. The core principle is Local $\\implies$ Global."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a perfect, upside-down bowl. This represents the **convex function**.",
+              "how_to_place": "Visualize the perfect bowl on the welcome mat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a sign reading 'LOCAL $\\implies$ GLOBAL', representing the key property of CP.",
+              "how_to_place": "Place the sign in the center of the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a frustrated mathematician struggling with a complex formula, illustrating the **Problem** of **Proving Convexity**.",
+              "how_to_place": "Picture the frustrated mathematician working on the counter."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(c)",
+      "question_text": "What is difference between Multivariable Optimization with Equality Constraints and Multivariable Optimization with Inequality? Give example",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Optimization",
+        "Multivariable Optimization",
+        "Equality Constraints",
+        "Inequality Constraints",
+        "Comparison"
+      ],
+      "answer": "The main difference between these two constraint types lies in the **dimensionality and shape of the feasible region** they define and the analytical methods used for solving them.\n\n---\n\n## Differentiation\n\n| Feature | Equality Constraints | Inequality Constraints |\n| :--- | :--- | :--- |\n| **Form** | Rigid equation: $h_k(\\mathbf{X}) = 0$ | Range definition: $g_j(\\mathbf{X}) \\le 0$ or $g_j(\\mathbf{X}) \\ge 0$ |\n| **Feasible Region** | A **Constraint Surface** or curve. Solution **must** lie ON the boundary. | A **Feasible Volume or Area**. Solution can be **INSIDE** or ON the boundary. |\n| **Dimensionality** | Reduces the search space dimension (e.g., a 3D problem constrained to a 2D surface). | Preserves the dimensionality of the search space (e.g., a 3D problem constrained to a 3D volume). |\n| **Solution Method** | **Lagrange Multipliers** | **Karush-Kuhn-Tucker (KKT) Conditions** |\n\n---\n\n## Example (Maximizing Profit of $f(x, y) = 5x + 3y$)\n\n### 1. Equality Constraint Example (Fixed Budget)\n$$\\text{Maximize } f(x, y) = 5x + 3y$$ \n$$\\text{Subject to: } 2x + y = 10$$ \n\n* The optimal solution must satisfy $2x+y=10$ **exactly**. It lies **on the line** defined by this equation.\n\n### 2. Inequality Constraint Example (Maximum Budget)\n$$\\text{Maximize } f(x, y) = 5x + 3y$$ \n$$\\text{Subject to: } 2x + y \\le 10$$ \n\n* The optimal solution can be any point satisfying $2x+y \\le 10$ (the entire shaded region). The optimum is usually found on the boundary $2x+y=10$. [Image illustrating the feasible region defined by one equality constraint (a line) and one inequality constraint (a shaded area) in a 2D space]",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Equality** Border says you **must** walk exactly **on** the single, thin white **line** ($h(\\mathbf{X})=0$). The **Inequality** Border says you can walk **anywhere within** the huge **area** ($g(\\mathbf{X})\\le 0$), including the boundary line.",
+          "explanation": "Equality implies a rigid boundary (solution on a surface), solved by Lagrange. Inequality defines a volume (solution inside or on boundary), solved by KKT."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a tightrope walker balancing on a single wire, representing the strict **Equality** boundary $h(\\mathbf{X})=0$.",
+              "how_to_place": "Visualize the tightrope walker on the wire."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a vast, shaded area on the floor, representing the allowed **Inequality** volume $g(\\mathbf{X})\\le 0$.",
+              "how_to_place": "See the shaded, open field covering the hall floor."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a statue of **Lagrange** standing on the tightrope (Equality method).",
+              "how_to_place": "Place the Lagrange statue on the kitchen counter."
+            },
+            {
+              "place_number": 4,
+              "location": "Living Room Couch",
+              "visualization": "I SEE the letters **KKT** painted across the whole couch, marking the method used to check the boundary (Inequality method).",
+              "how_to_place": "See the KKT letters covering the couch."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.2",
+      "sub_question_no": "(c) OR",
+      "question_text": "Explain and differentiate Global and Local optima.",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Optimization",
+        "Global Optima",
+        "Local Optima",
+        "Differentiation"
+      ],
+        "answer": "Optima refer to the solution points that represent the best possible value of the objective function. They are distinguished by the scope of the domain over which they are considered the 'best'.\n\nGlobal Optima:\nExplanation: A Global Optimum is the absolute best point in the entire feasible domain of the function. No other feasible point yields a better objective function value.\nProperty: If a solution exists, it is the highest (maximum) or lowest (minimum) possible value. There can be multiple points that achieve this same optimal value.\n\nLocal Optima:\nExplanation: A Local Optimum is the best point relative only to its immediate neighborhood (delta region). While it is the highest or lowest point in its vicinity, better points may exist elsewhere in the full domain.\n\nDifferentiation:\nFeature: Scope\nGlobal Optima: Entire feasible region.\nLocal Optima: Small, immediate neighborhood.\n\nFeature: Absolute Value\nGlobal Optima: Yes, it is the absolute best value achievable.\nLocal Optima: No, it is only the best relative to nearby points.\n\nFeature: Relationship\nGlobal Optima: A global optimum is always a local optimum.\nLocal Optima: A local optimum is not necessarily a global optimum.\n\nFeature: Difficulty to Find\nGlobal Optima: High (requires sophisticated global search or meta-heuristics).\nLocal Optima: Low (easily found by local gradient-based and direct search methods).\n\nExample: On a mountain range, the highest mountain is the Global Maximum, while all other individual peaks are Local Maxima.",      "memory_techniques": {
+        "story_method": {
+          "story": "The **Global** King owns the **entire** mountain range, sitting on the highest throne in all the land. The **Local** Lord only owns a single **small hill**, which is the highest in *his* territory, but definitely lower than the King's peak. The King's peak is so high, it's considered local too, but the Lord's hill is certainly not the global peak.",
+          "explanation": "Global refers to the entire domain (absolute best). Local refers only to the immediate neighborhood (relative best)."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a gigantic mountain range covering the whole view. The highest flag is on its peak, representing the **Global** scope.",
+              "how_to_place": "Imagine the mountain range visible through the doorway."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a tiny hill of sand in the corner. The peak of the sand hill is the highest point only in that **Local** small area.",
+              "how_to_place": "See the tiny sand hill tucked into the corner of the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a gold trophy (Global) sitting on top of a silver medal (Local), showing that Global $\\implies$ Local.",
+              "how_to_place": "Place the trophies stacked on the kitchen counter."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(a)",
+      "question_text": "Differentiate Linear and Non Linear programming",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Optimization",
+        "Linear Programming",
+        "Non-Linear Programming",
+        "Differentiation"
+      ],
+      "answer": "The core difference between Linear Programming (LP) and Non-linear Programming (NLP) is based on the **mathematical degree** of the functions defining the objective and constraints.\n\n| Feature | Linear Programming (LP) | Non-Linear Programming (NLP) |\n| :--- | :--- | :--- |\n| **Functions** | Objective and all constraints must be **linear** (degree 1). | At least one function (objective or constraint) is **non-linear** (degree $\\ne 1$). |\n| **Feasible Region** | Always a **convex** polygon/polyhedron. | Can be **convex or non-convex**, often complex. |\n| **Optima Guarantee** | Local optimum is always the **Global optimum**. | Local optimum is **NOT** guaranteed to be the global optimum. |\n| **Example** | Max $Z=3x_1+2x_2$ s.t. $x_1+x_2 \\le 5$. | Min $f=x_1^2 + x_2^2$ s.t. $x_1x_2 \\ge 1$. |\n\n*NLP problems are more general and include LP as a special case.* [Image comparing the feasible region and objective function contours of Linear vs. Non-linear Programming]",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **LP** Builder only uses **straight planks** (linear functions) for his foundation. The **NLP** Architect can use **curved beams and domes** (non-linear functions), making the design complex but also full of tricky **local optima**.",
+          "explanation": "LP uses only straight lines/planes (linear). NLP uses curves/surfaces (non-linear). LP guarantees Global optima, while NLP does not."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a single, straight line drawn on the door (LP: **Linear**) next to a sign reading 'GLOBAL ONLY'.",
+              "how_to_place": "Visualize the straight line and sign on the door."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a wavy, curving line drawn on the wall (NLP: **Non-linear**), full of small hills (Local Optima).",
+              "how_to_place": "See the wavy line and hills on the entrance wall."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(b)",
+      "question_text": "Explain Interval halving method and Fibonacci method with suitable example",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Optimization",
+        "Search Methods",
+        "Interval Halving",
+        "Fibonacci Method"
+      ],
+      "answer": "Both are **interval elimination techniques** used to efficiently find the optimum of a **unimodal function** $f(x)$ over a bounded interval $[a, b]$.\n\n---\n\n## ➗ Interval Halving Method\n\n* **Principle:** Reduces the interval of uncertainty by roughly **one half** ($L_{\\text{new}} \\approx L_{\\text{old}}/2$) in each iteration by using three test points: the midpoint $x_m$ and two points $x_1, x_2$ placed symmetrically close to $x_m$ (separated by a small tolerance $\\epsilon$). [Image illustrating the steps of the Interval Halving Search Method]\n\n### Example\nTo minimize $f(x)$ on $[0, 8]$. The first step compares $f(x_1), f(x_m), f(x_2)$ around $x_m=4$. If $f(x_1) > f(x_m)$, the new interval is $[x_m, b]$, reducing the length from 8 to $\\approx 4$.\n\n---\n\n## $\\Phi$ Fibonacci Method\n\n* **Principle:** Uses the **Fibonacci numbers** ($F_n$) to determine the highly strategic placement of two internal test points in each step. This method guarantees the **maximum possible interval reduction** for a fixed number of function evaluations $N$.\n* **Efficiency:** One test point from the previous step is always reused, maximizing computational efficiency. The final interval length $L_N$ relates to the initial length $L_1$ by $L_N = L_1 / F_{N+1}$.\n\n### Example\nTo minimize $f(x)$ on $[a, b]$. If $N=4$ steps are planned, $F_5=5$. The final interval length will be reduced by a factor of 5: $L_4 = L_1 / 5$.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Halving** detective cuts his path into **half** using three basic checkpoints. The **Fibonacci** expert, however, uses the magical **Fibonacci numbers** to perfectly place his checkpoints, guaranteeing the biggest possible **reduction** in distance after every step.",
+          "explanation": "Halving uses three points to cut the interval by 1/2. Fibonacci uses the sequence for maximum efficiency and reduction (reusing old points)."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a large knife cutting the doormat in half, representing **Interval Halving** (1/2 reduction).",
+              "how_to_place": "Visualize the knife cutting the mat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a snail shell with the numbers 1, 2, 3, 5, 8 drawn on it (Fibonacci sequence), representing the **Fibonacci Method**.",
+              "how_to_place": "See the Fibonacci snail shell in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE the equation $L_N = L_1 / F_{N+1}$ written on the counter, showing the efficient **interval reduction ratio** of the Fibonacci method.",
+              "how_to_place": "Place the equation prominently on the counter."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(c)",
+      "question_text": "What is Non-Linear Programming? Explain Direct Root methods in detail.",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Optimization",
+        "Non-Linear Programming",
+        "Direct Root Methods"
+      ],
+      "answer": "## 〰️ Non-Linear Programming (NLP)\n\n**Definition:** Non-Linear Programming (NLP) is the optimization of an objective function subject to constraints, where **at least one** of the objective function $f(\\mathbf{X})$ or the constraint functions $g(\\mathbf{X})$ is **non-linear** (i.e., contains terms like $x^2, x_1x_2, \\sin(x)$, etc.).\n\n* **Challenge:** Non-linearity means the feasible region can be non-convex, leading to the existence of multiple local optima that are not necessarily the global optimum. [Image illustrating a non-linear function with multiple local optima]\n\n---\n\n## 💡 Direct Root Methods\n\n**Explanation:** Direct Root methods are **indirect search methods** used for unconstrained single-variable optimization. They transform the objective function minimization problem $\\text{Optimize } f(x)$ into a **root-finding problem** by locating the zeros of the **first derivative** $f'(x)=0$.\n\n* **Principle:** The methods operate on the derivative function $g(x) = f'(x)$. Once a stationary point $x^*$ is found, the second derivative $f''(x^*)$ determines the nature of the extremum.\n* **Key Method (Newton-Raphson):** Uses an iterative formula that requires calculating both the first and second derivatives:\n    $$x_{k+1} = x_k - \\frac{f'(x_k)}{f''(x_k)}$$\n* **Advantage:** These methods offer very fast **quadratic convergence** when the solution is approached.\n* **Example:** To minimize $f(x) = x^3 - 3x^2 - 1$. The root function is $f'(x) = 3x^2 - 6x$. Solving $f'(x)=0$ yields $x=0$ and $x=2$ as candidates for the optimum. [Image illustrating the Newton-Raphson method finding the root of the derivative $f'(x)$]",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **NLP** architect builds a **curvy, complex building**. The **Direct Root** detective searches for the solution by ignoring the building and only hunting for the **flat spots** (roots) on the **slope graph** ($f'(x)=0$). He uses a high-speed **Newton-Raphson** formula to jump quickly to those spots.",
+          "explanation": "NLP involves non-linear terms. Direct Root methods find $x^*$ such that $f'(x^*)=0$, using algorithms like Newton-Raphson, and verify with the second derivative."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a graph of a wavy line with many peaks and valleys, representing the **Non-Linear** problem.",
+              "how_to_place": "Visualize the wavy graph on the doormat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a sign reading 'Find Root of $f\\'(x)$', representing the goal of the **Direct Root** method.",              "how_to_place": "Place the sign in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE the Newton-Raphson formula $x_{k+1} = x_k - \\frac{f'(x_k)}{f''(x_k)}$ written on a blackboard, representing the core method.",
+              "how_to_place": "See the formula displayed prominently on the counter."
+            },
+            {
+              "place_number": 4,
+              "location": "Living Room Couch",
+              "visualization": "I SEE a fast-moving arrow demonstrating **quadratic convergence** from a single point.",
+              "how_to_place": "See the fast convergence arrow on the couch."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(a) OR",
+      "question_text": "Define below terms: 1. Unrestricted search 2. Exhaustive search 3. Dichotomous search",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Optimization",
+        "Search Methods",
+        "Unrestricted Search",
+        "Exhaustive Search",
+        "Dichotomous Search"
+      ],
+      "answer": "These are basic, derivative-free search methods used for single-variable optimization, often aimed at finding the initial bracket or performing interval elimination.\n\n1.  **Unrestricted Search (Preliminary Search):** A starting technique used to find a rough but guaranteed initial interval $[a, b]$ that **brackets** the optimum $x^*$. It takes successive steps (e.g., of size $\\Delta x$) until the function value starts increasing again (for minimization), satisfying the unimodality requirement.\n2.  **Exhaustive Search:** A brute-force method applied over a fixed interval $[a, b]$. It divides the interval into a large number of equally spaced **sample points** ($N$) and evaluates the objective function at **every single point**. The best point found is the optimum *within the sampling resolution*.\n3.  **Dichotomous Search:** An efficient **interval elimination technique** used on a unimodal function. It places **two test points** symmetrically and very close to the center point $x_m$ (separated by a small tolerance $\\epsilon$). By comparing the function values, the interval of uncertainty is reduced by almost **half** ($L_{\\text{new}} \\approx L_{\\text{old}}/2$) in each iteration. [Image illustrating the steps of Dichotomous Search]",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Unrestricted** explorer searches blindly for an initial **bracket**. The **Exhaustive** hiker meticulously checks **every point** in the bracket (brute force). The **Dichotomous** twins speed things up by checking just **two close points** at the center, allowing them to cut the search space by half.",
+          "explanation": "Unrestricted finds the initial bracket. Exhaustive checks every point. Dichotomous uses two close points to cut the interval by 1/2."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a person drawing a large parenthesis [ ] around the door, representing the **Unrestricted Search** finding the initial **bracket**.",
+              "how_to_place": "Visualize the bracket drawn on the floor near the door."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a vast floor with every tile checked off, symbolizing **Exhaustive Search** (brute force).",
+              "how_to_place": "See the fully checked floor tiles."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE two very close dots ($\\epsilon$) on the counter, with a hand slicing the counter in half, representing **Dichotomous Search**.",
+              "how_to_place": "See the two close dots and the slicing hand."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(b) OR",
+      "question_text": "What is Golden Section method? Brief with suitable example.",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Optimization",
+        "Search Methods",
+        "Golden Section Method"
+      ],
+      "answer": "## Golden Section Method ($\\tau \\approx 0.618$)\n\n**Definition:** The **Golden Section Method (GSM)** is a highly efficient **interval elimination technique** used for finding the optimum of a **unimodal function** $f(x)$ over a bounded interval $[a, b]$.\n\n* **Principle:** It maintains a constant reduction ratio in each step by using the **Golden Ratio** $\\tau \\approx 0.618$ to strategically place two internal test points $x_1$ and $x_2$. [Image illustrating the placement of test points and interval reduction in the Golden Section Method]\n* **Efficiency:** GSM achieves high computational efficiency because, after the first iteration, **only one new function evaluation** is required per subsequent step. One of the old internal test points automatically becomes one of the new test points for the reduced interval.\n* **Reduction:** The length of the interval of uncertainty ($L_n$) reduces by a factor of $\\tau$ in each step: $L_n = \\tau^{n-1} L_1$.\n\n### Example\nTo minimize $f(x)$ on $[a_1, b_1]$. The initial test points are calculated as:\n\n* $x_{1} = a_1 + (1-\\tau) L_1$\n* $x_{2} = a_1 + \\tau L_1$\n\nIf $f(x_1) < f(x_2)$, the new interval is $[a_1, x_2]$, and $x_1$ is automatically the new internal point for the next step.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Golden Section** expert is highly sophisticated, using the magical $\\mathbf{0.618}$ **Golden Ratio** for every cut. His brilliance means that after the first cut, he only needs **one new measurement** for every step, reusing the old one to save massive amounts of effort.",
+          "explanation": "GSM uses the golden ratio $\\tau \\approx 0.618$ for point placement. Key efficiency: only one function evaluation is needed per subsequent iteration."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE the number **$0.618$** etched in gold on the door frame, representing the **Golden Ratio**.",
+              "how_to_place": "Visualize the golden number on the door frame."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a sign reading '1 New Test Only', representing the high **efficiency** (one evaluation per step) of the method.",
+              "how_to_place": "See the sign in the hall."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.3",
+      "sub_question_no": "(c) OR",
+      "question_text": "Describe Multivariable Optimization in detail.",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Optimization",
+        "Multivariable Optimization"
+      ],
+      "answer": "## Multivariable Optimization (MVO)\n\n**Definition:** MVO is the process of finding the optimal solution (maximum or minimum) of an objective function $f(\\mathbf{X})$ that depends on **two or more independent design variables** $\\mathbf{X} = \\{x_1, x_2, \\dots, x_n\\}$.\n\n* **Geometric View:** The function $f(\\mathbf{X})$ represents a **surface** (for $n=2$) or a **hypersurface** (for $n > 2$). \n\n---\n\n## Optimality Conditions (Unconstrained MVO)\n\n1.  **Necessary Condition:** For a local optimum $\\mathbf{X}^*$, the **gradient vector** of the objective function must be the zero vector (all partial derivatives must be zero):\n    $$\\nabla f(\\mathbf{X}^*) = \\mathbf{0}$$\n2.  **Sufficient Condition:** The nature of the optimum is determined by checking the **Hessian matrix** $\\mathbf{H}(\\mathbf{X}^*)$ (the matrix of second partial derivatives) at $\\mathbf{X}^*$:\n    * **Minimum:** If $\\mathbf{H}(\\mathbf{X}^*)$ is **Positive Definite**.\n    * **Maximum:** If $\\mathbf{H}(\\mathbf{X}^*)$ is **Negative Definite**.\n\n---\n\n## Solution Techniques\n\nSince MVO problems are complex and require iterations, solutions are found using advanced techniques:\n\n1.  **Direct Search Methods:** Do not use derivatives. Examples include the **Univariate Method** (coordinate descent), **Hooke's and Jeeves' Method**, and **Powell's Method**.\n2.  **Gradient-based Methods:** Use derivatives for direction. Examples include **Steepest Descent Method** (first-order) and **Newton's Method** (second-order).",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Multi**-hiker is climbing a vast **surface** (MVO). To find the flat spot (optimum), he needs a multi-tool (**Gradient** $\\nabla f$) to check all slopes at once. He then uses a second complex tool (**Hessian** $\\mathbf{H}$) to check the terrain's curvature, determining if the flat spot is a peak or a valley.",
+          "explanation": "MVO involves multiple variables and surfaces. Necessary condition is $\\nabla f = 0$. Sufficient condition uses the Hessian $\\mathbf{H}$."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a large, bumpy, wavy surface covering the door, representing the multivariable **surface** $f(\\mathbf{X})$.",
+              "how_to_place": "Visualize the wavy surface on the door."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a gradient compass pointing to zero on the floor, representing the necessary condition $\\nabla f = \\mathbf{0}$.",
+              "how_to_place": "See the zeroed gradient compass in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a heavy, metal matrix (the Hessian $\\mathbf{H}$) sitting on a scale, ready to determine if the spot is 'heavy' (Positive Definite $\\implies$ minimum).",
+              "how_to_place": "Place the Hessian matrix on the kitchen counter."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(a)",
+      "question_text": "Explain direct root method.",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Optimization",
+        "Direct Root Method"
+      ],
+      "answer": "## Direct Root Methods\n\n**Definition:** Direct Root methods are **indirect search methods** used for unconstrained single-variable optimization. They transform the objective function minimization problem $\\text{Optimize } f(x)$ into a **root-finding problem**.\n\n* **Principle:** They aim to find the points $x^*$ where the **first derivative** of the objective function is zero: $f'(x)=0$. These points are the stationary points (candidates for extrema).\n* **Methods:** These methods apply root-finding algorithms (like the **Newton-Raphson Method** or the Secant Method) directly to the derivative function $g(x) = f'(x)$.\n* **Advantage:** These methods typically offer very fast **quadratic convergence** when the solution is approached. [Image illustrating the Newton-Raphson method finding the root of the derivative $f'(x)$]",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Direct Root** detective searches for the solution by finding the spot where the **slope graph ($f'(x)$) is zero**. He uses a high-speed **Newton-Raphson** formula to jump quickly to the root.",
+          "explanation": "Direct Root methods find the minimum by finding the root of the derivative $f'(x)=0$, often using the fast Newton-Raphson method."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a sign reading 'Find Root of $f\\'(x)$', representing the goal of the **Direct Root Methods**.",
+              "how_to_place": "Place the sign on the doormat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE the Newton-Raphson formula $x_{k+1} = x_k - \\frac{f'(x_k)}{f''(x_k)}$ written on a blackboard.",
+              "how_to_place": "See the formula prominently displayed on the blackboard."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(b)",
+      "question_text": "Discuss Constraint Surface and Objective Function.",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Optimization",
+        "Constraint Surface",
+        "Objective Function"
+      ],
+      "answer": "## Objective Function ($f(\\mathbf{X})$)\n\n* **Definition:** The mathematical model of the quantity (profit, cost, volume) that the optimization problem aims to **maximize** or **minimize**.\n* **Role:** The objective function defines the performance metric of the system being designed. Finding the optimum value of $f(\\mathbf{X})$ is the purpose of the entire process.\n\n---\n\n## Constraint Surface\n\n* **Definition:** A constraint surface is the geometric locus of points defined by an **equality constraint**, $h_k(\\mathbf{X}) = 0$. \n* **Role:** It acts as a rigid boundary in the design space. The solution must lie exactly **on this surface**. For a problem with $n$ design variables, the constraint surface is an $(n-1)$-dimensional manifold. ",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Objective Function** is the **treasure chest** (maximized or minimized). The **Constraint Surface** is the solid **wall** ($h(\\mathbf{X})=0$) that exactly dictates where the treasure hunter is allowed to stand to reach the chest.",
+          "explanation": "Objective Function is the goal. Constraint Surface is the geometric boundary defined by equality constraints."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a large trophy marked 'MAX/MIN' representing the **Objective Function** (the goal).",
+              "how_to_place": "Visualize the trophy on the doormat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a solid, non-negotiable wall marked $h(\\mathbf{X}) = 0$ that cannot be passed, representing the **Constraint Surface**.",
+              "how_to_place": "See the solid wall erected in the hall."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(c)",
+      "question_text": "Discuss Univariate method, Hookes and Jeeves' method.",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Optimization",
+        "Univariate Method",
+        "Hookes and Jeeves Method"
+      ],
+      "answer": "Both methods are **Direct Search** techniques for unconstrained multivariable optimization, meaning they do not use derivative information ($\\nabla f$ or $\\mathbf{H}$). \n\n---\n\n## 🔄 Univariate Method (Coordinate Descent)\n\n**Explanation:** The Univariate method finds the optimum by minimizing the objective function $f(\\mathbf{X})$ with respect to **one variable at a time**, cycling through each coordinate axis sequentially, while holding all other variables constant.\n\n* **Method:** It requires a series of one-dimensional line searches. Starting at $\\mathbf{X}_k$, it finds $\\lambda_1^*$ along $x_1$ axis, then $\\lambda_2^*$ along $x_2$ axis, and so on.\n* **Drawback:** This method can be very inefficient and leads to a slow, **zig-zag path** if the function contours are elongated and not aligned with the coordinate axes.\n\n---\n\n## 🔎 Hooke's and Jeeves' Method (Pattern Search)\n\n**Explanation:** This method is more robust than Univariate search as it combines the local axis-aligned search with an accelerating leap based on previous success.\n\n* **1. Exploratory Move (Local Search):** A sequential search is performed along each coordinate axis (similar to Univariate), using a defined step size $\\Delta_i$. If a reduction in $f(\\mathbf{X})$ is found, the point is updated immediately.\n* **2. Pattern Move (Acceleration):** If the exploratory move is successful (moving $\\mathbf{X}_k \\to \\mathbf{X}_{k+1}$), a large leap is taken in that direction (the successful pattern) to a **Pattern Point** $\\mathbf{X}_p$:\n    $$\\mathbf{X}_p = \\mathbf{X}_{k+1} + (\\mathbf{X}_{k+1} - \\mathbf{X}_k)$$\n    The next exploratory move starts from $\\mathbf{X}_p$. This pattern move helps bypass the slow zig-zagging. [Image illustrating Hooke's and Jeeves' method with exploratory moves followed by an accelerating pattern move]",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Univariate** hiker is limited: he can only walk North, South, East, or West (one coordinate at a time), making him slow. The **Hooke's and Jeeves** team is smarter: they do the initial North-South walk (**Exploratory**), but if they find a good direction, they take a huge, accelerating **Pattern Move** leap to bypass the slow path.",
+          "explanation": "Univariate minimizes one variable at a time (slow). Hooke's and Jeeves' uses an exploratory move (local, axis-aligned) followed by an accelerating pattern move (leap)."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a hiker walking only along the edges of the doormat (N, S, E, W), representing the **Univariate** coordinate search.",
+              "how_to_place": "Visualize the hiker restricted to the edges of the mat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a magnifying glass performing a careful local search (Exploratory Move) next to a figure taking a huge leap (Pattern Move).",
+              "how_to_place": "See the magnifying glass and the leaping figure in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE the leap formula $\\mathbf{X}_p = \\mathbf{X}_{k+1} + (\\mathbf{X}_{k+1} - \\mathbf{X}_k)$ written on a rocket, symbolizing the acceleration of the Pattern Move.",
+              "how_to_place": "Place the formula rocket on the counter."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(a) OR",
+      "question_text": "Differentiate Direct and Indirect Search methods.",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Optimization",
+        "Search Methods",
+        "Direct Search",
+        "Indirect Search",
+        "Differentiation"
+      ],
+      "answer": "The key distinction between **Direct** and **Indirect** search methods lies in their reliance on the **derivatives** of the objective function $f(\\mathbf{X})$.\n\n| Feature | Direct Search Methods | Indirect Search Methods (Gradient-based) |\n| :--- | :--- | :--- |\n| **Derivative Use** | **Do not** require derivatives (Zero-order). They only use function values $f(\\mathbf{X})$. | **Require** calculation of the first derivative ($\\nabla f$) or second derivative ($\\mathbf{H}$). |\n| **Search Principle** | Based on local exploration and pattern moves, comparing function heights. | Guided by the **slope** (gradient) of the landscape, following the path of steepest descent or curvature. |\n| **Examples** | Hooke's and Jeeves', Powell's, Random Search. | Steepest Descent, Newton's Method, Conjugate Gradient. |\n| **Use Case** | Preferred for **non-differentiable or noisy** functions. | Preferred for **smooth, continuous** functions due to faster convergence. |\n\n*Note: The Simplex Method for Linear Programming is also considered a direct search method.*",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Direct** hiker is blind: he only uses his feet (function value) to check if the next step is lower. The **Indirect** hiker has sharp eyes and a map (derivatives) that tells him the exact **slope and curvature** of the ground, guiding him much faster.",
+          "explanation": "Direct methods are derivative-free (use only function value). Indirect methods use derivatives (slope/gradient) to determine direction."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a blindfolded person feeling the ground with their feet, representing **Direct Methods** (no derivatives).",
+              "how_to_place": "Visualize the blindfolded person near the door."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a magnifying glass inspecting a formula $\\nabla f$ on the floor, representing **Indirect Methods** (uses derivatives).",
+              "how_to_place": "See the magnifying glass inspecting the formula in the hall."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(b) OR",
+      "question_text": "Describe the Random Search Method for constrained optimization problem.",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Optimization",
+        "Random Search Method",
+        "Constrained Optimization"
+      ],
+      "answer": "The Random Search Method, particularly the **Random Walk Method**, can be adapted for constrained optimization problems by incorporating a **feasibility check** into the iterative process.\n\n## $\\sigma$ Random Search for Constrained Problems\n\n1.  **Candidate Generation:** Start at a feasible point $\\mathbf{X}_k$. Generate a **random vector** $\\mathbf{r}_k$ (direction) and a random step length $\\lambda_k$ to find a candidate point: $\\mathbf{X}_{candidate} = \\mathbf{X}_k + \\lambda_k \\mathbf{r}_k$.\n2.  **Feasibility Check:** This is the core constrained adaptation. The algorithm checks if $\\mathbf{X}_{candidate}$ satisfies **all problem constraints** ($h(\\mathbf{X}) = 0$ and $g(\\mathbf{X}) \\le 0$).\n3.  **Acceptance:** The move is accepted only if $\\mathbf{X}_{candidate}$ is **feasible** AND the objective function value is **improved** ($f(\\mathbf{X}_{candidate}) < f(\\mathbf{X}_k)$ for minimization). If the candidate is infeasible or worse, it is discarded, and a new random step is generated.\n\n* **Advantage:** This method is robust for searching feasible regions with complex, non-linear boundaries because it does not require calculating derivatives or specialized KKT analysis to handle the constraints. [Image illustrating a random search path exploring a constrained, non-convex feasible region]",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Constrained Random** hiker still throws dice (random search), but before he takes a step, he must check the **Feasibility Rulebook**. If his randomly chosen step lands outside the **constrained fence**, he throws the step away and tries again, ensuring he always stays in the allowed area.",
+          "explanation": "Random Search generates a random step, but a crucial feasibility check is required to ensure the candidate point satisfies all constraints before acceptance."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a person rolling giant dice (random search) but holding a rulebook (constraints) in the other hand.",
+              "how_to_place": "Visualize the person holding the dice and rulebook in the doorway."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a big '$\\checkmark$' sign and a big 'X' sign over two different areas, representing the **Feasibility Check** (Accept/Reject).",
+              "how_to_place": "See the checkmark and cross signs on the hall floor."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a tangled, knotted rope forming a complex boundary, representing a **complex feasible region** where random search is useful.",
+              "how_to_place": "Place the tangled rope on the counter."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.4",
+      "sub_question_no": "(c) OR",
+      "question_text": "Explain the Algorithm and Flowchart for Powell's Method of optimization.",
+      "diagram_representation": "Flowchart for Powell's Method is required.",
+      "marks": 7,
+      "tags": [
+        "Optimization",
+        "Powell's Method",
+        "Algorithm",
+        "Flowchart"
+      ],
+        "answer": "Powell's Method (also known as the Conjugate Direction Method) is a **Direct Search** technique for unconstrained multivariable minimization that uses conjugate directions to achieve fast convergence without calculating derivatives. [Image of Flowchart for Powell's Method] \\n\\n---\\n\\n## Algorithm: Powell's Conjugate Directions\\n\\n**Goal:** Minimize $f(\\\\mathbf{X})$ starting from $\\\\mathbf{X}_0$ with initial directions $\\\\mathbf{D} = \\\\{\\\\mathbf{d}_1, \\\\dots, \\\\mathbf{d}_n\\\\}$ (usually coordinate axes) and tolerance $\\\\epsilon$.\\n\\n1.  **Initialization:** Set $\\\\mathbf{X}_{start} = \\\\mathbf{X}_0$. Store the initial function value $f_{\\\\text{start}} = f(\\\\mathbf{X}_0)$.\\n2.  **Outer Loop (Cycle $k$):** Repeat until convergence criterion is met.\\n3.  **Inner Loop (Univariate Search):** Perform $n$ sequential line searches using the current directions $\\\\mathbf{D}$.\\n    * Set $\\\\mathbf{X}_{current} = \\\\mathbf{X}_{start}$.\\n    * For $i = 1$ to $n$: Find $\\\\lambda_i^*$ that minimizes $f(\\\\mathbf{X}_{current} + \\\\lambda_i \\\\mathbf{d}_i)$. Update $\\\\mathbf{X}_{current} = \\\\mathbf{X}_{current} + \\\\lambda_i^* \\\\mathbf{d}_i$.\\n4.  **Convergence Check:** If $|f(\\\\mathbf{X}_{current}) - f_{\\\\text{start}}| < \\\\epsilon$ OR $|\\\\mathbf{X}_{current} - \\\\mathbf{X}_{start}| < \\\\epsilon$, stop. $\\\\mathbf{X}_{current}$ is the optimum.\\n5.  **Generate New Conjugate Direction (Pattern):** If not converged, a new conjugate direction $\\\\mathbf{d}_{new}$ is generated by the displacement vector of the cycle:\\n    $$\\\\mathbf{d}_{new} = \\\\mathbf{X}_{current} - \\\\mathbf{X}_{start}$$\\n6.  **Line Search on New Direction:** Find $\\\\lambda_{new}^*$ that minimizes $f(\\\\mathbf{X}_{current} + \\\\lambda_{new} \\\\mathbf{d}_{new})$. Set $\\\\mathbf{X}_{next} = \\\\mathbf{X}_{current} + \\\\lambda_{new}^* \\\\mathbf{d}_{new}$.\\n7.  **Update Directions:** Discard the oldest direction ($\\\\mathbf{d}_1$). Shift the remaining directions ($\\\\mathbf{d}_i \\\\to \\\\mathbf{d}_{i-1}$) and replace the last direction $\\\\mathbf{d}_n$ with $\\\\mathbf{d}_{new}$.\\n8.  **Prepare for Next Cycle:** Set $\\\\mathbf{X}_{start} = \\\\mathbf{X}_{next}$ and go to Step 2. \\n\\n*The repeated generation of conjugate directions eliminates the inefficient zig-zagging observed in the simple Univariate method, leading to fast convergence.*",      "memory_techniques": {
+        "story_method": {
+          "story": "The **Powell** detective uses a **Conjugate Cycle**: he performs $N$ **Univariate** searches (Inner Loop). If he hasn't converged, he generates a **new, powerful Conjugate Direction** from the start point to the end point of the cycle. He swaps out the oldest direction for the new one and repeats the cycle, ensuring the next path is more direct.",
+          "explanation": "Powell's cycles through $N$ line searches (univariate). The displacement vector forms the new conjugate direction, which is used to update the set of directions."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE $N$ markers (directions) lined up, representing the **Initialization** of directions $\\mathbf{D}$.",
+              "how_to_place": "Visualize the $N$ markers in the doorway."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a sequence of small zig-zags (Univariate Searches) being straightened out by a huge arrow (the **Conjugate Direction**).",
+              "how_to_place": "See the zig-zags and the straightening arrow in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a direction $\\mathbf{d}_{new} = \\mathbf{X}_{current} - \\mathbf{X}_{start}$ written on a recipe card, showing how the new direction is **generated**.",
+              "how_to_place": "Place the formula on the kitchen counter."
+            },
+            {
+              "place_number": 4,
+              "location": "Living Room Couch",
+              "visualization": "I SEE an old direction marker ($\\mathbf{d}_1$) being thrown off the couch and replaced by a new one, representing the **Direction Update** step.",
+              "how_to_place": "See the direction markers being swapped on the couch."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(a)",
+      "question_text": "What are Fuzzy optimization techniques?",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Optimization",
+        "Fuzzy Optimization",
+        "Techniques"
+      ],
+      "answer": "## Fuzzy Optimization Techniques\n\n**Definition:** Fuzzy Optimization refers to a set of techniques used to solve optimization problems where the parameters, goals, or constraints are **imprecise, vague, or ambiguous**—a situation known as **Fuzzy Programming**.\n\n* **Principle:** It is based on **Fuzzy Set Theory**, which uses a **membership function** $\\mu(x)$ to assign a degree of confidence or satisfaction (a value between 0 and 1) to a statement, rather than the crisp (binary) value (0 or 1).\n* **Goal:** The primary goal is to find the solution that maximizes the overall **degree of satisfaction** (compatibility) across all fuzzy goals and constraints.\n* **Use Case:** Ideal for modeling human-like decisions, such as minimizing cost while maintaining a production rate that is 'high'. [Image illustrating a fuzzy membership function for a vague constraint like 'cost is low']",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Fuzzy** detective only deals with **blurry** clues (vague constraints). He never says 'yes' or 'no', but assigns a **degree of confidence** (membership value $\\mu(x)$) to each vague rule. His goal is to maximize his overall **satisfaction** with the blurry solution.",
+          "explanation": "Fuzzy optimization handles vague constraints. It uses the membership function $\\mu(x)$ (0 to 1) instead of binary sets. The objective is to maximize the degree of satisfaction."
+        },
+        "memory_palace": {
+          "total_places": 2,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a blurry, indistinct sign, representing the **Vague and Ambiguous** nature of fuzzy problems.",
+              "how_to_place": "Visualize the blurry sign on the doormat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a dial that can be set anywhere between 0 and 1, representing the **Membership Function** $\\mu(x)$ degree of satisfaction.",
+              "how_to_place": "See the dial on a pedestal in the hall."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(b)",
+      "question_text": "Explain Newton's method of Unconstrained Optimization Techniques with Example",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Optimization",
+        "Newton's Method",
+        "Unconstrained Optimization"
+      ],
+      "answer": "## 🚀 Newton's Method for Minimization\n\n**Explanation:** Newton's method is a **second-order** iterative algorithm for finding the local minimum of an unconstrained function $f(\\mathbf{X})$. It is based on approximating the function locally as a quadratic using derivatives.\n\n* **Principle:** It utilizes the **first derivative (Gradient, $\\nabla f$)** and the **second derivative (Hessian, $\\mathbf{H}$) ** to calculate a highly accurate search direction.\n* **Newton's Step:** The next point $\\mathbf{X}_{k+1}$ is found by moving directly to the minimum of the local quadratic approximation:\n    $$\\mathbf{X}_{k+1} = \\mathbf{X}_k - \\mathbf{H}(\\mathbf{X}_k)^{-1} \\nabla f(\\mathbf{X}_k)$$\n* **Advantage:** Offers very fast **quadratic convergence** when close to the minimum.\n\n### Example\n$\\text{Minimize } f(x) = x^3 - 3x^2 - 1$. Start at $x_1=3$.\n* The method calculates $f'(x) = 3x^2 - 6x$ and $f''(x) = 6x - 6$.\n* $$x_2 = 3 - \\frac{3(3^2) - 6(3)}{6(3) - 6} = 3 - \\frac{9}{12} = 2.25$$\n    The solution moves rapidly toward the actual minimum at $x=2$. [Image illustrating Newton's method for optimization showing quadratic approximation]",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Newton Optimizer** is a perfectionist. He only trusts the **Second-Order** tool (Hessian) to build a perfect **Quadratic** approximation of the hill. He then leaps directly to the bottom using his complex formula, achieving incredibly **fast** convergence.",
+          "explanation": "Newton's method uses the 2nd derivative (Hessian) for a quadratic approximation. The key is the update rule using $\\mathbf{H}^{-1} \\nabla f$, which leads to fast quadratic convergence."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a parabola (a **quadratic** curve) covering the mat.",
+              "how_to_place": "Visualize the parabola on the doormat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a heavy, intricate metal matrix (the **Hessian $\\mathbf{H}$**) being calculated on a device.",
+              "how_to_place": "See the intricate matrix device in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a lightning bolt striking the formula $x_{k+1} = x_k - \\mathbf{H}^{-1} \\nabla f$, representing the fast **Quadratic Convergence** step.",
+              "how_to_place": "Place the formula on the counter."
+            },
+            {
+              "place_number": 4,
+              "location": "Living Room Couch",
+              "visualization": "I SEE a ruler showing the step size from $3.0$ to $2.25$, representing the first step of the example.",
+              "how_to_place": "See the ruler showing the step size on the couch."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(c)",
+      "question_text": "Explain Genetic Algorithms and Simulated Annealing as Modern methods of Optimization with example",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Optimization",
+        "Genetic Algorithms",
+        "Simulated Annealing",
+        "Modern Methods"
+      ],
+      "answer": "Genetic Algorithms (GA) and Simulated Annealing (SA) are **meta-heuristic** methods, effective for solving complex, non-linear, and **global optimization** problems where calculus-based methods often fail.\n\n---\n\n## 🧬 Genetic Algorithms (GA)\n\n**Explanation:** GA is inspired by **natural selection and evolution**. It maintains a **population** of solutions (chromosomes) and iteratively applies biological operators to evolve better solutions over successive generations.\n\n* **Core Operators:** **Selection** (choosing the fittest), **Crossover** (exchanging genetic material), and **Mutation** (random changes for exploration).\n* **Advantage:** Highly effective for **global search** and escaping local optima due to its population-based approach. [Image illustrating the selection, crossover, and mutation process in a Genetic Algorithm]\n\n### Example\nGA is widely used to solve the **Traveling Salesman Problem (TSP)**, where solutions (routes) are evolved over generations to find the shortest possible tour.\n\n---\n\n## 🔥 Simulated Annealing (SA)\n\n**Explanation:** SA is a probabilistic method inspired by the metallurgical process of **annealing** (heating and slowly cooling a metal to find a minimum energy state).\n\n* **Mechanism:** It uses a control parameter called **temperature ($T$)**. At high temperatures, SA accepts **worse solutions** (uphill moves) with a high probability to achieve **global exploration**.\n* **Cooling Schedule:** As $T$ is slowly lowered (the cooling schedule), the probability of accepting worse solutions decreases, forcing the process to converge toward the global minimum.\n* **Advantage:** The probabilistic acceptance allows SA to consistently **jump out of local optima**. [Image illustrating the acceptance probability in Simulated Annealing decreasing as temperature $T$ decreases]\n\n### Example\nSA is used for complex tasks like **VLSI design** (optimizing the placement of components on a microchip) and global function minimization.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Genetic Algorithm** runs a survival show: the best **population** is chosen, they **mate** (**Crossover**) and randomly **mutate**. Meanwhile, the **Simulated Annealing** metallurgist uses **heat**: he allows the system to randomly jump higher (worse solution) when the **Temperature** is hot, but as it slowly **cools**, he forces the system to find the lowest possible, stable minimum.",
+          "explanation": "GA uses evolution (population, crossover, mutation). SA uses temperature and probability to escape local optima, simulating physical annealing."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE two parents with a baby created from mixing their genes, representing **GA's Crossover** and new **Population**.",
+              "how_to_place": "Visualize the family on the doormat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a high-temperature furnace (SA's starting point), representing **Simulated Annealing** and global exploration.",
+              "how_to_place": "See the hot furnace in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a thermometer slowly dropping, representing the **cooling schedule** of SA.",
+              "how_to_place": "Place the dropping thermometer on the counter."
+            },
+            {
+              "place_number": 4,
+              "location": "Living Room Couch",
+              "visualization": "I SEE a map of many cities connected by the shortest possible line (TSP), representing the key example for GA.",
+              "how_to_place": "See the TSP map on the couch."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(a) OR",
+      "question_text": "What are the grid search method used for and list out the advantages of it.",
+      "diagram_representation": null,
+      "marks": 3,
+      "tags": [
+        "Optimization",
+        "Grid Search Method",
+        "Advantages"
+      ],
+      "answer": "## 🟦 Grid Search Method\n\n**Usage:** The **Grid Search Method** is a basic, **non-derivative** exploration technique primarily used for **Hyperparameter Optimization** in machine learning and for **initial coarse search** in general optimization problems.\n\n* **Method:** It systematically constructs a multi-dimensional **grid** over the bounded domain and evaluates the objective function at **every single intersection point** (or combination) defined by the grid. [Image illustrating a 2D grid search over a feasible region]\n\n### Advantages\n1.  **Guaranteed Optimum (of samples):** Guaranteed to find the best solution among the sampled points because it checks every combination.\n2.  **Simplicity:** It is conceptually and computationally very simple to implement; no gradient or complex logic is required.\n3.  **Parallelization:** Since the evaluation of the objective function at each grid point is independent, the search is highly **parallelizable** across multiple processors, speeding up execution.\n4.  **Robustness:** Works reliably on non-smooth, discontinuous, or discrete optimization problems.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Grid Searcher** follows a strict **grid map** and is **guaranteed** to find the treasure because he checks **every single intersection**. He's very **simple** and requires no special tools, and he's super **fast** because he hires many assistants to check the map simultaneously (**parallelizable**).",
+          "explanation": "Grid search samples every point on a discrete grid. Advantages are simplicity, guaranteed optimum (among samples), and parallelization."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a perfect cross-hatched grid pattern covering the door, representing the systematic nature of the search.",
+              "how_to_place": "Visualize the grid pattern on the door."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a large, sparkling trophy with a ribbon that says 'GUARANTEED BEST', representing the advantage of **Guaranteed Optimum**.",
+              "how_to_place": "See the sparkling trophy in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE ten chefs working simultaneously on ten identical meals, representing the advantage of **Parallelization**.",
+              "how_to_place": "Picture the ten parallel chefs on the kitchen counter."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(b) OR",
+      "question_text": "Give details about Transformation techniques of Constrained Optimization Techniques",
+      "diagram_representation": null,
+      "marks": 4,
+      "tags": [
+        "Optimization",
+        "Transformation Techniques",
+        "Constrained Optimization"
+      ],
+      "answer": "## ✨ Transformation Techniques\n\n**Explanation:** Transformation techniques are strategies used in **Constrained Optimization** to mathematically reformulate a problem with constraints into an equivalent **Unconstrained Optimization** problem. This allows the use of fast, well-developed unconstrained algorithms (like Newton's or Steepest Descent) to find the solution.\n\n### Key Types\n\n1.  **Direct Transformation:** Involves analytically eliminating the constraints by **substituting variables** or restructuring the problem. This is primarily feasible only for simple equality constraints or side bounds.\n    * **Example:** To minimize $f(x, y) = x^2 + y^2$ subject to $x+y=10$, substitute $y = 10-x$ to get the unconstrained problem: $\\text{Min } f(x) = x^2 + (10-x)^2$.\n\n2.  **Indirect Transformation (Penalty/Barrier Function Methods):** Introduces a penalty term to the objective function that grows larger as the solution moves away from the feasible region defined by the constraints.\n    * **Exterior Penalty:** Penalizes solutions that are **infeasible** (outside the boundary). The penalty parameter $r_k \\to \\infty$.\n    * **Interior Barrier:** Penalizes solutions that approach the **boundary** from **within** the feasible region, preventing the search from leaving the feasible space. The barrier parameter $r_k \\to 0$. [Image illustrating a barrier function pushing the minimum away from the constraint boundary]",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Transformation** Wizard needs to solve a problem with **walls** (constraints). He uses two spells: The **Direct** spell (**Substitution**) removes the wall entirely by simplifying the equation. The **Indirect** spell (**Penalty**) keeps the wall but covers it with invisible force fields that shock the traveler when they try to **violate** the wall (Exterior) or push them away as they get too **close** to the wall (Interior/Barrier).",
+          "explanation": "Direct transformation eliminates variables via substitution. Indirect transformation adds penalties for constraint violation (Exterior) or approaching the boundary (Interior)."
+        },
+        "memory_palace": {
+          "total_places": 3,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE two boxes merging into one, representing **Direct Substitution** to eliminate a variable/constraint.",
+              "how_to_place": "Visualize the merging boxes on the doormat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a large red flag (the **Penalty**) being tied to a rope (the constraint), representing the **Indirect** method.",
+              "how_to_place": "See the flag tied to a rope in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE a spring pushing someone away from the counter edge (Interior Barrier Function).",
+              "how_to_place": "See the spring pushing near the kitchen counter."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "question_no": "Q.5",
+      "sub_question_no": "(c) OR",
+      "question_text": "Explain in detail Ant colony optimization as Modern methods of Optimization",
+      "diagram_representation": null,
+      "marks": 7,
+      "tags": [
+        "Optimization",
+        "Ant Colony Optimization",
+        "Modern Methods"
+      ],
+      "answer": "## 🐜 Ant Colony Optimization (ACO)\n\n**Explanation:** Ant Colony Optimization (ACO) is a **meta-heuristic** technique inspired by the foraging behavior of real ants, particularly their ability to find the shortest path between their colony and a food source using **pheromone trails**.\n\n* **Goal:** To find the optimal path or solution in **discrete optimization problems** (like TSP, routing, or scheduling).\n\n### Working Principle\n\n1.  **Pheromone Trails:** When an ant travels, it deposits a virtual trail of **pheromone**. The amount of pheromone indicates the quality or shortness of the path.\n2.  **Probabilistic Selection:** Subsequent ants choose paths based on the **concentration of pheromone**. A path with higher pheromone concentration has a higher probability of being selected. The probability $P_{ij}$ of an ant moving from node $i$ to node $j$ is calculated using pheromone level ($\\tau_{ij}$) and heuristic information (visibility, $\\eta_{ij}$):\n    $$P_{ij} = \\frac{(\\tau_{ij})^{\\alpha} (\\eta_{ij})^{\\beta}}{\\sum (\\tau_{ik})^{\\alpha} (\\eta_{ik})^{\\beta}}$$\n3.  **Evaporation:** Pheromones gradually **evaporate** over time. This decay mechanism prevents premature convergence to local optima and encourages exploration.\n4.  **Positive Feedback:** The process converges because shorter paths receive more traffic in less time, leading to rapid pheromone accumulation. This positive feedback drives the colony toward the global optimum (the shortest path). [Image illustrating Ant Colony Optimization finding the shortest path between two nodes in a graph]\n\n### Example: Traveling Salesman Problem (TSP)\nEach artificial ant constructs a full tour (a solution). The pheromone level on the path segments between cities is reinforced based on the overall length (cost) of the ant's constructed tour. Over iterations, the pheromone trails converge to the sequence of cities defining the shortest route.",
+      "memory_techniques": {
+        "story_method": {
+          "story": "The **Ant Colony** runs a pathfinding experiment: each ant drops **Pheromone** (road paint) on its route. New ants choose paths based on the amount of paint they see. Roads that are too long fade away (**Evaporation**), quickly forcing all ants onto the **shortest path**.",
+          "explanation": "ACO solves discrete pathfinding problems using pheromones. Path selection is probabilistic based on pheromone, and evaporation prevents stagnation."
+        },
+        "memory_palace": {
+          "total_places": 4,
+          "places": [
+            {
+              "place_number": 1,
+              "location": "Front Door",
+              "visualization": "I SEE a line of ants dropping colored paint (the **Pheromone Trails**) on the mat.",
+              "how_to_place": "Visualize the ants and pheromone on the doormat."
+            },
+            {
+              "place_number": 2,
+              "location": "Entrance Hall",
+              "visualization": "I SEE a brightly glowing path and a fading path, illustrating **Probabilistic Selection** and **Evaporation**.",
+              "how_to_place": "See the bright and fading paths in the hall."
+            },
+            {
+              "place_number": 3,
+              "location": "Kitchen",
+              "visualization": "I SEE the probability formula $P_{ij}$ written on a recipe card, which dictates ant movement.",
+              "how_to_place": "Place the formula card on the counter."
+            },
+            {
+              "place_number": 4,
+              "location": "Living Room Couch",
+              "visualization": "I SEE a map of many cities (TSP), representing the key **discrete sequence** problem solved by ACO.",
+              "how_to_place": "See the map of cities on the couch."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
